@@ -399,7 +399,6 @@ function entrar3() {
                                 }
                             }
                             $("#codigo").focus();
-                        
                         }
                     }
                 }

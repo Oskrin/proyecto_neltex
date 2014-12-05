@@ -70,6 +70,12 @@ function guardar_empresa(){
     }
 }
 
+function retornar(){
+//     location.href("../");
+     
+     window.location.assign("../");
+} 
+
 function inicio()
 {
     $("#ruc_empresa").validCampoFranz("0123456789");
@@ -83,13 +89,15 @@ function inicio()
     $("#btnGuardar").click(function(e) {
         e.preventDefault();
     });
-    $("#btnCancelar").click(function(e) {
+    $("#btnRetornar").click(function(e) {
         e.preventDefault();
     });
     
     ////////////eventos botones/////////////
     $("#btnCancelar").on("click", cancelar);
     $("#btnGuardar").on("click", guardar_empresa);
+    $("#btnIngreso").on("click", ingresarSistema);
+    $("#btnRetornar").on("click", retornar);
     //////////////////////////////////////
    
     ////////////dialogo///////////////
@@ -99,7 +107,7 @@ function inicio()
     $("#txt_usuario").focus();
     $("#txt_contra").on("keypress", enter);
     $("#txt_usuario").on("keypress", enter);
-    $("#btnIngreso").on("click", ingresarSistema);
+    
 }
 
 function ingresarSistema() {

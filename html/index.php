@@ -58,7 +58,9 @@ session_destroy();
                             <input id="Field" name="Field" type="checkbox" class="field login-checkbox" value="First Choice" tabindex="4" />
                             <label class="choice" for="Field">Recordar conexión</label>
                         </span>
-                        <button class="button btn btn-success btn-large" id="btnIngreso">Ingresar</button>
+
+                        <button class="button btn btn-success btn-large" id="btnIngreso" >Ingresar</button>
+                        <button class="button btn btn-success btn-large" id="btnRetornar">Retornar</button>
                     </div>
                 </form>
             </div>
