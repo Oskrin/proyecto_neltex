@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title></title>
-    </head>
-    <body>
-        <?php
-        // put your code here
-        ?>
-    </body>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+	function cargar(){	
+		window.location.href="web/";
+	}
+	cargar()
+</script>
+</body>
 </html>
