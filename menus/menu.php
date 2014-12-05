@@ -9,9 +9,9 @@ function menu_1() {
             <li><a href="../html/principal.php" target="_parent" class="inicio"><i class="icon-home"></i> Inicio</a></li>
             <li><a href="" target="_parent"> <i class="icon-th-large"></i> Ingresos</a>
                 <ul>
-                    <li><a href="../html/usuarios.php" target="_blank">Usuarios</a></li>
-                    <li><a href="../html/clientes.php" target="_blank">Clientes</a></li>
-                    <li><a href="../html/proveedores.php"target="_blank">Proveedores</a></li>
+                    <li><a href="../html/usuarios.php">Usuarios</a></li>
+                    <li><a href="../html/clientes.php">Clientes</a></li>
+                    <li><a href="../html/proveedores.php">Proveedores</a></li>
                     <!--<li><a href="../html/productos.php" target="_blank">Productos</a></li>
                     <li><a href="../html/archivosExcel.php" target="_blank">Cargar Productos</a></li>
                     <li><a href="" target="_parent">Clasificacion</a>
