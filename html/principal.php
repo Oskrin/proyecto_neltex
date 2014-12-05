@@ -83,19 +83,15 @@ include '../menus/menu.php';
 
 
                                 <div class="widget-content">
-                                    <style type="text/css">
-                                        .aur{
-                                            background: #222222;
-                                        }
-                                    </style>
+                                   
                                     <div class="tabbable aur" id="centro" >
                                         <fieldset>
                                             <div align="center">
-                                                <img src="../images/logo_empresa.fw.png" width="70%" /> 
+                                                <img src="../images/logo_empresa.jpg" width="70%" /> 
                                             </div>
                                         </fieldset>   
                                     </div>
-                                </div> 
+                                
                             </div>
                         </div> 
 

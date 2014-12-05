@@ -14,7 +14,7 @@ session_destroy();
         <link href="../css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" />
         <link rel="stylesheet" type="text/css" href="../css/jquery-ui-1.10.4.custom.css"/> 
         <link href="../css/font-awesome.css" rel="stylesheet">
-        
+
         <link href="../css/style.css" rel="stylesheet" type="text/css">
         <link href="../css/pages/signin.css" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="../css/alertify.core.css" />
@@ -32,10 +32,10 @@ session_destroy();
     </head>
 
     <body style="background: url(../images/fondo.fw.png)no-repeat fixed center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;">
+          -webkit-background-size: cover;
+          -moz-background-size: cover;
+          -o-background-size: cover;
+          background-size: cover;">
         <div class="account-container">
             <div class="content clearfix">
                 <form action="" method="post" name="form_admin">
@@ -61,22 +61,6 @@ session_destroy();
                         <button class="button btn btn-success btn-large" id="btnIngreso">Ingresar</button>
                     </div>
                 </form>
-            </div>
-            <div class="member span4">
-                <div class="member-thumbnail">
-                    <a href="#">
-                        <img src="../images/system.jpg" alt="avatar" />
-                    </a>
-                </div>
-                <ul class="member-menu">
-                    <li class="path-wrapper">
-                        <span class="overlay"></span>
-                        <div class="member-data">
-                            <h3>P&S Systems</h3>
-                            <div class="position">Desarrollo de Software</div>
-                        </div> 
-                    </li>
-                </ul>
             </div>
         </div> 
     </body>
