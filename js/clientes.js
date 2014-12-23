@@ -433,11 +433,31 @@ function inicio() {
                     if ($("#tipo_docu option:selected").text() === "Cedula") {
                         if (numero.length === 10) {
                             if(nat == true){
-                                if (digitoVerificador != d10){                          
+                                if (digitoVerificador != d10){  
                                     alertify.error('El número de cédula es incorrecto.');
                                     $("#ruc_ci").val("");
                                 }else{
-                                    alertify.success('El número de cédula es correcto.');
+                                    if($("#ruc_ci").val() === "0000000000"){
+                                        alertify.error('El número de cédula es incorrecto.');
+                                        $("#ruc_ci").val("");
+                                        }else{
+                                            if($("#ruc_ci").val() === "2222222222"){
+                                        alertify.error('El número de cédula es incorrecto.');
+                                        $("#ruc_ci").val("");
+                                        }else{
+                                            if($("#ruc_ci").val() === "4444444444"){
+                                        alertify.error('El número de cédula es incorrecto.');
+                                        $("#ruc_ci").val("");
+                                        }else{
+                                            if($("#ruc_ci").val() === "5555555555"){
+                                        alertify.error('El número de cédula es incorrecto.');
+                                        $("#ruc_ci").val("");
+                                        }else{
+                                        alertify.success('El número de cédula es correcto.');
+                                    }
+                                   } 
+                                        }
+                                    }
                                 }
                             }
                         }
