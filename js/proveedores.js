@@ -65,47 +65,47 @@ function guardar_proveedor() {
     
     if ($("#tipo_docu").val() === "") {
         $("#tipo_docu").focus();
-        alertify.alert("Seleccione un tipo de documento ");
+        alertify.error("Seleccione un tipo de documento ");
     } else {
         if ($("#tipo_docu").val() === "Cedula" && iden.length < 10) {
             $("#ruc_ci").focus();
-            alertify.alert("Error.. Minimo 10 digitos ");
+            alertify.error("Error.. Minimo 10 digitos ");
         } else {
             if ($("#tipo_docu").val() === "Ruc" && iden.length < 13) {
                 $("#ruc_ci").focus();
-                alertify.alert("Error.. Minimo 13 digitos ");
+                alertify.error("Error.. Minimo 13 digitos ");
             } else {
                 if ($("#empresa_pro").val() === "") {
                     $("#empresa_pro").focus();
-                    alertify.alert("Indique nombre de la empresa");
+                    alertify.error("Indique nombre de la empresa");
                 } else {
                     if ($("#direccion_pro").val() === "") {
                         $("#direccion_pro").focus();
-                        alertify.alert("Indique la dirección");
+                        alertify.error("Indique la dirección");
                     } else {
                         if ($("#nro_telefono").val() === "") {
                             $("#nro_telefono").focus();
-                            alertify.alert("Indique número telefónico");
+                            alertify.error("Indique número telefónico");
                         } else {
                             if (!expr.test(correo) || $("#correo").val() === "") {
                                 $("#correo").focus();
-                                alertify.alert("Ingrese un correo");
+                                alertify.error("Ingrese un correo");
                             }else{
                                 if ($("#pais_pro").val() === "") {
                                     $("#pais_pro").focus();
-                                    alertify.alert("Ingrese el país");
+                                    alertify.error("Ingrese el país");
                                 } else {
                                     if ($("#ciudad_pro").val() === "") {
                                         $("#ciudad_pro").focus();
-                                        alertify.alert("Ingrese la ciudad");
+                                        alertify.error("Ingrese la ciudad");
                                     } else {
                                         if ($("#forma_pago").val() === "") {
                                             $("#forma_pago").focus();
-                                            alertify.alert("Seleccione forma de pago");
+                                            alertify.error("Seleccione forma de pago");
                                         } else {
                                             if ($("#principal_pro").val() === "") {
                                                 $("#principal_pro").focus();
-                                                alertify.alert("Seleccione un tipo");
+                                                alertify.error("Seleccione un tipo");
                                             }else{
                                                 $.ajax({
                                                     type: "POST",
@@ -116,10 +116,11 @@ function guardar_proveedor() {
                                                     success: function(data) {
                                                         var val = data;
                                                         if (val == 1) {
-                                                            alertify.alert("Datos Guardados Correctamente",function(){
+                                                            alertify.success('Datos Agregados Correctamente');						    		
+                                                            setTimeout(function() {
                                                             location.reload();
-                                                            });
-                                                        }
+                                                            }, 1000);
+                                                       }
                                                     }
                                                 }); 
                                             }
@@ -141,51 +142,51 @@ function modificar_proveedor() {
     var correo = $("#correo").val();
     
     if ($("#id_proveedor").val() === "") {
-        alertify.alert("Seleccione un proveedor");
+        alertify.error("Seleccione un proveedor");
     } else {
         if ($("#tipo_docu").val() === "") {
             $("#tipo_docu").focus();
-            alertify.alert("Seleccione un tipo de documento ");
+            alertify.error("Seleccione un tipo de documento ");
         } else {
             if ($("#tipo_docu").val() === "Cedula" && iden.length < 10) {
                 $("#ruc_ci").focus();
-                alertify.alert("Error.. Minimo 10 digitos ");
+                alertify.error("Error.. Minimo 10 digitos ");
             } else {
                 if ($("#tipo_docu").val() === "Ruc" && iden.length < 13) {
                     $("#ruc_ci").focus();
-                    alertify.alert("Error.. Minimo 13 digitos ");
+                    alertify.error("Error.. Minimo 13 digitos ");
                 } else {
                     if ($("#empresa_pro").val() === "") {
                         $("#empresa_pro").focus();
-                        alertify.alert("Indique nombre de la empresa");
+                        alertify.error("Indique nombre de la empresa");
                     } else {
                         if ($("#direccion_pro").val() === "") {
                             $("#direccion_pro").focus();
-                            alertify.alert("Indique la dirección");
+                            alertify.error("Indique la dirección");
                         } else {
                             if ($("#nro_telefono").val() === "") {
                                 $("#nro_telefono").focus();
-                                alertify.alert("Indique número telefónico");
+                                alertify.error("Indique número telefónico");
                             } else {
                                 if (!expr.test(correo) || $("#correo").val() === "") {
                                     $("#correo").focus();
-                                    alertify.alert("Ingrese un correo");
+                                    alertify.error("Ingrese un correo");
                                 } else {
                                     if ($("#pais_pro").val() === "") {
                                         $("#pais_pro").focus();
-                                        alertify.alert("Ingrese el pais");
+                                        alertify.error("Ingrese el pais");
                                     } else {
                                         if ($("#ciudad_pro").val() === "") {
                                             $("#ciudad_pro").focus();
-                                            alertify.alert("Ingrese la ciudad");
+                                            alertify.error("Ingrese la ciudad");
                                         } else {
                                             if ($("#forma_pago").val() === "") {
                                                 $("#forma_pago").focus();
-                                                alertify.alert("Seleccione forma de pago");
+                                                alertify.error("Seleccione forma de pago");
                                             } else {
                                                 if ($("#principal_pro").val() === "") {
                                                     $("#principal_pro").focus();
-                                                    alertify.alert("Seleccione un tipo");
+                                                    alertify.error("Seleccione un tipo");
                                                 }else{
                                                     $.ajax({
                                                         type: "POST",
@@ -195,11 +196,11 @@ function modificar_proveedor() {
                                                         + "&visitador=" + $("#visitador").val() + "&direccion_pro=" + $("#direccion_pro").val() + "&nro_telefono=" + $("#nro_telefono").val() + "&nro_celular=" + $("#nro_celular").val() + "&fax=" + $("#fax").val() + "&pais_pro=" + $("#pais_pro").val() + "&ciudad_pro=" + $("#ciudad_pro").val() + "&forma_pago=" + $("#forma_pago").val() + "&correo=" + $("#correo").val() + "&principal_pro=" + $("#principal_pro").val() + "&observaciones_pro=" + $("#observaciones_pro").val(),
                                                         success: function(data) {
                                                             var val = data;
-                                                            if (val == 1)
-                                                            {
-                                                                alertify.alert("Datos Modificados Correctamente",function(){
+                                                            if (val == 1) {
+                                                                alertify.success('Datos Modificados Correctamente');						    		
+                                                                setTimeout(function() {
                                                                     location.reload();
-                                                                });
+                                                                }, 1000);
                                                             }
                                                         }
                                                     });
@@ -219,7 +220,7 @@ function modificar_proveedor() {
 
 function eliminar_proveedor() {
     if ($("#id_proveedor").val() === "") {
-        alertify.alert("Seleccione un proveedor");
+        alertify.error("Seleccione un proveedor");
     } else {
         $("#clave_permiso").dialog("open"); 
     }
@@ -228,7 +229,7 @@ function eliminar_proveedor() {
 function validar_acceso(){
     if($("#clave").val() == ""){
         $("#clave").focus();
-        alertify.alert("Ingrese la clave");
+        alertify.error("Ingrese la clave");
     }else{
         $.ajax({
             url: '../procesos/validar_acceso.php',
@@ -239,7 +240,7 @@ function validar_acceso(){
                 if (val == 0) {
                     $("#clave").val("");
                     $("#clave").focus();
-                    alertify.alert("Error... La clave es incorrecta ingrese nuevamente");
+                    alertify.error("Error... La clave es incorrecta ingrese nuevamente");
                 }else {
                     if (val == 1) {
                         $("#seguro").dialog("open");   
@@ -258,13 +259,15 @@ function aceptar(){
         success: function(data) {
             var val = data;
             if (val == 1) {
-                alertify.alert("Error.. El Proveedor tiene movimientos en el sistema",function(){
-                location.reload();
-                });
+                alertify.error('Error.. El Proveedor tiene movimientos en el sistema');						    		
+                setTimeout(function() {
+                    location.reload();
+                }, 1000);
             }else{
-                alertify.alert("Proveedor Eliminado Correctamente",function(){
-                location.reload();
-                }); 
+                alertify.success('Proveedor Eliminado Correctamente');						    		
+                setTimeout(function() {
+                    location.reload();
+                }, 1000); 
             }
         }
     }); 
@@ -313,7 +316,7 @@ function reset () {
 }
 
 function inicio() {
-    
+    alertify.set({ delay: 1000 });
     $("#nro_telefono").validCampoFranz("0123456789");
     $("#nro_celular").validCampoFranz("0123456789");
 
@@ -450,7 +453,12 @@ function inicio() {
                                     alertify.error('El número de cédula es incorrecto.');
                                     $("#ruc_ci").val("");
                                 }else{
-                                    alertify.success('El número de cédula es correcto.');
+                                     if($("#ruc_ci").val() === "0000000000"){
+                                        alertify.error('El número de cédula es incorrecto.');
+                                        $("#ruc_ci").val("");
+                                        }else{
+                                            alertify.success('El número de cédula es correcto.');
+                                    }
                                 }
                             }
                         }

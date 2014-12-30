@@ -117,7 +117,7 @@ $cont1++;
                                                             <div class="control-group">											
                                                                 <label class="control-label" for="fecha_actual">Fecha Actual:</label>
                                                                 <div class="controls">
-                                                                    <input type="text" name="fecha_actual" id="fecha_actual" readonly value="<?php echo date("Y-m-d"); ?>" class="campo" style="width: 100px" />
+                                                                    <input type="text" name="fecha_actual" id="fecha_actual" readonly value="" class="campo" style="width: 100px" />
                                                                 </div>
                                                             </div>
                                                         </section>
@@ -146,6 +146,7 @@ $cont1++;
                                                         <legend>Productos</legend>   
                                                         <table cellpadding="2" border="0" style="margin-left: 10px">
                                                             <tr>
+                                                                <td><label>Código Barras:</label></td>
                                                                 <td><label>Código:</label></td>   
                                                                 <td><label>Producto:</label></td>   
                                                                 <td><label>Cantidad:</label></td>   
@@ -154,6 +155,7 @@ $cont1++;
                                                             </tr>
 
                                                             <tr>
+                                                                <td><input type="text" name="codigo_barras" id="codigo_barras" class="campo" style="width: 170px"  placeholder="Buscar..."/></td>
                                                                 <td><input type="text" name="codigo" id="codigo" class="campo" style="width: 200px"  placeholder="Buscar..."/></td>
                                                                 <td><input type="text" name="producto" id="producto" class="campo" style="width: 200px"  placeholder="Buscar..."/></td>
                                                                 <td><input type="text" name="cantidad" id="cantidad" class="campo" style="width: 60px" maxlength="10"/></td>

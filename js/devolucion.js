@@ -136,11 +136,11 @@ function entrar() {
             } else {
                 if ($("#cantidad").val() === "") {
                     $("#cantidad").focus();
-                    alertify.alert("Ingrese una cantidad");
+//                    alertify.alert("Ingrese una cantidad");
                 } else {
                     if ($("#cantidad").val() === "0") {
                         $("#cantidad").focus();
-                        alertify.alert("Ingrese una cantidad");
+                        alertify.alert("Ingrese una cantidad válida");
                     } else {
                         if (parseInt($("#cantidad").val()) > parseInt($("#canti").val())) {
                             $("#cantidad").focus();
@@ -171,11 +171,11 @@ function entrar2() {
             } else {
                 if ($("#cantidad").val() === "") {
                     $("#cantidad").focus();
-                    alertify.alert("Ingrese una cantidad");
+//                    alertify.alert("Ingrese una cantidad");
                 } else {
                     if ($("#cantidad").val() === "0") {
                         $("#cantidad").focus();
-                        alertify.alert("Ingrese una cantidad");
+                        alertify.alert("Ingrese una cantidad válida");
                     } else {
                         if (parseInt($("#cantidad").val()) > parseInt($("#canti").val())) {
                             $("#cantidad").focus();
@@ -197,8 +197,8 @@ function entrar2() {
                                     if ($("#descuento").val() !== 0) {
                                     desc = $("#descuento").val();
                                     precio = (parseFloat($("#precio").val())).toFixed(2);
-                                    multi = ($("#cantidad").val() * precio).toFixed(2);
-                                    descuento = ((multi * parseFloat($("#descuento").val())) / 100);
+                                    multi = ($("#cantidad").val() * parseFloat($("#precio").val())).toFixed(2);
+                                    descuento = ((multi * parseFloat($("#descuento").val()))/100).toFixed(2);
                                     total = (multi - descuento).toFixed(2);
                                 } else {
                                     desc = 0;
@@ -228,8 +228,8 @@ function entrar2() {
                                         if ($("#descuento").val() !== 0) {
                                         desc = $("#descuento").val();
                                         precio = (parseFloat($("#precio").val())).toFixed(2);
-                                        multi = ($("#cantidad").val() * precio).toFixed(2);
-                                        descuento = ((multi * parseFloat($("#descuento").val())) / 100);
+                                        multi = ($("#cantidad").val() * parseFloat($("#precio").val())).toFixed(2);
+                                        descuento = ((multi * parseFloat($("#descuento").val()))/100).toFixed(2);
                                         total = (multi - descuento).toFixed(2);
                                         } else {
                                             desc = 0;
@@ -252,8 +252,8 @@ function entrar2() {
                                         if ($("#descuento").val() !== 0) {
                                         desc = $("#descuento").val();
                                         precio = (parseFloat($("#precio").val())).toFixed(2);
-                                        multi = ($("#cantidad").val() * precio).toFixed(2);
-                                        descuento = ((multi * parseFloat($("#descuento").val())) / 100);
+                                        multi = ($("#cantidad").val() * parseFloat($("#precio").val())).toFixed(2);
+                                        descuento = ((multi * parseFloat($("#descuento").val()))/100).toFixed(2);
                                         total = (multi - descuento).toFixed(2);
                                         } else {
                                             desc = 0;
@@ -287,8 +287,8 @@ function entrar2() {
                                         var dd = fil[t];
                                         if (dd['iva'] === "Si") {
                                             subtotal = (subtotal + parseFloat(dd['precio_t']));
+                                            iva = ((subtotal * 12) / 100).toFixed(2);
                                             var sub = parseFloat(subtotal).toFixed(2);
-                                            iva = (sub * 0.12).toFixed(2);
                                             mu = (dd['cantidad'] * dd['precio_u']).toFixed(2);
                                             des = ((mu * dd['descuento'])/100).toFixed(2);
                                             descu = (parseFloat(descu) + parseFloat(des)).toFixed(2);
@@ -462,8 +462,7 @@ function abrirDialogo() {
                     $('#combobox').children().remove().end();
                     $("#series").dialog("open");
                     $("#combobox").append('<option></option>');
-                    for (var i = 0; i < tama; i = i + 1)
-                    {
+                    for (var i = 0; i < tama; i = i + 1) {
                         $("#combobox").append('<option value='+data[i]+' >'+data[i]+'</option>');
                     }
                     $.widget( "custom.combobox", {

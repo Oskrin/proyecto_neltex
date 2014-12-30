@@ -131,6 +131,7 @@ function entrar2() {
                                 su = jQuery("#list").jqGrid('addRowData', $("#cod_producto").val(), datarow);
                                 ////////limpiar///////////
                                 $("#cod_producto").val("");
+                                $("#codigo_barras").val("");
                                 $("#codigo").val("");
                                 $("#producto").val("");
                                 $("#cantidad").val("");
@@ -164,6 +165,7 @@ function entrar2() {
                                     su = jQuery("#list").jqGrid('setRowData', $("#cod_producto").val(), datarow);
                                     ////////limpiar///////////
                                     $("#cod_producto").val("");
+                                    $("#codigo_barras").val("");
                                     $("#codigo").val("");
                                     $("#producto").val("");
                                     $("#cantidad").val("");
@@ -189,6 +191,7 @@ function entrar2() {
                                     su = jQuery("#list").jqGrid('addRowData', $("#cod_producto").val(), datarow);
                                     ////////limpiar///////////
                                     $("#cod_producto").val("");
+                                    $("#codigo_barras").val("");
                                     $("#codigo").val("");
                                     $("#producto").val("");
                                     $("#cantidad").val("");
@@ -208,14 +211,14 @@ function entrar2() {
                             for (var t = 0; t < fil.length; t++) {
                                 var dd = fil[t];
                                 valor_cos = (valor_cos + parseFloat(dd['precio_compra']));
-                                var valor_costo = valor_cos.toFixed(2);
+                                var valor_costo = (valor_cos).toFixed(2);
                                 valor_ven = (valor_ven + parseFloat(dd['precio_venta']));
-                                var valor_venta = valor_ven.toFixed(2);
+                                var valor_venta = (valor_ven).toFixed(2);
                                 }
                             $("#total_costo").val(valor_costo);
                             $("#total_venta").val(valor_venta);
                             
-                            $("#codigo").focus();
+                            $("#codigo_barras").focus();
                         }
                     }
                 }
@@ -228,7 +231,7 @@ function guardar_inventario() {
     var tam = jQuery("#list").jqGrid("getRowData");
     
     if (tam.length === 0) {
-        alertify.alert("Error... Ingrese productos en el inventario");
+        alertify.error("Error... Ingrese productos en el inventario");
     } else {
         var v1 = new Array();
         var v2 = new Array();
@@ -323,10 +326,12 @@ function flecha_atras(){
                                 diferencia: data[i + 7]
                                 };
                             var su = jQuery("#list").jqGrid('addRowData', data[i], datarow);
-                            valor_costo = valor_costo + parseFloat(data[i + 3]);
-                            valor_venta = valor_venta + parseFloat(data[i + 4]);
-                            $("#total_costo").val(valor_costo);
-                            $("#total_venta").val(valor_venta);
+                            valor_costo = (parseFloat(valor_costo) + parseFloat(data[i + 3])).toFixed(2);
+                            var entero = (parseFloat(valor_costo)).toFixed(2);
+                            valor_venta = (parseFloat(valor_venta) + parseFloat(data[i + 4])).toFixed(2);
+                            var entero2 = (parseFloat(valor_venta)).toFixed(2);
+                            $("#total_costo").val(entero);
+                            $("#total_venta").val(entero2);
                         }
                     }
                 });
@@ -386,15 +391,17 @@ function flecha_siguiente(){
                                 diferencia: data[i + 7]
                                 };
                             var su = jQuery("#list").jqGrid('addRowData', data[i], datarow);
-                            valor_costo = valor_costo + parseFloat(data[i + 3]);
-                            valor_venta = valor_venta + parseFloat(data[i + 4]);
-                            $("#total_costo").val(valor_costo);
-                            $("#total_venta").val(valor_venta);
+                            valor_costo = (parseFloat(valor_costo) + parseFloat(data[i + 3])).toFixed(2);
+                            var entero = (parseFloat(valor_costo)).toFixed(2);
+                            valor_venta = (parseFloat(valor_venta) + parseFloat(data[i + 4])).toFixed(2);
+                            var entero2 = (parseFloat(valor_venta)).toFixed(2);
+                            $("#total_costo").val(entero);
+                            $("#total_venta").val(entero2);
                         }
                     }
                 });
            }else{
-               alertify.alert("No hay mas registros posteriores!!");
+               alertify.alert("No hay mas registros superiores!!");
            }
        }
    }); 
@@ -407,6 +414,7 @@ function nuevo(){
 function limpiar_campo1(){
     if($("#codigo").val() === ""){
         $("#cod_producto").val("");
+        $("#codigo_barras").val("");
         $("#producto").val("");
         $("#cantidad").val("");
         $("#precio").val("");
@@ -417,6 +425,7 @@ function limpiar_campo1(){
 function limpiar_campo2(){
     if($("#producto").val() === ""){
         $("#cod_producto").val("");
+        $("#codigo_barras").val("");
         $("#codigo").val("");
         $("#cantidad").val("");
         $("#precio").val("");
@@ -493,11 +502,42 @@ function inicio() {
     $("#precio").on("keypress", enter2);
     ///////////////////
     
+            $("#codigo_barras").keyup(function(e) {
+        var codigo = $("#codigo_barras").val();
+        $.getJSON('../procesos/search3.php?codigo_barras=' + codigo, function(data) {
+                var tama = data.length;
+                if (tama !== 0) {
+                   for (var i = 0; i < tama; i = i + 8) {
+                        $("#codigo").val(data[i]);
+                        $("#producto").val(data[i + 1]);
+                        $("#precio").val(data[i + 2]);
+                        $("#stock").val(data[i + 3]);
+                        $("#p_venta").val(data[i + 4]);
+                        $("#existencia").val(data[i + 5]);
+                        $("#diferencia").val(data[i + 6]);
+                        $("#cod_producto").val(data[i + 7]);
+                        $("#cantidad").focus();
+                  }
+                }else{
+                    $("#codigo").val("");
+                    $("#producto").val("");
+                    $("#precio").val("");
+                    $("#stock").val("");
+                    $("#p_venta").val("");
+                    $("#existencia").val("");
+                    $("#diferencia").val("");
+                    $("#cod_producto").val("");
+                }
+            });
+    });
+    ///////////////////////////////////////////////////////
+    
     /////buscador productos codigo///// 
     $("#codigo").autocomplete({
         source: "../procesos/buscar_productoinv1.php",
         minLength: 1,
         focus: function(event, ui) {
+        $("#codigo_barras").val(ui.item.codigo_barras);
         $("#codigo").val(ui.item.value);
         $("#producto").val(ui.item.producto);
         $("#precio").val(ui.item.precio);
@@ -509,6 +549,7 @@ function inicio() {
         return false;
         },
         select: function(event, ui) {
+        $("#codigo_barras").val(ui.item.codigo_barras);
         $("#codigo").val(ui.item.value);
         $("#producto").val(ui.item.producto);
         $("#precio").val(ui.item.precio);
@@ -532,6 +573,7 @@ function inicio() {
         source: "../procesos/buscar_productoinv2.php",
         minLength: 1,
         focus: function(event, ui) {
+        $("#codigo_barras").val(ui.item.codigo_barras);
         $("#producto").val(ui.item.value);
         $("#codigo").val(ui.item.codigo);
         $("#precio").val(ui.item.precio);
@@ -543,6 +585,7 @@ function inicio() {
         return false;
         },
         select: function(event, ui) {
+        $("#codigo_barras").val(ui.item.codigo_barras);
         $("#producto").val(ui.item.value);
         $("#codigo").val(ui.item.codigo);
         $("#precio").val(ui.item.precio);
@@ -564,7 +607,7 @@ function inicio() {
 ///////////calendarios/////
     $('#fecha_actual').datepicker({
         dateFormat: 'yy-mm-dd'
-    });
+    }).datepicker('setDate', 'today');
     
 //////tablas////////////////
 jQuery("#list").jqGrid({

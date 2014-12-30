@@ -108,16 +108,6 @@ include '../menus/menu.php';
                                                     </div>
 
                                                     <div class="control-group">
-                                                        <label class="control-label" for="precio_compra">Precio Compra: <font color="red">*</font></label>
-                                                        <div class="controls">
-                                                            <div class="input-prepend input-append">
-                                                                <span class="add-on">$</span>
-                                                                <input type="text"  name="precio_compra" id="precio_compra"   placeholder="0.00" required  class="campo" style="width: 165px" />
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="control-group">
                                                         <label class="control-label" for="precio_minorista">PSP Minorista: <font color="red">*</font></label>
                                                         <div class="controls">
                                                             <div class="input-prepend input-append">
@@ -127,8 +117,8 @@ include '../menus/menu.php';
                                                         </div>
                                                     </div>
 
-                                                    <div class="control-group">
-                                                        <label class="control-label" for="utilidad_minorista">Utilidad Minorista: <font color="red">*</font></label>
+                                                    <div class="control-group" style="display: none">
+                                                        <label class="control-label" for="utilidad_minorista">Utilidad Minorista: </label>
                                                         <div class="controls">
                                                             <div class="input-prepend input-append">
                                                                 <span class="add-on">%</span>
@@ -170,9 +160,9 @@ include '../menus/menu.php';
                                                     </div>
 
                                                     <div class="control-group">
-                                                        <label class="control-label" for="fecha_creacion">Fecha Creación: <font color="red">*</font></label>
+                                                        <label class="control-label" for="fecha_creacion">Fecha Creación: </label>
                                                         <div class="controls">
-                                                            <input type="text"  name="fecha_creacion" id="fecha_creacion" required class="campo" value="<?php echo date("Y-m-d"); ?>"/>
+                                                            <input type="text"  name="fecha_creacion" id="fecha_creacion" required class="campo" value="" readonly /> 
                                                         </div>
                                                     </div>
 
@@ -203,10 +193,20 @@ include '../menus/menu.php';
                                                         </div>			
                                                     </div>
 
-                                                    <div class="control-group">											
+                                                    <div class="control-group">
+                                                        <label class="control-label" for="precio_compra">Precio Compra: <font color="red">*</font></label>
+                                                        <div class="controls">
+                                                            <div class="input-prepend input-append">
+                                                                <span class="add-on">$</span>
+                                                                <input type="text"  name="precio_compra" id="precio_compra"   placeholder="0.00" required  class="campo" style="width: 165px" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="control-group" style="display: none">											
                                                         <label class="control-label" for="iva">Iva: <font color="red">*</font></label>
                                                         <div class="controls">
-                                                            <select id="iva" name="iva" class="campo" style="width: 200px">
+                                                            <select id="iva" name="iva" class="campo" style="width: 200px" >
                                                                 <option value="">......Seleccione......</option>
                                                                 <option value="Si" selected>Si</option> 
                                                                 <option value="No">No</option> 
@@ -214,8 +214,8 @@ include '../menus/menu.php';
                                                         </div>
                                                     </div>
 
-                                                    <div class="control-group">											
-                                                        <label class="control-label" for="series">Series: <font color="red">*</font></label>
+                                                    <div class="control-group" style="display: none">											
+                                                        <label class="control-label" for="series">Series: </label>
                                                         <div class="controls">
                                                             <select id="series" name="series" class="campo" style="width: 200px">
                                                                 <option value="">......Seleccione......</option>
@@ -235,8 +235,8 @@ include '../menus/menu.php';
                                                         </div>
                                                     </div>
 
-                                                    <div class="control-group">											
-                                                        <label class="control-label" for="utilidad_mayorista">Utilidad Mayorista: <font color="red">*</font></label>
+                                                    <div class="control-group" style="display: none">											
+                                                        <label class="control-label" for="utilidad_mayorista">Utilidad Mayorista:</label>
                                                         <div class="controls">
                                                             <div class="input-prepend input-append">
                                                                 <span class="add-on">%</span>
@@ -300,7 +300,6 @@ include '../menus/menu.php';
                                                             <input type="file" name="archivo" id="archivo" onchange='Test.UpdatePreview(this)' accept="image/*" />
                                                         </div>	
                                                     </div> 
-
                                                 </section>
 
                                                 <section class="columna3_empresa">

@@ -117,17 +117,19 @@ $cont1++;
                                                                 <td><label for="comprobante" style="width: 100%">Comprobante Nro:</label></td>   
                                                                 <td><input type="text" name="comprobante" id="comprobante" class="campo" readonly style="width: 80px" value="<?php echo $cont1 ?>" /></td>
                                                                 <td><label style="width: 100%; margin-left: 10px">Fecha:</label></td>
-                                                                <td><input type="text" name="fecha_actual" id="fecha_actual" class="campo" readonly style="margin-left: 5px; width: 100px" value="<?php echo date("Y-m-d"); ?>" /></td>
+                                                                <td><input type="text" name="fecha_actual" id="fecha_actual" class="campo" readonly style="margin-left: 5px; width: 100px" value="" /></td>
                                                                 <td><label style="width: 100%; margin-left: 10px">Hora:</label></td>
                                                                 <td><input type="text" name="hora_actual" id="hora_actual" class="campo" readonly style="margin-left: 5px; width: 100px"/></td>
-                                                                <td><label for="proforma" style="width: 100%; margin-left: 10px">Proforma Nro:</label></td>   
-                                                                <td><input type="text" name="proforma" id="proforma" class="campo" style="margin-left: 5px; width: 100px"/></td>
+                                                                <!--<td><label for="proforma" style="width: 100%; margin-left: 10px">Proforma Nro:</label></td>-->   
+                                                                <td><input type="hidden" name="proforma" id="proforma" class="campo" style="margin-left: 5px; width: 100px"  readonly/></td>
                                                                 <td><input type="hidden" name="comprobante2" id="comprobante2" class="campo" style="width: 100px" value="<?php echo $cont1 ?>" /></td>
                                                             </tr>  
                                                         </table>  
-
-                                                        <hr style="color: #0056b2;" /> 
-
+                                                    </fieldset>
+                                                    <br />
+                                                    <hr> 
+                                                    
+                                                    <fieldset>
                                                         <table cellpadding="2" border="0" style="margin-left: 10px">
                                                             <tr>
                                                                 <td><label style="width: 100%">Digitador (a): </label></td>
@@ -145,8 +147,10 @@ $cont1++;
                                                             <tr>
                                                                 <td><label style="width: 100%">Cédula Identidad/RUC: <font color="red">*</font></label></td>  
                                                                 <td><input type="text" name="ruc_ci"  id="ruc_ci" placeholder="Buscar....." class="campo" style="width: 150px"/></td>
-                                                                <td><label style="width: 100%; margin-left: 10px">Nombres Completos del Cliente: <font color="red">*</font></label></td>
+                                                                <td><label style="width: 100%; margin-left: 10px">Cliente: <font color="red">*</font></label></td>
                                                                 <td><input type="text" name="nombre_cliente" id="nombre_cliente" class="campo" style="width: 250px"/></td>
+                                                                <td><label style="width: 100%; margin-left: 10px">Director@: </label></td>
+                                                                <td><input type="text" name="nombre_director" id="nombre_director" class="campo" style="width: 250px" readonly/></td>
                                                             </tr>  
                                                         </table>
 
@@ -164,7 +168,7 @@ $cont1++;
                                                         <table cellpadding="2" style="margin-left: 10px">
                                                             <tr>
                                                                 <td><label style="width: 100%">Fecha Cancelación: <font color="red">*</font></label></td>
-                                                                <td><input type="text" name="cancelacion" id="cancelacion" class="campo" style="width: 150px" value="<?php echo date("Y-m-d"); ?>" readonly/></td>
+                                                                <td><input type="text" name="cancelacion" id="cancelacion" class="campo" style="width: 150px" value="" readonly/></td>
                                                                 <td><label for="tipo_precio" style="width: 100%">Tipo de Precio: <font color="red">*</font></label></td>  
                                                                 <td><select id="tipo_precio" name="tipo_precio" style="width: 180px">
                                                                         <option value="MINORISTA">MINORISTA</option>
@@ -195,16 +199,18 @@ $cont1++;
                                                                 <td><label for="autorizacion"  style="width: 100%">Autorización: </label></td>
                                                                 <td><input type="text" name="autorizacion" id="autorizacion" class="campo" maxlength="45"/></td>
                                                                 <td><label for="fecha_auto" style="margin-left: 10px">Fecha autorización:</label></td>
-                                                                <td><input type="text" name="fecha_auto" id="fecha_auto" class="campo" style="width: 120px; margin-left: 5px" value="<?php echo date("Y-m-d"); ?>" readonly /></td>
+                                                                <td><input type="text" name="fecha_auto" id="fecha_auto" class="campo" style="width: 120px; margin-left: 5px" value="" readonly /></td>
                                                                 <td><label for="fecha_caducidad" style="margin-left: 10px">Fecha caducidad:</label></td>
-                                                                <td><input type="text" name="fecha_caducidad" id="fecha_caducidad" class="campo" style="width: 120px; margin-left: 5px" value="<?php echo date("Y-m-d"); ?>" readonly /></td>
+                                                                <td><input type="text" name="fecha_caducidad" id="fecha_caducidad" class="campo" style="width: 120px; margin-left: 5px" value="" readonly /></td>
                                                             </tr>
                                                         </table>
-
-                                                        <hr style="color: #0056b2;" /> 
-                                                        <p>Detalle de la factura</p>
+                                                    </fieldset>
+                                                    <br />
+                                                    <fieldset>  
+                                                        <legend>Detalle Factura</legend>
                                                         <table cellpadding="2" border="0" style="margin-left: 10px">
                                                             <tr>
+                                                                <td><label>Código Barras:</label></td>
                                                                 <td><label>Código:</label></td>   
                                                                 <td><label>Producto:</label></td>   
                                                                 <td><label>Cantidad:</label></td>   
@@ -214,11 +220,12 @@ $cont1++;
                                                             </tr>
 
                                                             <tr>
+                                                                <td><input type="text" name="codigo_barras" id="codigo_barras" class="campo" style="width: 170px"  placeholder="Buscar..."/></td>
                                                                 <td><input type="text" name="codigo" id="codigo" class="campo" style="width: 180px"  placeholder="Buscar..."/></td>
                                                                 <td><input type="text" name="producto" id="producto" class="campo" style="width: 200px"  placeholder="Buscar..."/></td>
                                                                 <td><input type="text" name="cantidad" id="cantidad" class="campo" style="width: 60px" maxlength="10"/></td>
                                                                 <td><input type="text" name="p_venta" id="p_venta" style="width: 60px" class="campo" maxlength="10"/></td>
-                                                                <td><input type="number" name="descuento" id="descuento" class="campo" style="width: 60px" maxlength="3" placeholder="%" min="0" readonly/></td>
+                                                                <td><input type="text" name="descuento" id="descuento" class="campo" style="width: 60px" maxlength="3" placeholder="%" min="0" readonly/></td>
                                                                 <td><input type="text" name="disponibles" id="disponibles" class="campo" readonly style="width: 60px" maxlength="10" value=""/></td>
                                                                 <!--<td><input type="button" class="btn btn-primary" id='btncargar' style="margin-top: -10px" value="Cargar"></td>-->
                                                                 <td><input type="hidden" name="iva_producto" id="iva_producto" class="campo" /></td>
@@ -233,18 +240,18 @@ $cont1++;
                                                             <table id="list"></table>
                                                         </div>
 
-                                                        <table border="0" cellspacing="2" style="margin-left: 625px">
+                                                        <table border="0" cellspacing="2" style="margin-left: 730px">
                                                             <tr>
                                                                 <td><label for="total_p" style="width: 100%">Tarifa 0:</label></td>
                                                                 <td><input type="text" style="width:80px" name="total_p" id="total_p" readonly value="0.00" class="campo"/></td>
                                                             </tr>    
                                                             <tr>
                                                                 <td><label for="total_p2" style="width: 100%" >Tarifa  12:</label></td>
-                                                                <td><input type="text" style="width: 80px" name="total_p2" id="total_p2" readonly value="0.00" class="campo"/></td>
+                                                                <td><input type="text" style="width: 80px" name="total_p2" id="total_p2" readonly value="0.000" class="campo"/></td>
                                                             </tr>
                                                             <tr>
                                                                 <td><label for="iva" style="width:100%" >12 %Iva:</label></td>
-                                                                <td><input type="text" style="width:80px" name="iva" id="iva" readonly value="0.00" class="campo"/></td>
+                                                                <td><input type="text" style="width:80px" name="iva" id="iva" readonly value="0.000" class="campo"/></td>
                                                             </tr>
                                                             <tr>
                                                                 <td><label for="desc" style="width: 100%" >Descuentos:</label></td>

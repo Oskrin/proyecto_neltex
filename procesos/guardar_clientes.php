@@ -14,7 +14,7 @@ while ($row = pg_fetch_row($consulta)) {
 $cont++;
 /////////////////////////////////////////////////////////
 
-if (pg_query("insert into clientes values('$cont','$_POST[tipo_docu]','$_POST[ruc_ci]','$_POST[nombres_cli]','$_POST[tipo_cli]','$_POST[direccion_cli]','$_POST[nro_telefono]','$_POST[nro_celular]','$_POST[pais_cli]','$_POST[ciudad_cli]','$_POST[email]','$_POST[cupo_credito]','$_POST[notas_cli]','Activo')")) {
+if (pg_query("insert into clientes values('$cont','$_POST[tipo_docu]','$_POST[ruc_ci]','".strtoupper($_POST[nombres_cli])."','$_POST[tipo_cli]','$_POST[direccion_cli]','$_POST[nro_telefono]','$_POST[nro_celular]','".strtoupper($_POST[pais_cli])."','".strtoupper($_POST[ciudad_cli])."','$_POST[email]','$_POST[cupo_credito]','$_POST[notas_cli]','Activo')")) {
     $data = 1;
 }
 

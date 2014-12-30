@@ -116,35 +116,35 @@ $(function(){
 function guardar_producto(){
     if ($("#cod_prod").val() === "") {
         $("#cod_prod").focus();
-        alertify.alert("Indique un Código");
+        alertify.error("Indique un Código");
     } else {
         if ($("#nombre_art").val() === "") {
             $("#nombre_art").focus();
-            alertify.alert("Nombre del producto");
+            alertify.error("Nombre del producto");
         } else {
             if ($("#iva").val() === "") {
                 $("#iva").focus();
-                alertify.alert("Seleccione una opción");
+                alertify.error("Seleccione una opción");
             } else {
                 if ($("#precio_compra").val() === "") {
                     $("#precio_compra").focus();
-                    alertify.alert("Indique un precio");
+                    alertify.error("Indique un precio");
                 } else {
                     if ($("#series").val() === "") {
                         $("#series").focus();
-                        alertify.alert("Seleccione una opción");
+                        alertify.error("Seleccione una opción");
                     } else {
                         if ($("#precio_minorista").val() === "") {
                             $("#precio_minorista").focus();
-                            alertify.alert("Ingrese precio minorista");
+                            alertify.error("Ingrese precio minorista");
                         } else {
                             if ($("#precio_mayorista").val() === "") {
                                 $("#precio_mayorista").focus();
-                                alertify.alert("Ingrese precio mayorista");
+                                alertify.error("Ingrese precio mayorista");
                             } else {
                                 if ($("#fecha_creacion").val() === "") {
                                     $("#fecha_creacion").focus();
-                                    alertify.alert("Indique una fecha");
+                                    alertify.error("Indique una fecha");
                                 }else{
                                     $("#productos_form").submit(function(e) {
                                         var formObj = $(this);
@@ -161,15 +161,15 @@ function guardar_producto(){
                                                 contentType: false,
                                                 cache: false,
                                                 processData:false,
-                                                success: function(data, textStatus, jqXHR)
-                                                {
+                                                success: function(data, textStatus, jqXHR) {
                                                     var res=data;
                                                     if(res == 1){
-                                                        alertify.alert("Datos Guardados Correctamente",function(){
+                                                        alertify.success('Datos Agregados Correctamente');						    		
+                                                        setTimeout(function() {
                                                             location.reload();
-                                                        });
+                                                        }, 1000);
                                                     } else{
-                                                        alertify.alert("Error..... Datos no Guardados");
+                                                        alertify.error("Error..... Datos no Guardados");
                                                     }
                                                 },
                                                 error: function(jqXHR, textStatus, errorThrown) 
@@ -203,39 +203,39 @@ function guardar_producto(){
 
 function modificar_producto(){
     if ($("#cod_productos").val() === "") {
-        alertify.alert("Seleccione un producto");
+        alertify.error("Seleccione un producto");
     } else {
         if ($("#cod_prod").val() === "") {
             $("#cod_prod").focus();
-            alertify.alert("Indique un Código");
+            alertify.error("Indique un Código");
         } else {
             if ($("#nombre_art").val() === "") {
                 $("#nombre_art").focus();
-                alertify.alert("Nombre del producto");
+                alertify.error("Nombre del producto");
             } else {
                 if ($("#iva").val() === "") {
                     $("#iva").focus();
-                    alertify.alert("Seleccione una opción");
+                    alertify.error("Seleccione una opción");
                 } else {
                     if ($("#precio_compra").val() === "") {
                         $("#precio_compra").focus();
-                        alertify.alert("Indique un precio");
+                        alertify.error("Indique un precio");
                     } else {
                         if ($("#series").val() === "") {
                             $("#series").focus();
-                            alertify.alert("Seleccione una opción");
+                            alertify.error("Seleccione una opción");
                         } else {
                             if ($("#precio_minorista").val() === "") {
                                 $("#precio_minorista").focus();
-                                alertify.alert("Ingrese precio minorista");
+                                alertify.error("Ingrese precio minorista");
                             } else {
                                 if ($("#precio_mayorista").val() === "") {
                                     $("#precio_mayorista").focus();
-                                    alertify.alert("Ingrese precio mayorista");
+                                    alertify.error("Ingrese precio mayorista");
                                 } else {
                                     if ($("#fecha_creacion").val() === "") {
                                         $("#fecha_creacion").focus();
-                                        alertify.alert("Indique una fecha");
+                                        alertify.error("Indique una fecha");
                                     }else{
                                         $("#productos_form").submit(function(e) {
                                             var formObj = $(this);
@@ -255,11 +255,12 @@ function modificar_producto(){
                                                     success: function(data, textStatus, jqXHR) {
                                                         var res=data;
                                                         if(res == 1){
-                                                            alertify.alert("Datos Modificados Correctamente",function(){
-                                                               location.reload();
-                                                          });
+                                                            alertify.success('Datos Modificados Correctamente');						    		
+                                                            setTimeout(function() {
+                                                                location.reload();
+                                                            }, 1000);
                                                         } else{
-                                                            alertify.alert("Error..... Datos no Modificados");
+                                                            alertify.error("Error..... Datos no Modificados");
                                                         }
                                                     },
                                                     error: function(jqXHR, textStatus, errorThrown) 
@@ -296,7 +297,7 @@ function modificar_producto(){
 
 function eliminar_productos() {
     if ($("#cod_productos").val() === "") {
-        alertify.alert("Seleccione un producto");
+        alertify.error("Seleccione un producto");
     } else {
         $("#clave_permiso").dialog("open");  
     }
@@ -305,7 +306,7 @@ function eliminar_productos() {
 function validar_acceso(){
     if($("#clave").val() == ""){
         $("#clave").focus();
-        alertify.alert("Ingrese la clave");
+        alertify.error("Ingrese la clave");
     }else{
         $.ajax({
             url: '../procesos/validar_acceso.php',
@@ -316,7 +317,7 @@ function validar_acceso(){
                 if (val == 0) {
                     $("#clave").val("");
                     $("#clave").focus();
-                    alertify.alert("Error... La clave es incorrecta ingrese nuevamente");
+                    alertify.error("Error... La clave es incorrecta ingrese nuevamente");
                 } else {
                     if (val == 1) {
                         $("#seguro").dialog("open");   
@@ -335,13 +336,15 @@ function aceptar(){
         success: function(data) {
             var val = data;
             if (val == 1) {
-                alertify.alert("Error... El Producto tiene movimientos en el sistema",function(){
+                alertify.error('Error... El Producto tiene movimientos en el sistema');						    		
+                setTimeout(function() {
                     location.reload();
-                });
+                },1000);
             }else{
-                alertify.alert("Producto Eliminado Correctamente",function(){
+                alertify.success('Producto Eliminado Correctamente');						    		
+                setTimeout(function() {
                     location.reload();
-                });
+                }, 1000);
             }
         }
     }); 
@@ -365,7 +368,7 @@ function nuevo_producto() {
 function agregar_categoria() {
     if ($("#nombre_categoria").val() === "") {
         $("#nombre_categoria").focus();
-        alertify.alert("Nombre Categoria");
+        alertify.error("Nombre Categoria");
     }else{
         $.ajax({
             type: "POST",
@@ -377,6 +380,9 @@ function agregar_categoria() {
                     $("#nombre_categoria").val("");
                     $("#categoria").load("../procesos/categorias_combos.php");
                     $("#categorias").dialog("close");
+                }else{
+                    $("#nombre_categoria").val("");
+                    alertify.error("Error.... La categoria ya existe");
                 }
             }
         });
@@ -386,7 +392,7 @@ function agregar_categoria() {
 function agregar_marca() {
     if ($("#nombre_marca").val() === "") {
         $("#nombre_marca").focus();
-        alertify.alert("Nombre Marca");
+        alertify.error("Nombre Marca");
     }else{
         $.ajax({
             type: "POST",
@@ -398,6 +404,9 @@ function agregar_marca() {
                     $("#nombre_marca").val("");
                     $("#marca").load("../procesos/marcas_combos.php");
                     $("#marcas").dialog("close");
+                }else{
+                    $("#nombre_marca").val("");
+                    alertify.error("Error.... La marca ya existe");
                 }
             }
         });
@@ -464,7 +473,7 @@ function porcenta2(){
 }
 
 function inicio() {
-    
+    alertify.set({ delay: 1000 });
     jQuery().UItoTop({
         easingType: 'easeOutQuart'
     });
@@ -508,7 +517,26 @@ function inicio() {
             }
         });
     });
+      /////////////////////////////////////////////////
+    
+     /////////////////verificar repetidos/////////////
+    $("#cod_barras").keyup(function() {
+        $.ajax({
+            type: "POST",
+            url: "../procesos/comparar_codigo2.php",
+            data: "codigo=" + $("#cod_barras").val(),
+            success: function(data) {
+                var val = data;
+                if (val == 1) {
+                    $("#cod_barras").val("");
+                    $("#cod_barras").focus();
+                    alertify.error("Error... El código de barras ya existe");
+                }
+            }
+        });
+    });
     /////////////////////////////////////////////////
+  
 
     /////////atributos/////////////
     $("#utilidad_minorista").attr("maxlength", "5");
@@ -585,13 +613,13 @@ function inicio() {
     /////////calendarios///////
     $("#fecha_creacion").datepicker({
         dateFormat: 'yy-mm-dd'
-    });
+    }).datepicker('setDate', 'today');
     //////////////////////////
 
     ////calcular datos/////
     $("#utilidad_minorista").keyup(function() {
         if($("#precio_compra").val() === ""){
-            alertify.alert("Error... Ingrese precio compra", function (){
+            alertify.error("Error... Ingrese precio compra", function (){
                 $("#precio_compra").focus();   
                 $("#utilidad_minorista").val(""); 
             });
@@ -609,7 +637,7 @@ function inicio() {
 
     $("#utilidad_mayorista").keyup(function() {
         if($("#precio_compra").val() === ""){
-            alertify.alert("Error... Ingrese precio compra", function (){
+            alertify.error("Error... Ingrese precio compra", function (){
                 $("#precio_compra").focus();   
                 $("#utilidad_mayorista").val(""); 
             });
