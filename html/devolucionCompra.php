@@ -117,7 +117,7 @@ $cont1++;
                                                             <div class="control-group">											
                                                                 <label class="control-label" for="fecha_actual">Fecha Actual:</label>
                                                                 <div class="controls">
-                                                                    <input type="text" name="fecha_actual" id="fecha_actual" readonly value="<?php date_default_timezone_set('America/Guayaquil'); echo date("Y-m-d"); ?>" class="campo" style="width: 100px" />
+                                                                    <input type="text" name="fecha_actual" id="fecha_actual" readonly value="" class="campo" style="width: 100px" />
                                                                 </div>
                                                             </div>
                                                         </section>

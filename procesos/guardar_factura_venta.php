@@ -37,7 +37,7 @@ if ($_POST['id_cliente'] === "") {
     $tipo = $_POST['ruc_ci'];
     if (strlen($tipo) == 10) {
 //////////////////guardar clientes/////////////    
-        pg_query("insert into clientes values('$contt','Cedula','$_POST[ruc_ci]','$_POST[nombre_cliente]','natural','$_POST[direccion_cliente]','$_POST[telefono_cliente]','','','','$_POST[correo]','','','Activo')");
+        pg_query("insert into clientes values('$contt','Cedula','$_POST[ruc_ci]','" . strtoupper($_POST[nombre_cliente]) . "','natural','$_POST[direccion_cliente]','$_POST[telefono_cliente]','','','','$_POST[correo]','','','Activo')");
 ////////////////////////////////////////////
 //
 ////////////guardar factura compra////////
@@ -46,7 +46,7 @@ if ($_POST['id_cliente'] === "") {
     } else {
         if (strlen($tipo) == 13) {
             //////////////////guardar clientes/////////////    
-            pg_query("insert into clientes values('$contt','Ruc','$_POST[ruc_ci]','$_POST[nombre_cliente]','natural','$_POST[direccion_cliente]','$_POST[telefono_cliente]','','','','$_POST[correo]','','','Activo')");
+            pg_query("insert into clientes values('$contt','Ruc','$_POST[ruc_ci]','" . strtoupper($_POST[nombre_cliente]) . "','natural','$_POST[direccion_cliente]','$_POST[telefono_cliente]','','','','$_POST[correo]','','','Activo')");
 ////////////////////////////////////////////
 //
 ////////////guardar factura compra////////
@@ -174,7 +174,7 @@ if ($forma === "Credito") {
 } else {
     if ($forma === "Contado") {
         for ($i = 0; $i <= $nelem; $i++) {
-            
+
             /////////////////contador detalle factura venta/////////////
             $cont6 = 0;
             $consulta = pg_query("select  max(id_detalle_venta) from detalle_factura_venta");

@@ -124,15 +124,15 @@ function enter3(e) {
 function entrar() {
     if ($("#cod_producto").val() === "") {
         $("#codigo").focus();
-        alertify.alert("Ingrese un producto");
+        alertify.error("Ingrese un producto");
     } else {
         if ($("#codigo").val() === "") {
             $("#codigo").focus();
-            alertify.alert("Ingrese un producto");
+            alertify.error("Ingrese un producto");
         } else {
             if ($("#producto").val() === "") {
                 $("#producto").focus();
-                alertify.alert("Ingrese un producto");
+                alertify.error("Ingrese un producto");
             } else {
                 if ($("#cantidad").val() === "") {
                     $("#cantidad").focus();
@@ -140,11 +140,11 @@ function entrar() {
                 } else {
                     if ($("#cantidad").val() === "0") {
                         $("#cantidad").focus();
-                        alertify.alert("Ingrese una cantidad válida");
+                        alertify.error("Ingrese una cantidad válida");
                     } else {
                         if (parseInt($("#cantidad").val()) > parseInt($("#canti").val())) {
                             $("#cantidad").focus();
-                            alertify.alert("Error.. La catidad ingresada es mayor a la de compra");
+                            alertify.error("Error.. La catidad ingresada es mayor a la de compra");
                         } else {
                             $("#precio").focus();
                         }
@@ -159,15 +159,15 @@ function entrar() {
 function entrar2() {
     if ($("#cod_producto").val() === "") {
         $("#codigo").focus();
-        alertify.alert("Ingrese un producto");
+        alertify.error("Ingrese un producto");
     } else {
         if ($("#codigo").val() === "") {
             $("#codigo").focus();
-            alertify.alert("Ingrese un producto");
+            alertify.error("Ingrese un producto");
         } else {
             if ($("#producto").val() === "") {
                 $("#producto").focus();
-                alertify.alert("Ingrese un producto");
+                alertify.error("Ingrese un producto");
             } else {
                 if ($("#cantidad").val() === "") {
                     $("#cantidad").focus();
@@ -337,19 +337,19 @@ function entrar2() {
 function comprobar() {
     if ($("#tipo_docu").val() === "") {
         $("#tipo_docu").focus();
-        alertify.alert("Seleccione tipo documento");
+        alertify.error("Seleccione tipo documento");
     } else {
         if ($("#empresa").val() === "") {
             $("#ruc_ci").focus();
-            alertify.alert("Indique una empresa");
+            alertify.error("Indique una empresa");
         } else {
             if ($("#tipo_comprobante").val() === "") {
                 $("#tipo_comprobante").focus();
-                alertify.alert("Seleccione tipo comprobante");
+                alertify.error("Seleccione tipo comprobante");
             } else {
                 if ($("#id_factura_compra").val() === "") {
                     $("#serie").focus();
-                    alertify.alert("Seleccione una factura");
+                    alertify.error("Seleccione una factura");
                 } else {
                     $("#codigo").focus();
                 }
@@ -596,26 +596,27 @@ function guardar_devolucion() {
 
     if ($("#tipo_docu").val() === "") {
         $("#tipo_docu").focus();
-        alertify.alert("Seleccione tipo documento");
+        alertify.error("Seleccione tipo documento");
     } else {
         if ($("#empresa").val() === "") {
             $("#ruc_ci").focus();
-            alertify.alert("Indique una empresa");
+            alertify.error("Indique una empresa");
         } else {
             if ($("#tipo_comprobante").val() === "") {
                 $("#tipo_comprobante").focus();
-                alertify.alert("Seleccione tipo comprobante");
+                alertify.error("Seleccione tipo comprobante");
             } else {
                 if ($("#serie").val() === "") {
                     $("#serie").focus();
-                    alertify.alert("Ingrese la serie");
+                    alertify.error("Ingrese la serie");
                 } else {
                     if ($("#autorizacion").val() === "") {
                         $("#autorizacion").focus();
-                        alertify.alert("Ingrese la autorización");
+                        alertify.error("Ingrese la autorización");
                     } else {
                         if (tam.length === 0) {
-                            alertify.alert("Error... Llene productos a la factura");
+                            $("#codigo").focus();
+                            alertify.error("Error... Llene productos a la factura");
                         } else {
                             var v1 = new Array();
                             var v2 = new Array();
@@ -653,7 +654,7 @@ function guardar_devolucion() {
                                     var val = data;
                                     if (val == 1) {
                                         alertify.alert("Devolución Guardada correctamente",function(){
-                                        window.open("../reportes/reportes/devolucion_compra.php?id="+$("#comprobante").val(),'_blank');    
+//                                        window.open("../reportes/reportes/devolucion_compra.php?id="+$("#comprobante").val(),'_blank');    
                                         location.reload();
                                         });
                                     }
@@ -914,6 +915,7 @@ return true;
 }
 
 function inicio() {
+    alertify.set({ delay: 1000 });
     jQuery().UItoTop({ easingType: 'easeOutQuart' });
     //////////////para hora///////////
     show();
@@ -945,6 +947,7 @@ function inicio() {
     $("#btnNuevo").click(function(e) {
         e.preventDefault();
     });
+    $("#btnImprimir").attr("disabled", true);
      $("#btnImprimir").click(function (){ 
          $.ajax({
         type: "POST",
@@ -1168,9 +1171,9 @@ function inicio() {
     $("#codigo").keyup(function(e) {
         var ids = $("#id_factura_compra").val();
         if (ids === "") {
-            alertify.alert("Error... Seleccione una Factura");
             $("#serie").focus();
             $("#codigo").val("");
+            alertify.error("Error... Seleccione una Factura");
         } else {
             /////buscador productos codigo///// 
             $("#codigo").autocomplete({
@@ -1212,9 +1215,9 @@ function inicio() {
     $("#producto").keyup(function(e) {
         var ids = $("#id_factura_compra").val();
         if (ids === "") {
-            alertify.alert("Error... Seleccione una Factura");
             $("#serie").focus();
             $("#codigo").val("");
+            alertify.error("Error... Seleccione una Factura");
         } else {
             /////buscador productos codigo///// 
             $("#producto").autocomplete({
@@ -1255,7 +1258,7 @@ function inicio() {
     ///////////calendarios/////
     $('#fecha_actual').datepicker({
         dateFormat: 'yy-mm-dd'
-    });
+    }).datepicker('setDate', 'today');
 
 //////////////////////tabla detalle/////////////////////////
     jQuery("#list").jqGrid({

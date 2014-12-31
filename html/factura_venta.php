@@ -128,7 +128,7 @@ $cont1++;
                                                     </fieldset>
                                                     <br />
                                                     <hr> 
-                                                    
+
                                                     <fieldset>
                                                         <table cellpadding="2" border="0" style="margin-left: 10px">
                                                             <tr>
@@ -149,8 +149,6 @@ $cont1++;
                                                                 <td><input type="text" name="ruc_ci"  id="ruc_ci" placeholder="Buscar....." class="campo" style="width: 150px"/></td>
                                                                 <td><label style="width: 100%; margin-left: 10px">Cliente: <font color="red">*</font></label></td>
                                                                 <td><input type="text" name="nombre_cliente" id="nombre_cliente" class="campo" style="width: 250px"/></td>
-                                                                <td><label style="width: 100%; margin-left: 10px">Director@: </label></td>
-                                                                <td><input type="text" name="nombre_director" id="nombre_director" class="campo" style="width: 250px" readonly/></td>
                                                             </tr>  
                                                         </table>
 
@@ -183,7 +181,6 @@ $cont1++;
                                                                 <td><select name="formas" id="formas">
                                                                         <option value="Contado">Contado</option>
                                                                         <option value="Credito">Crédito</option>
-                                                                        <option value="Cheque">Cheque</option>
                                                                     </select> </td>
                                                                 <td><label for="adelanto" style="margin-left: 10px">Adelanto:</label></td>
                                                                 <td><input type="text" name="adelanto" id="adelanto" class="campo" placeholder="$0.00" style="width: 120px"/></td>

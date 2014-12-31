@@ -633,7 +633,7 @@ function guardar_factura() {
                                                        var  val = data;
                                                         if (val == 1) {
                                                             alertify.alert("Factura Guardada correctamente", function(){
-                                                            window.open("../reportes/reportes/factura_compra.php?hoja=A4&id="+$("#comprobante").val(),'_blank');    
+//                                                            window.open("../reportes/reportes/factura_compra.php?hoja=A4&id="+$("#comprobante").val(),'_blank');    
                                                             location.reload();
                                                             });
                                                         }
@@ -931,6 +931,7 @@ return true;
 }
 
 function inicio() {
+    alertify.set({ delay: 1000 });
     jQuery().UItoTop({ easingType: 'easeOutQuart' });
     //////////////para hora///////////
     show();
@@ -962,7 +963,7 @@ function inicio() {
     $("#btnNuevo").click(function(e) {
         e.preventDefault();
     });
-    
+    $("#btnImprimir").attr("disabled", true);
     $("#btnImprimir").click(function (){
         $.ajax({
         type: "POST",

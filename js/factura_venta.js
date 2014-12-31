@@ -144,18 +144,26 @@ function enter5(e) {
     return true;
 }
 
+function enter6(e) {
+    if (e.which === 13 || e.keyCode === 13) {
+        comprobar3();
+        return false;
+    }
+    return true;
+}
+
 function entrar() {
     if ($("#cod_producto").val() === "") {
         $("#codigo").focus();
-        alertify.alert("Ingrese un producto");
+        alertify.error("Ingrese un producto");
     } else {
         if ($("#codigo").val() === "") {
             $("#codigo").focus();
-            alertify.alert("Ingrese un producto");
+            alertify.error("Ingrese un producto");
         } else {
             if ($("#producto").val() === "") {
                 $("#producto").focus();
-                alertify.alert("Ingrese un producto");
+                alertify.error("Ingrese un producto");
             } else {
                 if ($("#cantidad").val() === "") {
                     $("#cantidad").focus();
@@ -170,22 +178,22 @@ function entrar() {
 function entrar2() {
     if ($("#cod_producto").val() === "") {
         $("#codigo").focus();
-        alertify.alert("Ingrese un producto");
+        alertify.error("Ingrese un producto");
     } else {
         if ($("#codigo").val() === "") {
             $("#codigo").focus();
-            alertify.alert("Ingrese un producto");
+            alertify.error("Ingrese un producto");
         } else {
             if ($("#producto").val() === "") {
                 $("#producto").focus();
-                alertify.alert("Ingrese un producto");
+                alertify.error("Ingrese un producto");
             } else {
                 if ($("#cantidad").val() === "") {
                     $("#cantidad").focus();
                 } else {
                     if ($("#p_venta").val() === "") {
                         $("#p_venta").focus();
-                        alertify.alert("Ingrese precio venta");
+                        alertify.error("Ingrese precio venta");
                     } else {
                         $("#descuento").focus();
                     }
@@ -198,26 +206,26 @@ function entrar2() {
 function entrar3() {
     if ($("#cod_producto").val() === "") {
         $("#codigo").focus();
-        alertify.alert("Ingrese un producto");
+        alertify.error("Ingrese un producto");
     } else {
         if ($("#codigo").val() === "") {
             $("#codigo").focus();
-            alertify.alert("Ingrese un producto");
+            alertify.error("Ingrese un producto");
         } else {
             if ($("#producto").val() === "") {
                 $("#producto").focus();
-                alertify.alert("Ingrese un producto");
+                alertify.error("Ingrese un producto");
             } else {
                 if ($("#cantidad").val() === "") {
                     $("#cantidad").focus();
                 } else {
                     if ($("#p_venta").val() === "") {
                         $("#p_venta").focus();
-                        alertify.alert("Ingrese un precio");
+                        alertify.error("Ingrese un precio");
                     } else {
                         if (parseInt($("#cantidad").val()) > parseInt($("#disponibles").val())) {
                             $("#cantidad").focus();
-                            alertify.alert("Error.. La cantidad ingresada es mayor a la disponible");
+                            alertify.error("Error.. La cantidad ingresada es mayor a la disponible");
                         }else {
                             var filas = jQuery("#list").jqGrid("getRowData");
                             var descuento = 0;
@@ -280,7 +288,7 @@ function entrar3() {
                                     suma = parseInt(can) + parseInt($("#cantidad").val());
                                     if(suma > parseInt($("#disponibles").val())){
                                         $("#cantidad").focus();
-                                        alertify.alert("Error.. La cantidad ingresada es mayor a la disponible");  
+                                        alertify.error("Error.. La cantidad ingresada es mayor a la disponible");  
                                     }else{
                                         if ($("#descuento").val() !== "") {
                                             desc = $("#descuento").val();
@@ -360,7 +368,7 @@ function entrar3() {
                                         $("#disponibles").val("");
                                         $('#combobox').children().remove().end();
                                     }else{
-                                        alertify.alert("Error... Alcanzo el limite máximo de Items");
+                                        alertify.error("Error... Alcanzo el limite máximo de Items");
                                     }
                                 }
                             }
@@ -625,7 +633,7 @@ function autocompletar() {
 function comprobar() {
     if ($("#num_factura").val() === "") {
         $("#num_factura").focus();
-        alertify.success("Ingrese número de factura");
+        alertify.error("Ingrese número de factura");
     } else {
         var a = autocompletar($("#num_factura").val());
         $("#num_factura").val(a + "" + $("#num_factura").val());
@@ -743,11 +751,18 @@ function nuevo_cliente(){
                                         $("#telefono_cliente").attr("disabled", "disabled");
                                         $("#correo").attr("disabled", "disabled");
                                     }else{
-                                        alertify.success('El número de cédula es correcto.');
-                                        $("#nombre_cliente").focus();
-                                        $("#direccion_cliente").removeAttr("disabled");
-                                        $("#telefono_cliente").removeAttr("disabled");
-                                        $("#correo").removeAttr("disabled");
+                                        if($("#ruc_ci").val() === "0000000000"){
+                                        alertify.error('El número de cédula es incorrecto.');
+                                        $("#direccion_cliente").attr("disabled", "disabled");
+                                        $("#telefono_cliente").attr("disabled", "disabled");
+                                        $("#correo").attr("disabled", "disabled");
+                                        }else{
+                                            alertify.success('El número de cédula es correcto.');
+                                            $("#nombre_cliente").focus();
+                                            $("#direccion_cliente").removeAttr("disabled");
+                                            $("#telefono_cliente").removeAttr("disabled");
+                                            $("#correo").removeAttr("disabled");
+                                       }
                                     }
                                 }
                             }else{
@@ -829,15 +844,14 @@ function nuevo_cliente(){
 function comprobar1() {
     if ($("#num_factura").val() === "") {
         $("#num_factura").focus();
-        alertify.success("Ingrese número de factura");
+        alertify.error("Ingrese número de factura");
     } else {
-        if ($("#id_cliente").val() === "") {
-            $("#ruc_ci").focus();
-            alertify.success("Indique un cliente");
-        } else {
+        if ($("#id_cliente").val() === "" && $("#ruc_ci").val() !== "") {
+            nuevo_cliente();
+        }else{
             if ($("#ruc_ci").val() === "") {
                 $("#ruc_ci").focus();
-                alertify.success("Indique un cliente");
+                alertify.error("Indique un cliente");
             } 
         } 
     }
@@ -846,22 +860,36 @@ function comprobar1() {
 function comprobar2(){
     if ($("#ruc_ci").val() === "") {
         $("#ruc_ci").focus();
-        alertify.alert("Indique un cliente");
+        alertify.error("Indique un cliente");
     }else {
         if ($("#nombre_cliente").val() === "") {
             $("#nombre_cliente").focus();
-            alertify.alert("Nombres del cliente");
+            alertify.error("Nombres del cliente");
         }else{
             if ($("#direccion_cliente").val() === "") {
                 $("#direccion_cliente").focus();
-                alertify.alert("Dirección del cliente");
+                alertify.error("Dirección del cliente");
             }else{
-                if ($("#telefono_cliente").val() === "") {
-                    $("#telefono_cliente").focus();
-                    alertify.alert("Telefóno del cliente");
-                }else{
-                    $("#correo").focus();
-                } 
+                $("#telefono_cliente").focus();
+            }  
+        } 
+    }    
+}
+
+function comprobar3(){
+    if ($("#ruc_ci").val() === "") {
+        $("#ruc_ci").focus();
+        alertify.error("Indique un cliente");
+    }else {
+        if ($("#nombre_cliente").val() === "") {
+            $("#nombre_cliente").focus();
+            alertify.error("Nombres del cliente");
+        }else{
+            if ($("#direccion_cliente").val() === "") {
+                $("#direccion_cliente").focus();
+                alertify.error("Dirección del cliente");
+            }else{
+                $("#correo").focus();
             }  
         } 
     }    
@@ -1042,7 +1070,7 @@ function guardar_factura() {
 
     if ($("#num_factura").val() === "") {
         $("#num_factura").focus();
-        alertify.alert("Indique número de la factura");
+        alertify.error("Ingrese número de la factura");
     } else {
         var num_factu = ("001" + "-" + "001" + "-" + $("#num_factura").val());
         $.ajax({
@@ -1054,24 +1082,26 @@ function guardar_factura() {
                 if (val == 1) {
                     $("#num_factura").val("");
                     $("#num_factura").focus();
-                    alertify.alert("Error... El número de factura ya existe");
+                    alertify.error("Error... El número de factura ya existe");
                 }else{
-                    if ($("#id_cliente").val() === "") {
+                    if ($("#ruc_ci").val() === "") {
+                        var a = autocompletar($("#num_factura").val());
+                        $("#num_factura").val(a + "" + $("#num_factura").val());
                         $("#ruc_ci").focus();
                         alertify.alert("Indique un cliente");
                     } else {
                         if ($("#ruc_ci").val().length !== 10 && $("#ruc_ci").val().length !== 13) {
                             $("#ruc_ci").val("");
                             $("#ruc_ci").focus();
-                            alertify.alert("Error... Ingrese una Identificación valida");
+                            alertify.error("Error... Ingrese una Identificación valida");
                         } else{
                             if ($("#nombre_cliente").val() === "") {
                                 $("#nombre_cliente").focus();
-                                alertify.alert("Nombres del cliente");
+                                alertify.error("Nombres del cliente");
                             }else{
                                 if ($("#direccion_cliente").val() === "") {
                                     $("#direccion_cliente").focus();
-                                    alertify.alert("Dirección del cliente");
+                                    alertify.error("Dirección del cliente");
                                 }else{
                                     if ($("#tipo_precio").val() === "") {
                                         $("#tipo_precio").focus();
@@ -1079,11 +1109,11 @@ function guardar_factura() {
                                     } else {
                                         if (tam.length === 0) {
                                             $("#codigo").focus();
-                                            alertify.alert("Error... Llene productos a la factura");
+                                            alertify.error("Error... Llene productos a la factura");
                                         } else {
                                             if ($("#formas").val() === "Credito" && $("#meses").val() === "") {
                                                 $("#meses").focus();
-                                                alertify.alert("Meses a diferir");
+                                                alertify.error("Meses a diferir");
                                             } else {
                                                 var v1 = new Array();
                                                 var v2 = new Array();
@@ -1107,6 +1137,7 @@ function guardar_factura() {
                                                     v5[i] = datos['total'];
                                                     v6[i] = datos['pendiente'];
                                                 }
+                                                
                                                 for (i = 0; i < fil.length; i++) {
                                                     string_v1 = string_v1 + "|" + v1[i];
                                                     string_v2 = string_v2 + "|" + v2[i];
@@ -1126,7 +1157,7 @@ function guardar_factura() {
                                                         var val = data;
                                                         if (val == 1) {
                                                             alertify.alert("Factura Guardada correctamente", function(){
-                                                                window.open("../reportes_sistema/factura_venta.php?hoja=A4&id="+$("#comprobante").val(),'_blank');
+//                                                                window.open("../reportes_sistema/factura_venta.php?hoja=A4&id="+$("#comprobante").val(),'_blank');
                                                                 location.reload();
                                                             });
                                                         }
@@ -1584,6 +1615,7 @@ function punto(e){
 }
 
 function inicio() {
+    alertify.set({ delay: 1000 });
     jQuery().UItoTop({
         easingType: 'easeOutQuart'
     });
@@ -1673,6 +1705,7 @@ function inicio() {
         e.preventDefault();
     });
 
+    $("#btnImprimir").attr("disabled", true);
     $("#btncargar").on("click", abrirDialogo);
     $("#btnAgregar").on("click", agregar);
     $("#btnGuardarSeries").on("click", guardar_serie);
@@ -1687,7 +1720,7 @@ function inicio() {
     $("#btnAdelante").on("click", flecha_siguiente);
     
     $("#ruc_ci").on("keyup", limpiar_campo);
-    $("#nombre_cliente").on("keyup", limpiar_campo2);
+//    $("#nombre_cliente").on("keyup", limpiar_campo2);
     $("#codigo").on("keyup", limpiar_campo3);
     $("#producto").on("keyup", limpiar_campo4);
     
@@ -1701,9 +1734,9 @@ function inicio() {
     $("#ruc_ci").on("keypress", enter4);
     $("#nombre_cliente").on("keypress", enter5);
     $("#direccion_cliente").on("keypress", enter5);
-    $("#telefono_cliente").on("keypress", enter5);
+    $("#telefono_cliente").on("keypress", enter6);
     
-    $("#proforma").on("keyup", agregar_proforma);
+//    $("#proforma").on("keyup", agregar_proforma);
     /////////////////////////////////////////
 
     $("#direccion_cliente").attr("disabled", "disabled");
@@ -1993,7 +2026,6 @@ function inicio() {
         $("#direccion_cliente").val(ui.item.direccion_cliente);
         $("#telefono_cliente").val(ui.item.telefono_cliente);
         $("#correo").val(ui.item.correo);
-        $("#nombre_director").val(ui.item.nombre_director);
         return false;
         },
         select: function(event, ui) {
@@ -2003,7 +2035,6 @@ function inicio() {
         $("#direccion_cliente").val(ui.item.direccion_cliente);
         $("#telefono_cliente").val(ui.item.telefono_cliente);
         $("#correo").val(ui.item.correo);
-        $("#nombre_director").val(ui.item.nombre_director);
         $("#direccion_cliente").attr("disabled", "disabled");
         $("#telefono_cliente").attr("disabled", "disabled");
         $("#correo").attr("disabled", "disabled");
@@ -2028,7 +2059,6 @@ function inicio() {
         $("#direccion_cliente").val(ui.item.direccion_cliente);
         $("#telefono_cliente").val(ui.item.telefono_cliente);
         $("#correo").val(ui.item.correo);
-        $("#nombre_director").val(ui.item.nombre_director);
         return false;
         },
         select: function(event, ui) {
@@ -2038,7 +2068,6 @@ function inicio() {
         $("#direccion_cliente").val(ui.item.direccion_cliente);
         $("#telefono_cliente").val(ui.item.telefono_cliente);
         $("#correo").val(ui.item.correo);
-        $("#nombre_director").val(ui.item.nombre_director);
         $("#direccion_cliente").attr("disabled", "disabled");
         $("#telefono_cliente").attr("disabled", "disabled");
         $("#correo").attr("disabled", "disabled");
