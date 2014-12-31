@@ -6,7 +6,7 @@
 <body>
 <script type="text/javascript">
 	function cargar(){	
-		window.location.href="web/";
+		window.location.href="web/memento";
 	}
 	cargar()
 </script>
