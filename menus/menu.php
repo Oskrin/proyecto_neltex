@@ -45,7 +45,7 @@ function menu_1() {
                             <li><a href="../html/egresos.php" target="_blank">Egresos</a></li>
                         </ul>
                     </li>-->
-                    <!--<li><a href="" target="_parent">Cartera</a>
+                    <li><a href="" target="_parent">Cartera</a>
                         <ul>
                             <li><a href="../html/cuentasCobrar.php" target="_blank">Cuentas por cobrar</a></li>
                             <li><a href="../html/cuentasPagar.php" target="_blank">Cuentas por pagar</a></li>
@@ -57,7 +57,7 @@ function menu_1() {
                            </li>
                         </ul>
                     </li>
-                    <li><a href="../html/registroGastos.php" target="_blank">Registro Gastos</a></li>
+                    <!--<li><a href="../html/registroGastos.php" target="_blank">Registro Gastos</a></li>
                     <li><a href="../html/gastos.php" target="_blank">Gastos Internos</a></li>-->
                 </ul>
             </li>
