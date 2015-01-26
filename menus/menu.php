@@ -58,7 +58,7 @@ function menu_1() {
                            </li>
                         </ul>
                     </li>
-                     <li><a href="../html/plan_cuentas.php" target="_blank">Plna Cuentas</a></li>
+                     <li><a href="../html/plan_cuentas.php" target="_blank">Plan Cuentas</a></li>
                     <!--<li><a href="../html/registroGastos.php" target="_blank">Registro Gastos</a></li>
                     <li><a href="../html/gastos.php" target="_blank">Gastos Internos</a></li>-->
                 </ul>
