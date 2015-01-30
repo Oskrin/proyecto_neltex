@@ -10,6 +10,7 @@ function menu_1() {
             <li><a href="" target="_parent"> <i class="icon-th-large"></i> Ingresos</a>
                 <ul>
                     <li><a href="../html/usuarios.php">Usuarios</a></li>
+                    <li><a href="../html/permisos.php">Permisos</a></li>
                     <li><a href="../html/clientes.php" target="_blank">Clientes</a></li>
                     <li><a href="../html/proveedores.php" target="_blank">Proveedores</a></li>
                     <li><a href="" target="_parent">Clasificacion</a>

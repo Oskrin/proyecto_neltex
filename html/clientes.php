@@ -14,7 +14,7 @@ include '../menus/menu.php';
         <meta name="apple-mobile-web-app-capable" content="yes"> 
         <link rel="stylesheet" type="text/css" href="../css/buttons.css"/>
         <link rel="stylesheet" type="text/css" href="../css/jquery-ui-1.10.4.custom.css"/>    
-        <link rel="stylesheet" type="text/css" href="../css/normalize.css"/>    
+        <!--<link rel="stylesheet" type="text/css" href="../css/normalize.css"/>-->    
         <link rel="stylesheet" type="text/css" href="../css/ui.jqgrid.css"/> 
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/bootstrap-responsive.min.css" rel="stylesheet">
