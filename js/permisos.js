@@ -57,8 +57,33 @@ function inicio() {
 		   	sortname: 'id_detalles_permiso',
                         multiselect: true,
 		        sortorder: "asc",
-		        height: '100%'
-		});
+                        viewrecords: true,
+		        height: '100%',
+                        subGrid : true,
+                        subGridRowExpanded: function(subgrid_id2, row_id2) {
+                        var subgrid_table_id2, pager_id2; 
+                        subgrid_table_id2 = subgrid_id2+"_t";
+		        pager_id2 = "p_"+subgrid_table_id2;
+                        $("#"+subgrid_id2).html("<table id='"+subgrid_table_id2+"' class='scroll'></table><div id='"+pager_id2+"' class='scroll'></div>");
+                        jQuery("#"+subgrid_table_id2).jqGrid({
+                        url:"../xml/xmlDetalleAdicionales.php?id="+row_id2,
+			datatype: "xml",
+			colNames: ['CÓDIGO','DESCRICIÓN'],
+			colModel: [
+				{name:"id_detalle_adicional",index:"id_detalle_adicional",width:50,key:true},
+				{name:"descripcion",index:"descripcion",width:300},
+			],
+		   	rowNum:20,
+		   	pager: pager_id2,
+		   	sortname: 'id_detalle_adicional',
+                        multiselect: true,
+		        sortorder: "asc",
+                        viewrecords: true,
+		        height: '100%' 
+                          });
+                          jQuery("#"+subgrid_table_id2).jqGrid('navGrid',"#"+pager_id2,{edit:false,add:false,del:false})
+                        }
+                    });
 		jQuery("#"+subgrid_table_id).jqGrid('navGrid',"#"+pager_id,{edit:false,add:false,del:false})
 	},
         caption: 'Lista Menu'
