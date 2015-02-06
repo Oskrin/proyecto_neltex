@@ -90,7 +90,7 @@ include '../menus/menu.php';
                                                 <div class="controls">
                                                     <?php
                                                     include '../procesos/base.php';
-                                                    $consulta = pg_query("select * from usuario");
+                                                    $consulta = pg_query("select * from cargo_usuario");
                                                     echo "<select id=tipo_cargo name=tipo_cargo class=span4>";
                                                     while ($row = pg_fetch_row($consulta)) {
                                                         if ($row[6] == 1) {
