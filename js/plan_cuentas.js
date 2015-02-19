@@ -26,7 +26,7 @@ var dialogo =
 {
     autoOpen: false,
     resizable: false,
-    width: 860,
+    width: 700,
     height: 350,
     modal: true
 };
@@ -60,105 +60,75 @@ function abrirDialogo() {
 
 function guardar_plan() {
    
-    if ($("#codigo_cuenta").val() === "") {
-        $("#codigo_cuenta").focus();
-        alertify.error("Ingrese un Código ");
+    if ($("#tipo").val() === "" ) {
+        $("#tipo").focus();
+        alertify.error("Seleccione un tipo de Cuenta");
     } else {
-        if ($("#descripcion").val() === "") {
-            $("#descripcion").focus();
-            alertify.error("Ingrese una Descripción");
+        if ($("#codigo").val() === "") {
+            $("#codigo").focus();
+            alertify.error("Ingrese un Código ");
         } else {
-            if ($("#tipo").val() === "" ) {
-                $("#tipo").focus();
-                alertify.error("Seleccione un tipo de Cuenta");
-            } else {
+            if ($("#descripcion").val() === "") {
+                $("#descripcion").focus();
+                alertify.error("Ingrese una Descripción");
+            } else {               
                 $.ajax({
                     type: "POST",
                     url: "../procesos/guardar_plan.php",
-                    data: "codigo_cuenta=" + $("#codigo_cuenta").val() + "&descripcion=" + $("#descripcion").val() +
-                    "&tipo=" + $("#tipo").val() + "&cuenta=" + $("#cuenta").val() + "&ruc=" + $("#ruc").val(),
+                    data: "codigo_cuenta=" + + $("#codigo_cuenta").val()+ "&descripcion=" + $("#descripcion").val() +
+                    "&tipo=" + $("#tipo").val() + "&cuenta=" + $("#cuenta").val(),
                     success: function(data) {
                         var val = data;
                         if (val == 1) {
                             alertify.success('Datos Agregados Correctamente');						    		
                             setTimeout(function() {
-                            location.reload();
+                                location.reload();
+                            }, 1000);
+                        }
+                    }
+                });
+            }
+       
+      } 
+    }  
+}
+
+function modificar_cliente() {
+    
+  if ($("#id_plan_cuentas").val() === "" ) {
+        alertify.error("Seleccione un Plan de Cuenta");
+    } else {
+     if ($("#tipo").val() === "" ) {
+        $("#tipo").focus();
+        alertify.error("Seleccione un tipo de Cuenta");
+    } else {
+        if ($("#codigo").val() === "") {
+            $("#codigo").focus();
+            alertify.error("Ingrese un Código ");
+        } else {
+            if ($("#descripcion").val() === "") {
+                $("#descripcion").focus();
+                alertify.error("Ingrese una Descripción");
+            } else {               
+                $.ajax({
+                    type: "POST",
+                    url: "../procesos/modificar_plan.php",
+                    data: "codigo_cuenta=" + + $("#codigo").val()+ "&descripcion=" + $("#descripcion").val() +
+                    "&tipo=" + $("#tipo").val() + "&cuenta=" + $("#cuenta").val() + "&id_plan_cuentas=" + $("#id_plan_cuentas").val(),
+                    success: function(data) {
+                        var val = data;
+                        if (val == 1) {
+                            alertify.success('Datos Agregados Correctamente');						    		
+                            setTimeout(function() {
+                                location.reload();
                             }, 1000);
                         }
                     }
                 });
             }
         }
-    }  
-}
-
-function modificar_cliente() {
-    var iden = $("#ruc_ci").val();
-    
-    if ($("#id_cliente").val() === "") {
-        alertify.error("Seleccione un cliente");
-    } else {
-        if ($("#tipo_docu").val() === "") {
-            $("#tipo_docu").focus();
-            alertify.error("Seleccione un tipo de documento ");
-        } else {
-            if ($("#tipo_docu").val() === "Cedula" && iden.length < 10) {
-                $("#ruc_ci").focus();
-                alertify.error("Error.. Minimo 10 digitos ");
-            } else {
-                if ($("#tipo_docu").val() === "Ruc" && iden.length < 13) {
-                    $("#ruc_ci").focus();
-                    alertify.error("Error.. Minimo 13 digitos ");
-                } else {
-                    if ($("#nombres_cli").val() === "") {
-                        $("#nombres_cli").focus();
-                        alertify.error("Ingrese Nombres completos");
-                    } else {
-                        if ($("#tipo_cli").val() === "") {
-                            $("#tipo_cli").focus();
-                            alertify.error("Seleccione Tipo cliente");
-                        } else {
-                            if ($("#direccion_cli").val() === "") {
-                                $("#direccion_cli").focus();
-                                alertify.error("Ingrese una dirección");
-                            } else {
-                                if ($("#pais_cli").val() === "") {
-                                    $("#pais_cli").focus();
-                                    alertify.error("Ingrese un pais");
-                                } else {
-                                    if ($("#ciudad_cli").val() === "") {
-                                        $("#ciudad_cli").focus();
-                                        alertify.error("Ingrese una ciudad");
-                                    } else {
-                                        if ($("#cupo_credito").val() === "") {
-                                            $("#cupo_credito").focus();
-                                            alertify.error("Ingrese cantidad del crédito");
-                                        }else{
-                                            $.ajax({
-                                                type: "POST",
-                                                url: "../procesos/modificar_clientes.php",
-                                                data: "tipo_docu=" + $("#tipo_docu").val() + "&ruc_ci=" + $("#ruc_ci").val() + "&id_cliente=" + $("#id_cliente").val() +
-                                                "&nombres_cli=" + $("#nombres_cli").val() + "&tipo_cli=" + $("#tipo_cli").val() + "&direccion_cli=" + $("#direccion_cli").val() + "&nro_telefono=" + $("#nro_telefono").val() + "&nro_celular=" + $("#nro_celular").val() + "&pais_cli=" + $("#pais_cli").val() + "&ciudad_cli=" + $("#ciudad_cli").val() + "&email=" + $("#email").val() + "&cupo_credito=" + $("#cupo_credito").val() + "&notas_cli=" + $("#notas_cli").val(),
-                                                success: function(data) {
-                                                    var val = data;
-                                                    if (val == 1) {
-                                                        alertify.success('Datos Modificados Correctamente');						    		
-                                                        setTimeout(function() {
-                                                            location.reload();
-                                                        }, 1000);
-                                                    }
-                                                }
-                                            });  
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
     }
+  } 
 }
 
 function eliminar_cliente() {
@@ -272,51 +242,9 @@ function punto(e){
 }
 
 function inicio() {
-    alertify.set({ delay: 1000 });
-    //////////atributos////////////
-    $("#ruc_ci").attr("disabled", "disabled");
-    $("#btnModificar").attr("disabled", true);
-    $("#nro_telefono").validCampoFranz("0123456789");
-    $("#nro_celular").validCampoFranz("0123456789");
-    //////////////////////////////
-    
-    //////////////para valor////////
-    $("#cupo_credito").on("keypress",punto);
-    ////////////////////////////////
-
-
-    ///////tipo pago//////////////
-    $("#tipo_docu").change(function() {
-        if ($("#tipo_docu").val() === "Cedula") {
-            $("#ruc_ci").val("");
-            $("#ruc_ci").keypress(ValidNum);
-            $("#ruc_ci").removeAttr("disabled");
-            $("#ruc_ci").attr("maxlength", "10");
-
-        } else {
-            if ($("#tipo_docu").val() === "Ruc") {
-                $("#ruc_ci").val("");
-                $("#ruc_ci").keypress(ValidNum);
-                $("#ruc_ci").removeAttr("disabled");
-                $("#ruc_ci").removeAttr("maxlength");
-                $("#ruc_ci").attr("maxlength", "13");
-            } else {
-                if ($("#tipo_docu").val() === "Pasaporte") {
-                    $("#ruc_ci").val("");
-                    $("#ruc_ci").unbind("keypress");
-                    $("#ruc_ci").removeAttr("disabled");
-                    $("#ruc_ci").attr("maxlength", "30");
-                }
-            }
-        }
+    alertify.set({
+        delay: 1000
     });
-    /////////////////////////////
-    
-     //////////validar cedula ruc/////////////
-    $("#ruc_ci").validarCedulaEC({
-    strict: false
-    });
-    ///////////////////////////////// 
 
     /////valida si ya existe/////
     $("#ruc_ci").keyup(function() {
@@ -418,8 +346,8 @@ function inicio() {
                                     if($("#ruc_ci").val() === "0000000000"){
                                         alertify.error('El número de cédula es incorrecto.');
                                         $("#ruc_ci").val("");
-                                        }else{
-                                            alertify.success('El número de cédula es correcto.');
+                                    }else{
+                                        alertify.success('El número de cédula es correcto.');
                                     }
                                 }
                             }
@@ -432,12 +360,12 @@ function inicio() {
                             if(ruc == "001" ){
                                 if(digito3 < 6){ 
                                     if(nat == true){
-                                     if (digitoVerificador != d10){                          
-                                      alertify.error('El ruc persona natural es incorrecto.');
-                                      $("#ruc_ci").val("");
-                                      }else{
-                                       alertify.success('El ruc persona natural es correcto.');    
-                                      } 
+                                        if (digitoVerificador != d10){                          
+                                            alertify.error('El ruc persona natural es incorrecto.');
+                                            $("#ruc_ci").val("");
+                                        }else{
+                                            alertify.success('El ruc persona natural es correcto.');    
+                                        } 
                                     }
                                 }else{
                                     if(digito3 == 6){ 
@@ -475,6 +403,8 @@ function inicio() {
         });
     });
     ////////////////////////////////
+    
+   $("#codigo_cuenta").on("keypress",punto);
 
     //////////////////////
     $("#btnGuardar").click(function(e) {
@@ -510,24 +440,22 @@ function inicio() {
     $("#clientes").dialog(dialogo);
     $("#clave_permiso").dialog(dialogo3);
     $("#seguro").dialog(dialogo4);
-   /////////////////////////// 
+/////////////////////////// 
 
    /////////////tabla clientes/////////
     jQuery("#list").jqGrid({
         url: '../xml/datos_plan.php',
         datatype: 'xml',
-        colNames: ['Id', 'Codigo', 'Descripción', 'Tipo Cuenta', 'Cuenta', 'Requiere RUC'],
+        colNames: ['Id', 'Codigo', 'Descripción', 'Tipo Cuenta', 'Cuenta'],
         colModel: [
             {name: 'id_plan_cuentas', index: 'id_plan_cuentas', editable: true, align: 'center', width: '120', search: false, frozen: true, editoptions: {readonly: 'readonly'}, formoptions: {elmprefix: ""}},
             {name: 'codigo_cuenta', index: 'codigo_cuenta', editable: true, align: 'center', width: '120', search: false, frozen: true, formoptions: {elmsuffix: " (*)"}, editrules: {required: true}},
             {name: 'descripcion', index: 'descripcion', editable: true, align: 'center', width: '120', search: true, frozen: true, formoptions: {elmsuffix: " (*)"}, editrules: {required: true}},
             {name: 'tipo', index: 'tipo', editable: true, align: 'center', width: '120', search: true, frozen: true, editoptions: {readonly: 'readonly'}, formoptions: {elmprefix: ""}},
             {name: 'cuenta', index: 'cuenta', editable: true, align: 'center', width: '120', search: false, frozen: true, editoptions: {readonly: 'readonly'}, formoptions: {elmprefix: ""}},
-            {name: 'ruc', index: 'ruc', editable: true, align: 'center', width: '120', search: false, frozen: true, editoptions: {readonly: 'readonly'}, formoptions: {elmprefix: ""}}
-            
         ],
         rowNum: 10,
-        width: 830,
+        width: 670,
         height: 200,
         rowList: [10, 20, 30],
         pager: jQuery('#pager'),

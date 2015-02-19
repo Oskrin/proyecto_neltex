@@ -9,6 +9,8 @@ function menu_1() {
             <li><a href="../html/principal.php" target="_parent" class="inicio"><i class="icon-home"></i> Inicio</a></li>
             <li><a href="" target="_parent"> <i class="icon-th-large"></i> Ingresos</a>
                 <ul>
+                    <li><a href="../html/usuarios.php" target="_blank">Usuarios</a></li>
+                    <li><a href="../html/permisos.php" target="_blank">Permisos</a></li>
                     <li><a href="../html/clientes.php" target="_blank">Clientes</a></li>
                     <li><a href="../html/proveedores.php"target="_blank">Proveedores</a></li>
                     <li><a href="../html/productos.php" target="_blank">Productos</a></li>
@@ -57,6 +59,7 @@ function menu_1() {
                     </li>
                     <li><a href="../html/registroGastos.php" target="_blank">Registro Gastos</a></li>
                     <li><a href="../html/gastos.php" target="_blank">Gastos Internos</a></li>
+                    <li><a href="../html/plan_cuentas.php" target="_blank">Plan de Cuentas</a></li>
                 </ul>
             </li>
             

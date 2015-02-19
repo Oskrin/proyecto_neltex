@@ -86,21 +86,7 @@ include '../menus/menu.php';
                                     <div class="tabbable">
                                         <fieldset>
                                             <form class="form-horizontal" id="clientes_form" name="clientes_form" method="post">
-                                                <section class="columna1">
-                                                    <div class="control-group">											
-                                                        <label class="control-label" for="tipo_docu">Código cuenta: <font color="red">*</font></label>
-                                                        <div class="controls" >
-                                                            <input type="text" name="codigo_cuenta"  id="codigo_cuenta" placeholder="Código de la cuenta" required class="campo"/>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="control-group">											
-                                                        <label class="control-label" for="descripcion">Descripción: <font color="red">*</font></label>
-                                                        <div class="controls">
-                                                            <input type="text" name="descripcion"  id="descripcion" placeholder="Descripción de la cuenta" required class="campo"/>
-                                                        </div>
-                                                    </div>
-
+                                                <div class="span6">
                                                     <div class="control-group">											
                                                         <label class="control-label" for="tipo">Tipo cuenta: </label>
                                                         <div class="controls">
@@ -120,6 +106,28 @@ include '../menus/menu.php';
                                                         </div>
                                                     </div>
 
+                                                    <div class="control-group">											
+                                                        <label class="control-label" for="tipo_docu">Código cuenta: <font color="red">*</font></label>
+                                                        <div class="controls" >
+                                                            <input type="text" name="codigo_cuenta"  id="codigo_cuenta" required class="campo"/>
+                                                            <input type="hidden" name="id_plan_cuentas"  id="id_plan_cuentas" required class="campo"/>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    <div class="control-group">											
+                                                        <label class="control-label" for=""></label>
+                                                        <div class="controls">
+                                                            <label class="control-label" for="formato"><font color="red">FORMATO:9.9.99.99.99.99</font></label>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="control-group">											
+                                                        <label class="control-label" for="descripcion">Descripción: <font color="red">*</font></label>
+                                                        <div class="controls">
+                                                            <input type="text" name="descripcion"  id="descripcion" placeholder="Descripción de la cuenta" required class="campo"/>
+                                                        </div>
+                                                    </div>
+
                                                     <div class="control-group">
                                                         <label class="control-label" for="direccion_cli">Cuenta de : <font color="red">*</font></label>
                                                         <div class="controls">
@@ -129,17 +137,7 @@ include '../menus/menu.php';
                                                             </select>
                                                         </div>
                                                     </div>
-
-                                                    <div class="control-group">											
-                                                        <label class="control-label" for="cupo_credito">Requiere RUC: <font color="red">*</font></label>
-                                                        <div class="controls">
-                                                            <select name="ruc" id="ruc">
-                                                                <option value="Si" selected>Si</option>
-                                                                <option value="No">No</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                </section>
+                                                </div>
                                             </form>
                                         </fieldset>
 
