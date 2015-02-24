@@ -78,6 +78,19 @@ if ($forma === "Credito") {
 
         pg_query("Update productos Set precio_compra='" . $arreglo3[$i] . "', stock='" . $cal . "' where cod_productos='" . $arreglo1[$i] . "'");
         ////////////////////////////////////////////////////////
+        //
+        ///////////////////contador kardex/////////////
+        $cont5 = 0;
+        $consulta3 = pg_query("select max(id_kardex) from kardex");
+        while ($row = pg_fetch_row($consulta3)) {
+            $cont5 = $row[0];
+        }
+        $cont5++;
+        /////////////////////////////////////////////////////////
+        //
+        ///guardar kardex/////
+        pg_query("insert into kardex values('$cont5',' $_POST[fecha_actual]', '" . 'Factura Compra:' . $_POST[serie] . "' ,'$arreglo2[$i]','$arreglo3[$i]','$arreglo5[$i]','$arreglo1[$i]','Activo','1')");
+        /////////////////////////////
     }
 } else {
     if ($forma === "Contado") {
@@ -104,6 +117,19 @@ if ($forma === "Credito") {
 
             pg_query("Update productos Set precio_compra='" . $arreglo3[$i] . "', stock='" . $cal . "' where cod_productos='" . $arreglo1[$i] . "'");
             ///////////////////////////////////////////
+            //
+            ///////////////////contador kardex/////////////
+            $cont7 = 0;
+            $consulta3 = pg_query("select max(id_kardex) from kardex");
+            while ($row = pg_fetch_row($consulta3)) {
+                $cont7 = $row[0];
+            }
+            $cont7++;
+            /////////////////////////////////////////////////////////
+            //
+            ///guardar kardex/////
+            pg_query("insert into kardex values('$cont7','$_POST[fecha_actual]','" . 'Factura Compra:' . $_POST[serie] . "','$arreglo2[$i]','$arreglo3[$i]','$arreglo5[$i]','$arreglo1[$i]','Activo','1')");
+            /////////////////////////////
         }
     }
 }
