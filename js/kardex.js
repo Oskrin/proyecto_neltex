@@ -109,6 +109,8 @@ function guardar_inventario() {
 
 
 function generar(){
+$("#td_kardex tbody").empty(); 
+
 $.ajax({
     type: "POST",
     url: "../procesos/retornar_kardex.php",  
