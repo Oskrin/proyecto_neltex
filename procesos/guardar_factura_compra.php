@@ -131,6 +131,37 @@ if ($forma === "Credito") {
             pg_query("insert into kardex values('$cont7','$_POST[fecha_actual]','" . 'Factura Compra:' . $_POST[serie] . "','$arreglo2[$i]','$arreglo3[$i]','$arreglo5[$i]','$arreglo1[$i]','Activo','1')");
             /////////////////////////////
         }
+         /////////////////contador libro diario/////////////
+         //for ($i = 0; $i <= 3; $i++) {
+            $cont8 = 0;
+            $consulta = pg_query("select  max(id_libro_diario) from libro_diario");
+            while ($row = pg_fetch_row($consulta)) {
+                $cont8 = $row[0];
+            }
+            $cont8++;
+            //////////////////////////
+            //
+            ///guardar libro/////
+            pg_query("insert into libro_diario values('$cont8','$_POST[fecha_actual]','Inventarios','$_POST[tarifa12]','0.00','Compra Mercaderia','Activo')");
+            $cont8 = 0;
+            $consulta = pg_query("select  max(id_libro_diario) from libro_diario");
+            while ($row = pg_fetch_row($consulta)) {
+                $cont8 = $row[0];
+            }
+            $cont8++;
+            ////////////////////////// 
+            pg_query("insert into libro_diario values('$cont8','$_POST[fecha_actual]','Iva Compras','$_POST[iva]','0.00','Compra Mercaderia','Activo')");
+            $cont8 = 0;
+            $consulta = pg_query("select  max(id_libro_diario) from libro_diario");
+            while ($row = pg_fetch_row($consulta)) {
+                $cont8 = $row[0];
+            }
+            $cont8++;
+            ////////////////////////// 
+            pg_query("insert into libro_diario values('$cont8','$_POST[fecha_actual]','Caja Chica','0.00','$_POST[tot]','Compra Mercaderia','Activo')");
+            /////////////////////////////     
+         
+
     }
 }
 

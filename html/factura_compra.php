@@ -209,12 +209,12 @@ $cont1++;
                                                                         <option value="Contado">Contado</option>
                                                                         <option value="Credito">Crédito</option>
                                                                     </select> </td>
-                                                                <td><label for="adelanto" style="margin-left: 10px">Adelanto:</label></td>
-                                                                <td><input type="text" name="adelanto" id="adelanto" class="campo" placeholder="$0.00" style="width: 120px"/></td>
-                                                                <td><label for="meses" style="margin-left: 10px">Meses:</label></td>
-                                                                <td><input type="number" name="meses" id="meses"  class="campo" style="width: 100px" min="1" max="3"/></td>
-                                                                <td><label for="cuotas" style="margin-left: 10px">Cuotas:</label></td>
-                                                                <td><select id="cuotas" name="cuotas" style="width: 100px"></select></td>
+                                                                <!--<td><label for="adelanto" style="margin-left: 10px">Adelanto:</label></td>-->
+                                                                <td><input type="hidden" name="adelanto" id="adelanto" class="campo" placeholder="$0.00" style="width: 120px"/></td>
+                                                                <!--<td><label for="meses" style="margin-left: 10px">Meses:</label></td>-->
+                                                                <td><input type="hidden" name="meses" id="meses"  class="campo" style="width: 100px" min="1" max="3"/></td>
+                                                                <!--<td><label for="cuotas" style="margin-left: 10px">Cuotas:</label></td>-->
+                                                                <td><select id="cuotas" name="cuotas" style="width: 100px; display: none"></select></td>
                                                             </tr>
                                                         </table>
                                                     </fieldset>
