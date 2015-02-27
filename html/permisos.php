@@ -5,6 +5,7 @@ if (empty($_SESSION['id'])) {
 }
 include '../menus/menu.php';
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
     <head>
