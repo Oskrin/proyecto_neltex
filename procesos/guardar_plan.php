@@ -13,8 +13,9 @@ while ($row = pg_fetch_row($consulta)) {
 }
 $cont++;
 /////////////////////////////////////////////////////////
-
-if (pg_query("insert into plan_cuentas values('$cont','$_POST[codigo_cuenta]','$_POST[descripcion]','$_POST[tipo]','$_POST[cuenta]','','Activo')")) {
+//echo "insert into plan_cuentas values('$cont','$_POST[codigo_cuenta]','$_POST[descripcion]','$_POST[cuenta]','Activo')";
+if (pg_query("insert into plan_cuentas values('$cont','$_POST[codigo_cuenta]','$_POST[descripcion]','$_POST[cuenta]','Activo')")) {
+    
     $data = 1;
 }
 

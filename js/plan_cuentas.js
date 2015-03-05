@@ -59,76 +59,68 @@ function abrirDialogo() {
 }
 
 function guardar_plan() {
-   
-    if ($("#tipo").val() === "" ) {
-        $("#tipo").focus();
-        alertify.error("Seleccione un tipo de Cuenta");
+    if ($("#codigo_cuenta").val() === "") {
+        $("#codigo_cuenta").focus();
+        alertify.error("Ingrese un Código ");
     } else {
-        if ($("#codigo").val() === "") {
-            $("#codigo").focus();
-            alertify.error("Ingrese un Código ");
-        } else {
-            if ($("#descripcion").val() === "") {
-                $("#descripcion").focus();
-                alertify.error("Ingrese una Descripción");
-            } else {               
-                $.ajax({
-                    type: "POST",
-                    url: "../procesos/guardar_plan.php",
-                    data: "codigo_cuenta=" + + $("#codigo_cuenta").val()+ "&descripcion=" + $("#descripcion").val() +
-                    "&tipo=" + $("#tipo").val() + "&cuenta=" + $("#cuenta").val(),
-                    success: function(data) {
-                        var val = data;
-                        if (val == 1) {
-                            alertify.success('Datos Agregados Correctamente');						    		
-                            setTimeout(function() {
-                                location.reload();
-                            }, 1000);
-                        }
+        if ($("#descripcion").val() === "") {
+            $("#descripcion").focus();
+            alertify.error("Ingrese una Descripción");
+        } else { 
+            $.ajax({
+                type: "POST",
+                url: "../procesos/guardar_plan.php",
+                data: "codigo_cuenta=" +  $("#codigo_cuenta").val()+ "&descripcion=" + $("#descripcion").val() + "&cuenta=" + $("#cuenta").val(),
+                success: function(data) {
+                    var val = data;
+                    if (val == 1) {
+                        alertify.success('Datos Agregados Correctamente');
+                        $("#codigo_cuenta").val("");
+                        $("#descripcion").val("");
+                        $("#list").trigger("reloadGrid");
                     }
-                });
-            }
+                }
+            });
        
-      } 
+        } 
     }  
 }
 
-function modificar_cliente() {
-    
-  if ($("#id_plan_cuentas").val() === "" ) {
+function modificar_plan() {
+    if ($("#id_plan_cuentas").val() === "" ) {
         alertify.error("Seleccione un Plan de Cuenta");
     } else {
-     if ($("#tipo").val() === "" ) {
-        $("#tipo").focus();
-        alertify.error("Seleccione un tipo de Cuenta");
-    } else {
-        if ($("#codigo").val() === "") {
-            $("#codigo").focus();
-            alertify.error("Ingrese un Código ");
+        if ($("#tipo").val() === "" ) {
+            $("#tipo").focus();
+            alertify.error("Seleccione un tipo de Cuenta");
         } else {
-            if ($("#descripcion").val() === "") {
-                $("#descripcion").focus();
-                alertify.error("Ingrese una Descripción");
-            } else {               
-                $.ajax({
-                    type: "POST",
-                    url: "../procesos/modificar_plan.php",
-                    data: "codigo_cuenta=" + + $("#codigo").val()+ "&descripcion=" + $("#descripcion").val() +
-                    "&tipo=" + $("#tipo").val() + "&cuenta=" + $("#cuenta").val() + "&id_plan_cuentas=" + $("#id_plan_cuentas").val(),
-                    success: function(data) {
-                        var val = data;
-                        if (val == 1) {
-                            alertify.success('Datos Agregados Correctamente');						    		
-                            setTimeout(function() {
-                                location.reload();
-                            }, 1000);
+            if ($("#codigo").val() === "") {
+                $("#codigo").focus();
+                alertify.error("Ingrese un Código ");
+            } else {
+                if ($("#descripcion").val() === "") {
+                    $("#descripcion").focus();
+                    alertify.error("Ingrese una Descripción");
+                } else {               
+                    $.ajax({
+                        type: "POST",
+                        url: "../procesos/modificar_plan.php",
+                        data: "codigo_cuenta=" + + $("#codigo").val()+ "&descripcion=" + $("#descripcion").val() +
+                        "&tipo=" + $("#tipo").val() + "&cuenta=" + $("#cuenta").val() + "&id_plan_cuentas=" + $("#id_plan_cuentas").val(),
+                        success: function(data) {
+                            var val = data;
+                            if (val == 1) {
+                                alertify.success('Datos Agregados Correctamente');						    		
+                                setTimeout(function() {
+                                    location.reload();
+                                }, 1000);
+                            }
                         }
-                    }
-                });
+                    });
+                }
             }
         }
-    }
-  } 
+    } 
 }
 
 function eliminar_cliente() {
@@ -404,7 +396,7 @@ function inicio() {
     });
     ////////////////////////////////
     
-   $("#codigo_cuenta").on("keypress",punto);
+    $("#codigo_cuenta").on("keypress",punto);
 
     //////////////////////
     $("#btnGuardar").click(function(e) {
@@ -426,7 +418,7 @@ function inicio() {
 
     ///////////////////////////
     $("#btnGuardar").on("click", guardar_plan);
-    $("#btnModificar").on("click", modificar_cliente);
+    $("#btnModificar").on("click", modificar_plan);
     $("#btnBuscar").on("click", abrirDialogo);
     $("#btnEliminar").on("click", eliminar_cliente);
     $("#btnAceptar").on("click", aceptar);
@@ -446,16 +438,15 @@ function inicio() {
     jQuery("#list").jqGrid({
         url: '../xml/datos_plan.php',
         datatype: 'xml',
-        colNames: ['Id', 'Codigo', 'Descripción', 'Tipo Cuenta', 'Cuenta'],
+        colNames: ['Id', 'Codigo', 'Descripción', 'Cuenta'],
         colModel: [
             {name: 'id_plan_cuentas', index: 'id_plan_cuentas', editable: true, align: 'center', width: '120', search: false, frozen: true, editoptions: {readonly: 'readonly'}, formoptions: {elmprefix: ""}},
             {name: 'codigo_cuenta', index: 'codigo_cuenta', editable: true, align: 'center', width: '120', search: false, frozen: true, formoptions: {elmsuffix: " (*)"}, editrules: {required: true}},
-            {name: 'descripcion', index: 'descripcion', editable: true, align: 'center', width: '120', search: true, frozen: true, formoptions: {elmsuffix: " (*)"}, editrules: {required: true}},
-            {name: 'tipo', index: 'tipo', editable: true, align: 'center', width: '120', search: true, frozen: true, editoptions: {readonly: 'readonly'}, formoptions: {elmprefix: ""}},
+            {name: 'descripcion', index: 'descripcion', editable: true, align: 'center', width: '200', search: true, frozen: true, formoptions: {elmsuffix: " (*)"}, editrules: {required: true}},
             {name: 'cuenta', index: 'cuenta', editable: true, align: 'center', width: '120', search: false, frozen: true, editoptions: {readonly: 'readonly'}, formoptions: {elmprefix: ""}},
         ],
         rowNum: 10,
-        width: 670,
+        width: 500,
         height: 200,
         rowList: [10, 20, 30],
         pager: jQuery('#pager'),

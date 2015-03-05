@@ -64,6 +64,15 @@ function menu_1() {
                 </ul>
             </li>
             
+                <li><a href="" target="_parent"><i class="icon-book"></i> Contabilidad</a>
+                <ul>
+                    <li><a href="../html/plan_cuentas.php" target="_blank">Plan de Cuentas</a></li>
+                    <li><a href="../html/transacciones.php" target="_blank">Transacciones</a></li>
+                    <li><a href="../html/kardex.php" target="_blank">Kardex</a></li>
+                    <li><a href="../html/libro_diario.php" target="_blank">Libro Diario</a></li>
+                </ul>
+            </li>
+            
             <li><a href="" target="_parent"><i class="icon-print"></i> Reportes</a>
                 <ul>
                     <li><a href="" target="_parent">Productos</a>
@@ -148,6 +157,7 @@ function menu_1() {
                         <li><a href="" id="gastos_internos">Gastos Internos Fechas</a></li>         
                       </ul>
                   </li> 
+                  <li><a href="" target="_parent">Plan de Cuentas</a></li> 
                 </ul>
             </li>
            
