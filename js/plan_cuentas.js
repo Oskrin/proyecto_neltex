@@ -86,6 +86,10 @@ function guardar_plan() {
     }  
 }
 
+function este(){
+window.open('../fdpf/ayuda_general.pdf');
+}
+
 function modificar_plan() {
     if ($("#id_plan_cuentas").val() === "" ) {
         alertify.error("Seleccione un Plan de Cuenta");

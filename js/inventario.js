@@ -3,6 +3,10 @@ function evento(e) {
     e.preventDefault();
 }
 
+function este(){
+window.open('../fdpf/ayuda_general.pdf');
+}
+
 $(function() {
     $('#main-menu').smartmenus({
         subMenusSubOffsetX: 1,

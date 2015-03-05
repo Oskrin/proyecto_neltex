@@ -170,6 +170,7 @@ function menu_1() {
             
             <li><a href="" target="_parent"><i class="icon-warning-sign"></i> Ayuda</a>
                 <ul class="mega-menu">
+                <li><a href="javascript: este()">Ayuda General</a></li>
                     <li>
                         <!-- The mega drop down contents -->
                         <div style="width:400px;max-width:100%;">

@@ -10,6 +10,10 @@ $(function() {
     });
 });
 
+function este(){
+window.open('../fdpf/ayuda_general.pdf');
+}
+
 var dialogo =
 {
     autoOpen: false,

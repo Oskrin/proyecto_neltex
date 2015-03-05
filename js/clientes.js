@@ -3,10 +3,15 @@ function evento(e) {
     e.preventDefault();
 }
 
+
 function scrollToBottom() {
     $('html, body').animate({
         scrollTop: $(document).height()
     }, 'slow');
+}
+
+function este(){
+window.open('../fdpf/ayuda_general.pdf');
 }
 
 function scrollToTop() {
