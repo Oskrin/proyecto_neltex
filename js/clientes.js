@@ -310,7 +310,9 @@ function punto(e){
 function inicio() {
     alertify.set({ delay: 1000 });
     //////////atributos////////////
-    $("#ruc_ci").attr("disabled", "disabled");
+    //$("#ruc_ci").attr("disabled", "disabled");
+    $("#ruc_ci").attr("maxlength", "10");
+    $("#ruc_ci").keypress(ValidNum);
     $("#nro_telefono").validCampoFranz("0123456789");
     $("#nro_celular").validCampoFranz("0123456789");
     //////////////////////////////
