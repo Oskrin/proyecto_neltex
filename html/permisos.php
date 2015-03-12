@@ -115,7 +115,6 @@ include '../menus/menu.php';
                                                 <table id="list"></table>
                                                 <div id="pager"></div>   
                                             </fieldset>  
-                                            <!--<a href="javascript:void(0)" id="m1">Get Selected id's</a>-->
                                         </div>
                                     </form>    
 
