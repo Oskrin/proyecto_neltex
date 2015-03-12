@@ -303,14 +303,20 @@ include '../menus/menu.php';
                                                             <img id="foto" name="foto" style="width: 100%; height: 100%"  />
                                                         </div> 
                                                     </div> 
-
                                                   </div>
 
                                                   <div class="span6">
-                                                      hfghhfg
+                                                      <div class="control-group">
+                                                    <label class="control-label" for="cuenta_contable">Cuenta Contable:</label>
+                                                    <div class="controls">
+                                                        <div class="input-append">
+                                                            <input type="text" name="cuenta_contable" readonly id="cuenta_contable" class="span3"/>
+                                                            <input type="hidden" name="id_plan_cuentas" id="id_plan_cuentas" class="span3"/>
+                                                            <input type="button" class="btn btn-primary" id='btnCuenta' value="Agregar..." title=""/>
+                                                        </div>
+                                                    </div>
+                                                  </div> 
                                                   </div>
-                                                   
-
                                                 </div>
                                                </div> 
                                             </form>
@@ -327,6 +333,11 @@ include '../menus/menu.php';
                                         <div id="productos" title="Búsqueda de Productos" class="">
                                             <table id="list"><tr><td></td></tr></table>
                                             <div id="pager"></div>
+                                        </div>
+
+                                        <div id="cuentas" title="Búsqueda Plan de Cuentas" class="">
+                                            <table id="list2"><tr><td></td></tr></table>
+                                            <div id="pager2"></div>
                                         </div>
 
                                         <div id="categorias" title="AGREGAR CATEGORIA">

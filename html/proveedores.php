@@ -26,9 +26,10 @@ include '../menus/menu.php';
         <link href="../css/sm-core-css.css" rel="stylesheet" type="text/css" />
         <link href="../css/sm-blue/sm-blue.css" rel="stylesheet" type="text/css" />
 
+        <script type="text/javascript" src="../js/jquery-1.7.2.min.js"></script>
         <script type="text/javascript" src="../js/bootstrap.js"></script>
         <script type="text/javascript" src="../js/jquery-loader.js"></script>
-        <script type="text/javascript" src="../js/jquery-1.10.2.js"></script>
+        <!--<script type="text/javascript" src="../js/jquery-1.10.2.js"></script>-->
         <script type="text/javascript" src="../js/jquery-ui-1.10.4.custom.min.js"></script>
         <script type="text/javascript" src="../js/grid.locale-es.js"></script>
         <script type="text/javascript" src="../js/jquery.jqGrid.src.js"></script>
@@ -86,14 +87,22 @@ include '../menus/menu.php';
 
                                 <div class="widget-content">
                                     <div class="tabbable">
+                                    <ul class="nav nav-tabs">
+                                            <li class="active">
+                                                <a href="#formcontrols" data-toggle="tab">Generales</a>
+                                            </li>
+                                            <li ><a href="#jscontrols" data-toggle="tab">Adicionales</a></li>
+                                        </ul>
                                         <fieldset>
                                             <form class="form-horizontal" id="proveedores_form" name="proveedores_form" method="post">
-                                                <section class="columna1">
+                                            <div class="tab-content">
+                                              <div class="tab-pane active" id="formcontrols">
+                                                <div class="span6">
                                                     <div class="control-group">
                                                         <label class="control-label" for="tipo_docu">Tipo Documento: <font color="red">*</font></label>
                                                         <div class="controls" >
-                                                            <select name="tipo_docu" id="tipo_docu" required style="width: 200px">
-                                                                <option value="">......Seleccione......</option>
+                                                            <select name="tipo_docu" id="tipo_docu" required class="span4">
+                                                                <!-- <option value="">......Seleccione......</option> -->
                                                                 <option value="Cedula">Cedula</option>
                                                                 <option value="Ruc">Ruc</option>
                                                                 <option value="Pasaporte">Pasaporte</option>
@@ -104,65 +113,55 @@ include '../menus/menu.php';
                                                     <div class="control-group">
                                                         <label class="control-label" for="empresa_pro">Empresa: <font color="red">*</font></label>
                                                         <div class="controls">
-                                                            <input type="text" name="empresa_pro"  id="empresa_pro" placeholder="Nombre de la Empresa" required class="campo"/>
+                                                            <input type="text" name="empresa_pro"  id="empresa_pro" placeholder="Nombre de la Empresa" required class="span4"/>
                                                         </div>  
                                                     </div> 
 
                                                     <div class="control-group">
                                                         <label class="control-label" for="visitador">Visitador:</label>
                                                         <div class="controls">
-                                                            <input type="text" name="visitador" id="visitador" placeholder="Empleado Empresa" required  class="campo"/>
+                                                            <input type="text" name="visitador" id="visitador" placeholder="Empleado Empresa" required  class="span4"/>
                                                         </div>   
                                                     </div> 
 
                                                     <div class="control-group">
                                                         <label class="control-label" for="nro_telefono">Nro. Telefónico: <font color="red">*</font></label>
                                                         <div class="controls">
-                                                            <input type="tel" name="nro_telefono" id="nro_telefono" placeholder="062-999-999" maxlength="10" class="campo"/>
+                                                            <input type="tel" name="nro_telefono" id="nro_telefono" placeholder="062-999-999" maxlength="10" class="span4"/>
                                                         </div>   
                                                     </div> 
 
                                                     <div class="control-group">
                                                         <label class="control-label" for="correo">E-mail: <font color="red">*</font></label>
                                                         <div class="controls">
-                                                            <div class="input-prepend input-append">
-                                                                <span class="add-on">@</span>
-                                                                <input type="text" name="correo" id="correo" placeholder="xxxx@example.com" class="campo" style="width: 165px"/>
-                                                            </div>
+                                                            <input type="text" name="correo" id="correo" placeholder="xxxx@example.com" class="span4"/>
                                                         </div>  
                                                     </div> 
 
                                                     <div class="control-group">
                                                         <label class="control-label" for="pais_pro">País: <font color="red">*</font></label>
                                                         <div class="controls">
-                                                            <input type="text" name="pais_pro" id="pais_pro" required  class="campo"/>
+                                                            <input type="text" name="pais_pro" id="pais_pro" required  class="span4"/>
                                                         </div>  
                                                     </div> 
 
                                                     <div class="control-group">
                                                         <label class="control-label" for="forma_pago">Formas de Pago: <font color="red">*</font></label>
                                                         <div class="controls" >
-                                                            <select name="forma_pago" id="forma_pago" required style="width: 200px">
+                                                            <select name="forma_pago" id="forma_pago" required class="span4">
                                                                 <option value="">......Seleccione......</option>
                                                                 <option value="Contado">Contado</option>
                                                                 <option value="Credito">Credito</option>
                                                             </select>
                                                         </div>  
                                                     </div> 
+                                                </div>  
 
-                                                    <div class="control-group">
-                                                        <label class="control-label" for="observaciones_pro">Observaciones:</label>
-                                                        <div class="controls" >
-                                                            <textarea name="observaciones_pro" id="observaciones_pro" rows="3" class="campo"></textarea>
-                                                        </div>  
-                                                    </div> 
-                                                </section>  
-
-                                                <section class="columna2">
+                                                <div class="span6">
                                                     <div class="control-group">											
                                                         <label class="control-label" for="ruc_ci">RUC/CI: <font color="red">*</font></label>
                                                         <div class="controls">
-                                                            <input type="text" name="ruc_ci"  id="ruc_ci" placeholder="10000000000" required class="campo"  />
+                                                            <input type="text" name="ruc_ci"  id="ruc_ci" placeholder="10000000000" required class="span4"  />
                                                             <input type="hidden" name="id_proveedor"  id="id_proveedor" readonly class="campo" >
                                                         </div>	
                                                         <!--<div id="mensaje1" class="errores">Dame tu nombre</div>-->
@@ -171,49 +170,74 @@ include '../menus/menu.php';
                                                     <div class="control-group">											
                                                         <label class="control-label" for="representante_legal">Representante Legal: </label>
                                                         <div class="controls">
-                                                            <input type="text" name="representante_legal" id="representante_legal" placeholder="Representante Legal" required class="campo"  />
+                                                            <input type="text" name="representante_legal" id="representante_legal" placeholder="Representante Legal" required class="span4"  />
                                                         </div>
                                                     </div>
 
                                                     <div class="control-group">											
                                                         <label class="control-label" for="direccion_pro">Dirección: <font color="red">*</font></label>
                                                         <div class="controls">
-                                                            <input type="text"  name="direccion_pro" id="direccion_pro" placeholder="Dirección de la Empresa" required class="campo" />
+                                                            <input type="text"  name="direccion_pro" id="direccion_pro" placeholder="Dirección de la Empresa" required class="span4" />
                                                         </div>
                                                     </div>
 
                                                     <div class="control-group">											
                                                         <label class="control-label" for="nro_celular">Nro. de Celular:</label>
                                                         <div class="controls">
-                                                            <input type="tel" name="nro_celular" id="nro_celular" maxlength="10" placeholder="09-9999-999" class="campo"/>
+                                                            <input type="tel" name="nro_celular" id="nro_celular" maxlength="10" placeholder="09-9999-999" class="span4"/>
                                                         </div>
                                                     </div>
 
                                                     <div class="control-group">
                                                         <label class="control-label" for="fax">Fax: </label>
                                                         <div class="controls">
-                                                            <input type="text" name="fax" id="fax" class="campo" />
+                                                            <input type="text" name="fax" id="fax" class="span4" />
                                                         </div>
                                                     </div>
 
                                                     <div class="control-group">											
                                                         <label class="control-label" for="ciudad_pro">Ciudad: <font color="red">*</font> </label>
                                                         <div class="controls">
-                                                            <input type="text" name="ciudad_pro" id="ciudad_pro" required class="campo"/>
+                                                            <input type="text" name="ciudad_pro" id="ciudad_pro" required class="span4"/>
                                                         </div>
                                                     </div>
 
                                                     <div class="control-group">											
                                                         <label class="control-label" for="principal_pro">Proveedor Principal: <font color="red">*</font></label>
                                                         <div class="controls">
-                                                            <select name="principal_pro" id="principal_pro" required style="width: 200px">
+                                                            <select name="principal_pro" id="principal_pro" required class="span4">
                                                                 <option value="">......Seleccione......</option>
                                                                 <option value="Si">Si</option>
                                                                 <option value="No">No</option>
                                                             </select>
                                                         </div>			
                                                     </div>
-                                                </section>
+                                                  </div>
+                                                </div>
+
+                                                <div class="tab-pane" id="jscontrols">
+                                                
+                                                <div class="span6">
+                                                  <div class="control-group">
+                                                    <label class="control-label" for="cuenta_contable">Cuenta Contable:</label>
+                                                    <div class="controls">
+                                                        <div class="input-append">
+                                                            <input type="text" name="cuenta_contable" readonly id="cuenta_contable" class="span3"/>
+                                                            <input type="hidden" name="id_plan_cuentas" id="id_plan_cuentas" class="span3"/>
+                                                            <input type="button" class="btn btn-primary" id='btnCuenta' value="Agregar..." title=""/>
+                                                        </div>
+                                                    </div>
+                                                  </div> 
+
+                                                  <div class="control-group">
+                                                        <label class="control-label" for="observaciones_pro">Observaciones:</label>
+                                                        <div class="controls" >
+                                                            <textarea name="observaciones_pro" id="observaciones_pro" rows="3" class="span4"></textarea>
+                                                        </div>  
+                                                    </div>  
+                                                </div>
+                                               </div>
+                                              </div>  
                                             </form>
                                         </fieldset>  
 
@@ -228,6 +252,11 @@ include '../menus/menu.php';
                                         <div id="proveedores" title="Búsqueda de Proveedores" class="">
                                             <table id="list"><tr><td></td></tr></table>
                                             <div id="pager"></div>
+                                        </div>
+
+                                        <div id="cuentas" title="Búsqueda Plan de Cuentas" class="">
+                                            <table id="list2"><tr><td></td></tr></table>
+                                            <div id="pager2"></div>
                                         </div>
 
                                         <div id="clave_permiso" title="PERMISOS">
@@ -258,7 +287,6 @@ include '../menus/menu.php';
             </div> 
         </div> 
         <script type="text/javascript" src="../js/base.js"></script>
-
 
         <div class="footer">
             <div class="footer-inner">

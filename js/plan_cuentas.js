@@ -438,7 +438,7 @@ function inicio() {
     $("#seguro").dialog(dialogo4);
 /////////////////////////// 
 
-   /////////////tabla clientes/////////
+   /////////////tabla plan/////////
     jQuery("#list").jqGrid({
         url: '../xml/datos_plan.php',
         datatype: 'xml',

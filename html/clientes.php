@@ -186,23 +186,32 @@ include '../menus/menu.php';
                                                   <div class="control-group">                                           
                                                         <label class="control-label" for="cupo_credito">Cupo de Crédito:</label>
                                                         <div class="controls">
-                                                             <input type="text" name="cupo_credito" id="cupo_credito" class="span4"/>
+                                                             <input type="text" name="cupo_credito" id="cupo_credito" class="span4" value="0.00" />
                                                         </div>
-                                                    </div>  
-
+                                                    </div> 
+                                                    <div class="control-group">
+                                                            <label class="control-label" for="notas_cli">Notas: </label>
+                                                            <div class="controls">
+                                                                <textarea name="notas_cli" id="notas_cli" rows="3" class="span4"></textarea>
+                                                            </div>
+                                                        </div> 
                                                 </div>
                                                 
                                                 <div class="span6">
-                                                  <div class="control-group">                                           
-                                                        <label class="control-label" for="cupo_credito">Cuenta Contable:</label>
-                                                        <div class="controls">
-                                                             <input type="text" name="cupo_credito" id="cupo_credito" class="span4"/>
+                                                  <div class="control-group">
+                                                    <label class="control-label" for="cuenta_contable">Cuenta Contable:</label>
+                                                    <div class="controls">
+                                                        <div class="input-append">
+                                                            <input type="text" name="cuenta_contable" readonly id="cuenta_contable" class="span3"/>
+                                                            <input type="hidden" name="id_plan_cuentas" id="id_plan_cuentas" class="span3"/>
+                                                            <input type="button" class="btn btn-primary" id='btnCuenta' value="Agregar..." title=""/>
                                                         </div>
-                                                    </div>  
-                                                </div>
+                                                    </div>
+                                                  </div>  
+                                                 </div>
                                                </div>
                                               </div>  
-                                            </form>
+                                           </form>
                                         </fieldset>
 
                                         <div class="form-actions">
@@ -216,6 +225,11 @@ include '../menus/menu.php';
                                         <div id="clientes" title="Búsqueda de Clientes" class="">
                                             <table id="list"><tr><td></td></tr></table>
                                             <div id="pager"></div>
+                                        </div>
+
+                                        <div id="cuentas" title="Búsqueda Plan de Cuentas" class="">
+                                            <table id="list2"><tr><td></td></tr></table>
+                                            <div id="pager2"></div>
                                         </div>
 
                                         <div id="clave_permiso" title="PERMISOS">
