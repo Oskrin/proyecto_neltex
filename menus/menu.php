@@ -59,9 +59,6 @@ function menu_1() {
                     </li>
                     <li><a href="../html/registroGastos.php" target="_blank">Registro Gastos</a></li>
                     <li><a href="../html/gastos.php" target="_blank">Gastos Internos</a></li>
-                    <li><a href="../html/plan_cuentas.php" target="_blank">Plan de Cuentas</a></li>
-                    <li><a href="../html/kardex.php" target="_blank">Kardex</a></li>
-                    <li><a href="../html/libro_diario.php" target="_blank">Libro Diario</a></li>
                 </ul>
             </li>
             
@@ -71,6 +68,12 @@ function menu_1() {
                     <li><a href="../html/transacciones.php" target="_blank">Transacciones</a></li>
                     <li><a href="../html/kardex.php" target="_blank">Kardex</a></li>
                     <li><a href="../html/libro_diario.php" target="_blank">Libro Diario</a></li>
+                    <li><a href="" target="_parent">Bancos</a>
+                        <ul>
+                            <li><a href="../html/bancos.php" target="_blank">Catalogo Bancos</a></li>
+                            <li><a href="../html/cuentasPagar.php" target="_blank">Conciliación</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </li>
             
