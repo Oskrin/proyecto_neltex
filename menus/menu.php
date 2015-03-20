@@ -74,6 +74,12 @@ function menu_1() {
                             <li><a href="../html/cuentasPagar.php" target="_blank">Conciliación</a></li>
                         </ul>
                     </li>
+                    <li><a href="" target="_parent">Cierre de Caja</a>
+                        <ul>
+                            <li><a href="../html/bancos.php" target="_blank">Contado</a></li>
+                            <li><a href="../html/cuentasPagar.php" target="_blank">Crédito</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </li>
             
