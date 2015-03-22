@@ -3,6 +3,10 @@ function evento(e) {
     e.preventDefault();
 }
 
+function este(){
+window.open('../fdpf/ayuda_general.pdf');
+}
+
 function scrollToBottom() {
     $('html, body').animate({
         scrollTop: $(document).height()
@@ -54,8 +58,23 @@ var dialogo4 = {
     hide: "blind"
 }
 
+var dialogo_cuenta ={
+    autoOpen: false,
+    resizable: false,
+    width: 530,
+    height: 350,
+    modal: true,
+    position: "top",
+    show: "explode",
+    hide: "blind"
+}
+
 function abrirDialogo() {
     $("#proveedores").dialog("open");
+}
+
+function abrirCuenta() {
+    $("#cuentas").dialog("open");
 }
 
 function guardar_proveedor() {
@@ -112,7 +131,7 @@ function guardar_proveedor() {
                                                     url: "../procesos/guardar_proveedores.php",
                                                     data: "tipo_docu=" + $("#tipo_docu").val() + "&ruc_ci=" + $("#ruc_ci").val() +
                                                     "&empresa_pro=" + $("#empresa_pro").val() + "&representante_legal=" + $("#representante_legal").val()
-                                                    + "&visitador=" + $("#visitador").val() + "&direccion_pro=" + $("#direccion_pro").val() + "&nro_telefono=" + $("#nro_telefono").val() + "&nro_celular=" + $("#nro_celular").val() + "&fax=" + $("#fax").val() + "&pais_pro=" + $("#pais_pro").val() + "&ciudad_pro=" + $("#ciudad_pro").val() + "&forma_pago=" + $("#forma_pago").val() + "&correo=" + $("#correo").val() + "&principal_pro=" + $("#principal_pro").val() + "&observaciones_pro=" + $("#observaciones_pro").val(),
+                                                    + "&visitador=" + $("#visitador").val() + "&direccion_pro=" + $("#direccion_pro").val() + "&nro_telefono=" + $("#nro_telefono").val() + "&nro_celular=" + $("#nro_celular").val() + "&fax=" + $("#fax").val() + "&pais_pro=" + $("#pais_pro").val() + "&ciudad_pro=" + $("#ciudad_pro").val() + "&forma_pago=" + $("#forma_pago").val() + "&correo=" + $("#correo").val() + "&principal_pro=" + $("#principal_pro").val() + "&observaciones_pro=" + $("#observaciones_pro").val()+ "&id_plan_cuentas=" + $("#id_plan_cuentas").val(),
                                                     success: function(data) {
                                                         var val = data;
                                                         if (val == 1) {
@@ -317,11 +336,13 @@ function reset () {
 
 function inicio() {
     alertify.set({ delay: 1000 });
-    $("#nro_telefono").validCampoFranz("0123456789");
-    $("#nro_celular").validCampoFranz("0123456789");
 
     //////////atributos////////////
-    $("#ruc_ci").attr("disabled", "disabled");
+    $("#ruc_ci").focus();
+    $("#ruc_ci").attr("maxlength", "10");
+    $("#ruc_ci").keypress(ValidNum);
+    $("#nro_telefono").validCampoFranz("0123456789");
+    $("#nro_celular").validCampoFranz("0123456789");
     ///////tipo pago//////////////
 
     $("#tipo_docu").change(function() {
@@ -530,6 +551,9 @@ function inicio() {
     $("#btnNuevo").click(function(e) {
         e.preventDefault();
     });
+    $("#btnCuenta").click(function(e) {
+        e.preventDefault();
+    });
     ///////////////////////
 
     //////////////////////
@@ -542,10 +566,11 @@ function inicio() {
     $("#btnAcceder").on("click", validar_acceso);
     $("#btnCancelar").on("click", cancelar_acceso);
     $("#btnBuscar").on("click", abrirDialogo);
-
+    $("#btnCuenta").on("click", abrirCuenta);
     /////////////////////
 
     $("#proveedores").dialog(dialogo);
+    $("#cuentas").dialog(dialogo_cuenta);
     $("#clave_permiso").dialog(dialogo3);
     $("#seguro").dialog(dialogo4);
 
@@ -636,6 +661,90 @@ function inicio() {
             }
         }
     });
+
+/////////////tabla plan/////////
+    jQuery("#list2").jqGrid({
+        url: '../xml/datos_plan.php',
+        datatype: 'xml',
+        colNames: ['Id', 'Codigo', 'Descripción', 'Cuenta'],
+        colModel: [
+            {name: 'id_plan_cuentas', index: 'id_plan_cuentas', editable: true, align: 'center', width: '120', search: false, frozen: true, editoptions: {readonly: 'readonly'}, formoptions: {elmprefix: ""}},
+            {name: 'codigo_cuenta', index: 'codigo_cuenta', editable: true, align: 'center', width: '120', search: false, frozen: true, formoptions: {elmsuffix: " (*)"}, editrules: {required: true}},
+            {name: 'descripcion', index: 'descripcion', editable: true, align: 'center', width: '200', search: true, frozen: true, formoptions: {elmsuffix: " (*)"}, editrules: {required: true}},
+            {name: 'cuenta', index: 'cuenta', editable: true, align: 'center', width: '120', search: false, frozen: true, editoptions: {readonly: 'readonly'}, formoptions: {elmprefix: ""}},
+        ],
+        rowNum: 10,
+        width: 500,
+        height: 200,
+        rowList: [10, 20, 30],
+        pager: jQuery('#pager2'),
+        sortname: 'id_plan_cuentas',
+        shrinkToFit: false,
+        sortorder: 'asc',
+        caption: 'Lista Plan de Cuentas',
+        editurl: 'procesos/estadio_del.php',
+        viewrecords: true,
+        ondblClickRow: function(){
+         var id = jQuery("#list2").jqGrid('getGridParam', 'selrow');
+         jQuery('#list').jqGrid('restoreRow', id); 
+         var ret = jQuery("#list2").jqGrid('getRowData', id);
+
+            if (id) {
+                $("#id_plan_cuentas").val(ret.id_plan_cuentas);  
+                $("#cuenta_contable").val(ret.descripcion);
+                $("#cuentas").dialog("close");
+            } else {
+                alertify.alert("Seleccione un fila");
+            }    
+        }
+    }).jqGrid('navGrid', '#pager2',
+            {
+                add: false,
+                edit: false,
+                del: false,
+                refresh: false,
+                search: false,
+                view: true
+            },
+    {
+        recreateForm: true, closeAfterEdit: true, checkOnUpdate: true, reloadAfterSubmit: true, closeOnEscape: true
+    },
+    {
+        reloadAfterSubmit: true, closeAfterAdd: true, checkOnUpdate: true, closeOnEscape: true,
+        bottominfo: "Todos los campos son obligatorios son obligatorios"
+    },
+    {
+        width: 300, closeOnEscape: true
+    },
+    {
+        closeOnEscape: true,        
+        multipleSearch: false, overlay: false
+
+    },
+    {
+    },
+            {
+                closeOnEscape: true
+            }
+    );
+    /////////////////       
+    jQuery("#list2").jqGrid('navButtonAdd', '#pager2', {caption: "Añadir",
+        onClickButton: function() {
+            var id = jQuery("#list2").jqGrid('getGridParam', 'selrow');
+            jQuery('#list2').jqGrid('restoreRow', id);
+            var ret = jQuery("#list2").jqGrid('getRowData', id);
+
+            if (id) {
+                $("#id_plan_cuentas").val(ret.id_plan_cuentas);  
+                $("#cuenta_contable").val(ret.descripcion);
+                $("#cuentas").dialog("close");
+            } else {
+                alertify.alert("Seleccione un fila");
+            }
+        }
+    });
+ /////////////////////fin tabla plan/////////////////////
+
 }
 
 

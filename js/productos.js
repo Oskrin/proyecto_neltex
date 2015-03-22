@@ -3,6 +3,10 @@ function evento(e) {
     e.preventDefault();
 }
 
+function este(){
+window.open('../fdpf/ayuda_general.pdf');
+}
+
 $(function() {
     $('#main-menu').smartmenus({
         subMenusSubOffsetX: 1,
@@ -83,6 +87,17 @@ var dialogo5 ={
     hide: "blind"
 }
 
+var dialogo_cuenta ={
+    autoOpen: false,
+    resizable: false,
+    width: 530,
+    height: 350,
+    modal: true,
+    position: "top",
+    show: "explode",
+    hide: "blind"
+}
+
 function abrirDialogo() {
     $("#productos").dialog("open");
 }
@@ -93,6 +108,10 @@ function abrirCategoria() {
 
 function abrirMarca() {
     $("#marcas").dialog("open");
+}
+
+function abrirCuenta() {
+    $("#cuentas").dialog("open");
 }
 
 $(function(){
@@ -585,6 +604,13 @@ function inicio() {
     $("#btnNuevo").click(function(e) {
         e.preventDefault();
     });
+    $("#btnNuevo").click(function(e) {
+        e.preventDefault();
+    });
+    $("#btnCuenta").click(function(e) {
+        e.preventDefault();
+    });
+    ////////////////////////////////////////
     
     $("#btnGuardarCategoria").on("click", agregar_categoria);
     $("#btnGuardarMarca").on("click", agregar_marca);
@@ -599,6 +625,7 @@ function inicio() {
     $("#btnSalir").on("click", cancelar);
     $("#btnAcceder").on("click", validar_acceso);
     $("#btnCancelar").on("click", cancelar_acceso);
+    $("#btnCuenta").on("click", abrirCuenta);
     
     $("#precio_minorista").on("keypress", enter);
     $("#precio_mayorista").on("keypress", enter2);
@@ -608,6 +635,7 @@ function inicio() {
     $("#marcas").dialog(dialogos_marca);
     $("#clave_permiso").dialog(dialogo3);
     $("#seguro").dialog(dialogo4);
+    $("#cuentas").dialog(dialogo_cuenta);
     ///////////////////////////////////////////////
 
     /////////calendarios///////
@@ -784,7 +812,90 @@ $("#precio_mayorista").keyup(function() {
 
         }
     });
-///////////////////fin tabla productos////////////   
+   ///////////////////fin tabla productos////////////   
+
+   /////////////tabla plan/////////
+    jQuery("#list2").jqGrid({
+        url: '../xml/datos_plan.php',
+        datatype: 'xml',
+        colNames: ['Id', 'Codigo', 'Descripción', 'Cuenta'],
+        colModel: [
+            {name: 'id_plan_cuentas', index: 'id_plan_cuentas', editable: true, align: 'center', width: '120', search: false, frozen: true, editoptions: {readonly: 'readonly'}, formoptions: {elmprefix: ""}},
+            {name: 'codigo_cuenta', index: 'codigo_cuenta', editable: true, align: 'center', width: '120', search: false, frozen: true, formoptions: {elmsuffix: " (*)"}, editrules: {required: true}},
+            {name: 'descripcion', index: 'descripcion', editable: true, align: 'center', width: '200', search: true, frozen: true, formoptions: {elmsuffix: " (*)"}, editrules: {required: true}},
+            {name: 'cuenta', index: 'cuenta', editable: true, align: 'center', width: '120', search: false, frozen: true, editoptions: {readonly: 'readonly'}, formoptions: {elmprefix: ""}},
+        ],
+        rowNum: 10,
+        width: 500,
+        height: 200,
+        rowList: [10, 20, 30],
+        pager: jQuery('#pager2'),
+        sortname: 'id_plan_cuentas',
+        shrinkToFit: false,
+        sortorder: 'asc',
+        caption: 'Lista Plan de Cuentas',
+        editurl: 'procesos/estadio_del.php',
+        viewrecords: true,
+        ondblClickRow: function(){
+         var id = jQuery("#list2").jqGrid('getGridParam', 'selrow');
+         jQuery('#list').jqGrid('restoreRow', id); 
+         var ret = jQuery("#list2").jqGrid('getRowData', id);
+
+            if (id) {
+                $("#id_plan_cuentas").val(ret.id_plan_cuentas);  
+                $("#cuenta_contable").val(ret.descripcion);
+                $("#cuentas").dialog("close");
+            } else {
+                alertify.alert("Seleccione un fila");
+            }    
+        }
+    }).jqGrid('navGrid', '#pager2',
+            {
+                add: false,
+                edit: false,
+                del: false,
+                refresh: false,
+                search: false,
+                view: true
+            },
+    {
+        recreateForm: true, closeAfterEdit: true, checkOnUpdate: true, reloadAfterSubmit: true, closeOnEscape: true
+    },
+    {
+        reloadAfterSubmit: true, closeAfterAdd: true, checkOnUpdate: true, closeOnEscape: true,
+        bottominfo: "Todos los campos son obligatorios son obligatorios"
+    },
+    {
+        width: 300, closeOnEscape: true
+    },
+    {
+        closeOnEscape: true,        
+        multipleSearch: false, overlay: false
+
+    },
+    {
+    },
+            {
+                closeOnEscape: true
+            }
+    );
+    /////////////////       
+    jQuery("#list2").jqGrid('navButtonAdd', '#pager2', {caption: "Añadir",
+        onClickButton: function() {
+            var id = jQuery("#list2").jqGrid('getGridParam', 'selrow');
+            jQuery('#list2').jqGrid('restoreRow', id);
+            var ret = jQuery("#list2").jqGrid('getRowData', id);
+
+            if (id) {
+                $("#id_plan_cuentas").val(ret.id_plan_cuentas);  
+                $("#cuenta_contable").val(ret.descripcion);
+                $("#cuentas").dialog("close");
+            } else {
+                alertify.alert("Seleccione un fila");
+            }
+        }
+    });
+ /////////////////////fin tabla plan/////////////////////
 }
 
 

@@ -7,6 +7,10 @@ $(function() {
     });
 });
 
+function este(){
+window.open('../fdpf/ayuda_general.pdf');
+}
+
 function numeros(e) { 
 tecla = (document.all) ? e.keyCode : e.which;
 if (tecla==8) return true;

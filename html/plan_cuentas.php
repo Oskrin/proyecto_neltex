@@ -79,67 +79,71 @@ include '../menus/menu.php';
                             <div class="widget ">
                                 <div class="widget-header">
                                     <i class="icon-user"></i>
-                                    <h3>NUEVA CUENTA</h3>
+                                    <h3>PLAN DE CUENTAS</h3>
                                 </div> <!-- /widget-header -->
 
                                 <div class="widget-content">
                                     <div class="tabbable">
                                         <fieldset>
-                                            <form class="form-horizontal" id="clientes_form" name="clientes_form" method="post">
-                                                <section class="columna1">
-                                                    <div class="control-group">											
-                                                        <label class="control-label" for="tipo_docu">Código cuenta: <font color="red">*</font></label>
-                                                        <div class="controls" >
-                                                            <input type="text" name="codigo_cuenta"  id="codigo_cuenta" placeholder="Código de la cuenta" required class="campo"/>
-                                                        </div>
+                                            <form class="form-horizontal" id="plan_form" name="plan_form" method="post">
+                                                <div class="row">  
+                                                    <div class="span5">
+                                                        <table id="list"><tr><td></td></tr></table>
+                                                        <div id="pager"></div>
                                                     </div>
 
-                                                    <div class="control-group">											
-                                                        <label class="control-label" for="descripcion">Descripción: <font color="red">*</font></label>
-                                                        <div class="controls">
-                                                            <input type="text" name="descripcion"  id="descripcion" placeholder="Descripción de la cuenta" required class="campo"/>
+                                                    <div class="span5">
+                                                        <div class="control-group">
+                                                            <label class="control-label" for="direccion_cli">Cuenta de : <font color="red">*</font></label>
+                                                            <div class="controls">
+                                                                <select name="cuenta" id="cuenta">
+                                                                    <option value="G" selected>GRUPO</option>
+                                                                    <option value="M">MOVIMIENTO</option>
+                                                                </select>
+                                                            </div>
                                                         </div>
-                                                    </div>
+                                                        <!--                                                        <div class="control-group">											
+                                                                                                                    <label class="control-label" for="tipo">Tipo cuenta: </label>
+                                                                                                                    <div class="controls">
+                                                                                                                        <select name="tipo" id="tipo">
+                                                                                                                            <option value="">...Seleccione...</option>
+                                                                                                                            <option value="Activo">Activo</option>
+                                                                                                                            <option value="Pasivo">Pasivo</option>
+                                                                                                                            <option value="Capital">Capital</option>
+                                                                                                                            <option value="Ingresos">Ingresos</option>
+                                                                                                                            <option value="Costos">Costos</option>
+                                                                                                                            <option value="Gastos">Gastos</option>
+                                                                                                                            <option value="Otros Ingresos">Otros Ingresos</option>
+                                                                                                                            <option value="Otros Egresos">Otros Egresos</option>
+                                                                                                                            <option value="Cta. de Orden Deudora">Cta. de Orden Deudora</option>
+                                                                                                                            <option value="Cta. de Orden Acreedora">Cta. de Orden Acreedora</option>
+                                                                                                                        </select>
+                                                                                                                    </div>
+                                                                                                                </div>-->
 
-                                                    <div class="control-group">											
-                                                        <label class="control-label" for="tipo">Tipo cuenta: </label>
-                                                        <div class="controls">
-                                                            <select name="tipo" id="tipo">
-                                                                <option value="">...Seleccione...</option>
-                                                                <option value="Activo">Activo</option>
-                                                                <option value="Pasivo">Pasivo</option>
-                                                                <option value="Capital">Capital</option>
-                                                                <option value="Ingresos">Ingresos</option>
-                                                                <option value="Costos">Costos</option>
-                                                                <option value="Gastos">Gastos</option>
-                                                                <option value="Otros Ingresos">Otros Ingresos</option>
-                                                                <option value="Otros Egresos">Otros Egresos</option>
-                                                                <option value="Cta. de Orden Deudora">Cta. de Orden Deudora</option>
-                                                                <option value="Cta. de Orden Acreedora">Cta. de Orden Acreedora</option>
-                                                            </select>
+                                                        <div class="control-group">											
+                                                            <label class="control-label" for="tipo_docu">Código cuenta: <font color="red">*</font></label>
+                                                            <div class="controls" >
+                                                                <input type="text" name="codigo_cuenta"  id="codigo_cuenta" required class="campo"/>
+                                                                <input type="hidden" name="id_plan_cuentas"  id="id_plan_cuentas" required class="campo"/>
+                                                            </div>
                                                         </div>
-                                                    </div>
 
-                                                    <div class="control-group">
-                                                        <label class="control-label" for="direccion_cli">Cuenta de : <font color="red">*</font></label>
-                                                        <div class="controls">
-                                                            <select name="cuenta" id="cuenta">
-                                                                <option value="Agrupacion" selected>Agrupacion</option>
-                                                                <option value="Detalle">Detalle</option>
-                                                            </select>
+                                                        <div class="control-group">											
+                                                            <label class="control-label" for=""></label>
+                                                            <div class="controls">
+                                                                <label class="control-label" for="formato"><font color="red">FORMATO:9.9.99.99.99.99</font></label>
+                                                            </div>
                                                         </div>
-                                                    </div>
 
-                                                    <div class="control-group">											
-                                                        <label class="control-label" for="cupo_credito">Requiere RUC: <font color="red">*</font></label>
-                                                        <div class="controls">
-                                                            <select name="ruc" id="ruc">
-                                                                <option value="Si" selected>Si</option>
-                                                                <option value="No">No</option>
-                                                            </select>
+                                                        <div class="control-group">											
+                                                            <label class="control-label" for="descripcion">Descripción: <font color="red">*</font></label>
+                                                            <div class="controls">
+                                                                <input type="text" name="descripcion"  id="descripcion" placeholder="Descripción de la cuenta" required class="campo"/>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                </section>
+                                                </div>
                                             </form>
                                         </fieldset>
 
@@ -152,29 +156,9 @@ include '../menus/menu.php';
 
 
                                         <div id="clientes" title="Búsqueda de Clientes" class="">
-                                            <table id="list"><tr><td></td></tr></table>
-                                            <div id="pager"></div>
+
                                         </div>
 
-                                        <div id="clave_permiso" title="PERMISOS">
-                                            <table border="0" >
-                                                <tr>
-                                                    <td><label>Ingese la clave de seguridad</label></td> 
-                                                    <td><input type="password" name="clave" id="clave" class="campo"></td>
-                                                </tr>  
-                                            </table>
-                                            <div class="form-actions" align="center">
-                                                <button class="btn btn-primary" id='btnAcceder'><i class="icon-ok"></i> Acceder</button>
-                                                <button class="btn btn-primary" id='btnCancelar'><i class="icon-remove-sign"></i> Cancelar</button>
-                                            </div>
-                                        </div> 
-
-                                        <div id="seguro">
-                                            <label>Esta seguro de eliminar al cliente</label>  
-                                            <br />
-                                            <button class="btn btn-primary" id='btnAceptar'><i class="icon-ok"></i> Aceptar</button>
-                                            <button class="btn btn-primary" id='btnSalir'><i class="icon-remove-sign"></i> Cancelar</button>
-                                        </div>
                                     </div>
                                 </div> 
                             </div> 

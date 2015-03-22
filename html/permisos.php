@@ -5,6 +5,7 @@ if (empty($_SESSION['id'])) {
 }
 include '../menus/menu.php';
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
     <head>
@@ -90,7 +91,7 @@ include '../menus/menu.php';
                                                 <div class="controls">
                                                     <?php
                                                     include '../procesos/base.php';
-                                                    $consulta = pg_query("select * from cargo_usuario");
+                                                    $consulta = pg_query("select * from usuario");
                                                     echo "<select id=tipo_cargo name=tipo_cargo class=span4>";
                                                     while ($row = pg_fetch_row($consulta)) {
                                                         if ($row[6] == 1) {
@@ -114,7 +115,6 @@ include '../menus/menu.php';
                                                 <table id="list"></table>
                                                 <div id="pager"></div>   
                                             </fieldset>  
-                                            <!--<a href="javascript:void(0)" id="m1">Get Selected id's</a>-->
                                         </div>
                                     </form>    
 

@@ -1,33 +1,32 @@
 <?php
-
 if (empty($_SESSION['id'])) {
     header('Location: index.php');
 }
 
 function menu_1() {
-    print(' <ul id="main-menu" class="sm sm-blue">
+ print(' <ul id="main-menu" class="sm sm-blue">
             <li><a href="../html/principal.php" target="_parent" class="inicio"><i class="icon-home"></i> Inicio</a></li>
             <li><a href="" target="_parent"> <i class="icon-th-large"></i> Ingresos</a>
                 <ul>
-                    <li><a href="../html/usuarios.php">Usuarios</a></li>
-                    <li><a href="../html/permisos.php">Permisos</a></li>
+                    <li><a href="../html/usuarios.php" target="_blank">Usuarios</a></li>
+                    <li><a href="../html/permisos.php" target="_blank">Permisos</a></li>
                     <li><a href="../html/clientes.php" target="_blank">Clientes</a></li>
-                    <li><a href="../html/proveedores.php" target="_blank">Proveedores</a></li>
-                    <li><a href="" target="_parent">Clasificacion</a>
-                    <ul>
+                    <li><a href="../html/proveedores.php"target="_blank">Proveedores</a></li>
+                    <li><a href="" target="_parent">Generales</a>
+                      <ul>
+                          <li><a href="../html/bodegas.php" target="_blank">Bodegas</a></li>
                           <li><a href="../html/categorias.php" target="_blank">Categorias</a></li>
                           <li><a href="../html/marcas.php" target="_blank">Marcas</a></li>
-                    </ul>
+                      </ul>
                     </li>
-                    <li><a href="../html/productos.php" target="_blank">Productos</a></li>
-                    <li><a href="../html/archivosExcel.php" target="_blank">Cargar Productos</a></li>
-                </ul> 
+                  <li><a href="../html/productos.php" target="_blank">Productos</a></li>
+                </ul>
             </li>
             
             <li><a href="" target="_parent"><i class="icon-book"></i> Procesos</a>
                 <ul>
                     <li><a href="../html/inventario.php" target="_blank">Inventario</a></li>
-                    <!--<li><a href="../html/proformas.php" target="_blank">Proformas</a></li>-->
+                    <li><a href="../html/proformas.php" target="_blank">Proformas</a></li>
                     <li><a href="" target="_parent">Compras</a>
                         <ul>
                             <li><a href="../html/factura_compra.php" target="_blank">Productos Bodega</a></li>
@@ -37,10 +36,13 @@ function menu_1() {
                     <li><a href="" target="_parent">Ventas</a>
                         <ul>
                             <li><a href="../html/factura_venta.php" target="_blank">Ventas facturación</a></li>
-                            <!--<li><a href="../html/notasCredito.php" target="_blank">Notas de crédito</a></li>-->
+                            <li><a href="../html/notasCredito.php" target="_blank">Notas de crédito</a></li>
                         </ul>
                     </li>
+<<<<<<< HEAD
                     
+=======
+>>>>>>> origin/master
                     <li><a href="" target="_parent">Transferencias</a>
                         <ul>
                             <li><a href="../html/ingresos.php" target="_blank">Ingresos</a></li>
@@ -59,12 +61,41 @@ function menu_1() {
                            </li>
                         </ul>
                     </li>
+<<<<<<< HEAD
                      <li><a href="../html/plan_cuentas.php" target="_blank">Plan Cuentas</a></li>
                     <a href="../html/registroGastos.php" target="_blank">Registro Gastos</a></li>
                     <li><a href="../html/gastos.php" target="_blank">Gastos Internos</a>
                 </ul>
             </li>
 
+=======
+                    <li><a href="../html/registroGastos.php" target="_blank">Registro Gastos</a></li>
+                    <li><a href="../html/gastos.php" target="_blank">Gastos Internos</a></li>
+                </ul>
+            </li>
+            
+                <li><a href="" target="_parent"><i class="icon-book"></i> Contabilidad</a>
+                <ul>
+                    <li><a href="../html/plan_cuentas.php" target="_blank">Plan de Cuentas</a></li>
+                    <li><a href="../html/transacciones.php" target="_blank">Transacciones</a></li>
+                    <li><a href="../html/kardex.php" target="_blank">Kardex</a></li>
+                    <li><a href="../html/libro_diario.php" target="_blank">Libro Diario</a></li>
+                    <li><a href="" target="_parent">Bancos</a>
+                        <ul>
+                            <li><a href="../html/bancos.php" target="_blank">Catalogo Bancos</a></li>
+                            <li><a href="../html/cuentasPagar.php" target="_blank">Conciliación</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="" target="_parent">Cierre de Caja</a>
+                        <ul>
+                            <li><a href="../html/bancos.php" target="_blank">Contado</a></li>
+                            <li><a href="../html/cuentasPagar.php" target="_blank">Crédito</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            
+>>>>>>> origin/master
             <li><a href="" target="_parent"><i class="icon-print"></i> Reportes</a>
                 <ul>
                     <li><a href="" target="_parent">Productos</a>
@@ -74,6 +105,10 @@ function menu_1() {
                             <li><a href="" id="producto_existencia_minima">Productos existencia mínima</a></li>
                         </ul>
                    </li>
+<<<<<<< HEAD
+=======
+                   
+>>>>>>> origin/master
                    <li><a href="" target="_parent">Compras</a>
                         <ul>
                             <li><a href="">Resumen de compras locales</a>
@@ -88,6 +123,10 @@ function menu_1() {
                             </li>
                         </ul>
                    </li>
+<<<<<<< HEAD
+=======
+                   
+>>>>>>> origin/master
                    <li><a href="" target="_parent">Ventas</a>
                         <ul>
                             <li><a href="" target="_parent">Flujo de caja</a>
@@ -112,6 +151,10 @@ function menu_1() {
                             <li><a href="" id="buscar_serie">Buscar por nro de serie</a></li>
                         </ul>
                    </li>
+<<<<<<< HEAD
+=======
+                   
+>>>>>>> origin/master
                    <li><a href="" target="_parent">Cartera</a>
                         <ul>
                             <!--<li><a href="">Estados de cuentas proveedores locales</a></li>
@@ -133,12 +176,20 @@ function menu_1() {
                             </li>
                         </ul>
                    </li>
+<<<<<<< HEAD
                    <!--<li><a href="" target="_parent">Proformas</a>
+=======
+                  <li><a href="" target="_parent">Proformas</a>
+>>>>>>> origin/master
                         <ul>
                             <li><a href="" target="_parent" id="proformas">Proformas</a></li>
                             <li><a href="" id="lista_proformas">Lista de Proformas</a></li>
                         </ul>
+<<<<<<< HEAD
                   </li> --> 
+=======
+                   </li> 
+>>>>>>> origin/master
                   <li><a href="" target="_parent">Gastos</a>
                       <ul>
                         <li><a href="" id="gastos">Gastos por factura</a></li> 
@@ -146,14 +197,31 @@ function menu_1() {
                         <li><a href="" id="gastos_internos">Gastos Internos Fechas</a></li>         
                       </ul>
                   </li> 
+<<<<<<< HEAD
+=======
+                  <li><a href="" target="_parent">Plan de Cuentas</a></li> 
+>>>>>>> origin/master
                 </ul>
             </li>
-                     
+           
             <li><a href="" target="_parent"><i class="icon-bookmark"></i> Bienvenido</a>
                 <ul>
                     <li><a href="" class="disabled">' . $_SESSION['nombres'] . '</a></li>
-                    <li><a href="../html/configuracion.php" target="_blank">Modificar</a></li>
                     <li><a href="../html/index.php">Salir</a></li>
+                </ul>
+            </li>
+            
+            <li><a href="" target="_parent"><i class="icon-warning-sign"></i> Ayuda</a>
+                <ul class="mega-menu">
+                <li><a href="javascript: este()">Ayuda General</a></li>
+                    <li>
+                        <!-- The mega drop down contents -->
+                        <div style="width:400px;max-width:100%;">
+                            <div style="padding:1px 10px;">
+                              <li><a href="../procesos/backup.php" id="">Respaldo de la base de datos</a></li>     
+                            </div>
+                        </div>
+                    </li>
                 </ul>
             </li>
         </ul>');

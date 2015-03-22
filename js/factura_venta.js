@@ -4,6 +4,10 @@ function evento(e) {
     e.preventDefault();
 }
 
+function este(){
+window.open('../fdpf/ayuda_general.pdf');
+}
+
 $(function() {
     $('#main-menu').smartmenus({
         subMenusSubOffsetX: 1,
@@ -80,8 +84,8 @@ var dialogo3 =
 var dialogo4 ={
     autoOpen: false,
     resizable: false,
-    width: 240,
-    height: 150,
+    width: 300,
+    height: 300,
     modal: true,
     position: "top",
     show: "explode",
@@ -2101,50 +2105,97 @@ function inicio() {
     //////////////////calcular meses/////////
     $("#meses").change(function() {
         var meses = $("#meses").val();
-        $('#cuotas').children().remove().end();
-        if ($("#formas").val() === "Contado") {
-            $("#meses").val("");
-            alertify.alert("Error...No se puede diferer");
-        } else {
+        var fecha = new Date();
+        var dd = fecha.getDate();
+        var mm = fecha.getMonth()+2; //hoy es 0!
+        var yyyy = fecha.getFullYear();
+        if(dd<10) {
+            dd='0'+dd
+        } 
+
+        if(mm<10) {
+            mm='0'+mm
+        }
+
+        fecha = yyyy+'-'+mm+'-'+dd;
+        // $('#cuotas').children().remove().end();
+        $("#tablaNuevo tbody").empty();
             if ($("#formas").val() === "Credito") {
+
                 if (meses > 1) {
-                    if($("#adelanto").val() !== "")
-                    {
+                    var fecha = new Date();
+                    var dd = fecha.getDate();
+                    var mm = fecha.getMonth()+3; //hoy es 0!
+                    var yyyy = fecha.getFullYear();
+                    if(dd<10) {
+                        dd='0'+dd
+                    } 
+
+                    if(mm<10) {
+                        mm='0'+mm
+                    }
+
+                    fecha = yyyy+'-'+mm+'-'+dd;
+
+                    if($("#adelanto").val() !== "") {
                         var resta = ($("#tot").val() - $("#adelanto").val());
                         for ( var i = 1; i <= meses - 1; i++) {
                             var calcu = resta / (meses);
                             var entero = Math.floor(calcu).toFixed(2);
-                            $("#cuotas").append('<option>'+entero+'</option>'); 
+                            $("#tablaNuevo tbody").append( "<tr>" +
+                            "<td align=center >" + fecha + "</td>" +
+                            "<td align=center>" + fecha+ "</td>" +                        
+                           "<tr>");
+                           // $("#cuotas").append('<option>'+entero+'</option>'); 
                         }
                         var calcu1 = entero * (meses - 1);
                         var sal = resta - calcu1;
                         var entero2 = sal.toFixed(2);
-                        $("#cuotas").append('<option>'+entero2+'</option>'); 
+                        $("#tablaNuevo tbody").append( "<tr>" +
+                        "<td align=center >" + fecha + "</td>" +    
+                        "<td align=center >" + entero2 + "</td>" +                         
+                        "<tr>");
+                       // $("#cuotas").append('<option>'+entero2+'</option>'); 
                     }else{
                         var to = $("#tot").val();
                         for (i = 1; i <= meses - 1; i++) {
                             calcu = to / (meses);
                             entero = Math.floor(calcu).toFixed(2);
-                            $("#cuotas").append('<option>'+entero+'</option>'); 
+                            $("#tablaNuevo tbody").append( "<tr>" +
+                            "<td align=center >" + fecha + "</td>" +    
+                            "<td align=center >" + entero + "</td>" +                         
+                            "<tr>");
+                          //  $("#cuotas").append('<option>'+entero+'</option>'); 
                         }
                         calcu1 = entero * (meses - 1);
                         sal = to - calcu1;
                         entero2 = sal.toFixed(2);
-                        $("#cuotas").append('<option>'+entero2+'</option>'); 
+                        $("#tablaNuevo tbody").append( "<tr>" +
+                            "<td align=center >" + fecha + "</td>" +
+                            "<td align=center >" + entero2 + "</td>" +                         
+                            "<tr>");
+                       // $("#cuotas").append('<option>'+entero2+'</option>'); 
                     }
                 }else{
-                    if($("#adelanto").val() !== "")
-                    {
+                    if($("#adelanto").val() !== "") {
                         resta = ($("#tot").val() - $("#adelanto").val());
                         var redo = parseFloat(resta).toFixed(2);
-                        $("#cuotas").append('<option>'+redo+'</option>');  
+                        $("#tablaNuevo tbody").append( "<tr>" +
+                            "<td align=center >" + fecha + "</td>" +
+                            "<td align=center >" + redo + "</td>" +                         
+                            "<tr>");
+                       // $("#cuotas").append('<option>'+redo+'</option>');  
                     }else{
                         to = $("#tot").val();
                         redo = parseFloat(to).toFixed(2);
-                        $("#cuotas").append('<option>'+redo+'</option>'); 
+                        $("#tablaNuevo tbody").append( "<tr>" +
+                            "<td align=center >" + fecha + "</td>" +
+                            "<td align=center >" + redo + "</td>" +                         
+                            "<tr>");
+                       // $("#cuotas").append('<option>'+redo+'</option>'); 
                     }
                 }
-            }
+            // }
         }
     });
     /////////////////////////////////////////

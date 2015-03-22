@@ -9,6 +9,10 @@ var dialogo =
     modal: true
 };
 
+function este(){
+window.open('../fdpf/ayuda_general.pdf');
+}
+
 function enter(e) {
     if (e.which === 13 || e.keyCode === 13) {
         ingresarSistema();
