@@ -30,7 +30,7 @@ include '../menus/menu.php';
         <script type="text/javascript" src="../js/jquery.jqGrid.src.js"></script>
         <script type="text/javascript" src="../js/buttons.js" ></script>
         <script type="text/javascript" src="../js/validCampoFranz.js" ></script>
-        <script type="text/javascript" src="../js/usuarios.js"></script>
+        <script type="text/javascript" src="../js/cierre.js"></script>
         <script type="text/javascript" src="../js/datosUser.js"></script>
         <script type="text/javascript" src="../js/ventana_reporte.js"></script>
         <script type="text/javascript" src="../js/guidely/guidely.min.js"></script>
@@ -75,7 +75,7 @@ include '../menus/menu.php';
                             <div class="widget ">
                                 <div class="widget-header">
                                     <i class="icon-user"></i>
-                                    <h3>USUARIOS</h3>
+                                    <h3>CIERRE DE CAJA</h3>
                                 </div> <!-- /widget-header -->
 
                                 <div class="widget-content">
@@ -84,6 +84,17 @@ include '../menus/menu.php';
                                             <table id="list"></table>
                                             <div id="pager"></div>   
                                         </fieldset>   
+                                        <br />
+                                        <form method="POST" name="cierre" id="cierre">
+                                        <p>TOTAL FACTURADO:</p>
+                                        <input type="text" name="total" id="total" readonly />
+                                        <p>TOTAL EN CAJA:</p>
+                                        <input type="text" name="total_caja" id="total_caja" />
+                                        </form>
+                                    </div>
+                                    <div class="form-actions">
+                                        <button class="btn btn-primary" id='btnCierre'><i class="icon-save"></i> Cierre</button>
+                                        <button class="btn btn-primary" id='btnNuevo'><i class="icon-pencil"></i> Nuevo</button>
                                     </div>
                                 </div> 
                             </div>
