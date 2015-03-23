@@ -51,7 +51,7 @@ if ($forma === "Credito") {
     $total = $_POST['tot'];
     ///////////////
     //////////////guardar pagos compra//////////
-    pg_query("insert into pagos_compra values('$cont2','$_POST[id_proveedor]','$cont1','$_SESSION[id]','$_POST[fecha_actual]','0','0','$_POST[tipo_comprobante]','$total','$total','Activo'");
+    pg_query("insert into pagos_compra values('$cont2','$_POST[id_proveedor]','$cont1','$_SESSION[id]','$_POST[fecha_actual]','0','0','$_POST[tipo_comprobante]','$total','$total','Activo')");
     ///////////////////////////////////////////
     //
     ////////////////guardar detalle compra/////

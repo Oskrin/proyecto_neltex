@@ -199,22 +199,22 @@ $cont1++;
                                                                 <td><input type="text" name="autorizacion" id="autorizacion" class="campo" maxlength="45"/></td>
                                                                 <td><label style="width: 100%; margin-left: 10px">Fecha Cancelación: <font color="red">*</font></label></td>
                                                                 <td><input type="text" name="cancelacion" id="cancelacion" class="campo" style="width: 150px" value="" readonly/></td>
-                                                            </tr>  
-                                                        </table>
-
-                                                        <table cellpadding="2" style="margin-left: 10px">
-                                                            <tr>
                                                                 <td><label for="formas"  style="width: 100%">Formas de Pago:</label></td>
                                                                 <td><select name="formas" id="formas">
                                                                         <option value="Contado">Contado</option>
                                                                         <option value="Credito">Crédito</option>
                                                                     </select> </td>
-                                                                <!--<td><label for="adelanto" style="margin-left: 10px">Adelanto:</label></td>-->
-                                                                <td><input type="hidden" name="adelanto" id="adelanto" class="campo" placeholder="$0.00" style="width: 120px"/></td>
-                                                                <!--<td><label for="meses" style="margin-left: 10px">Meses:</label></td>-->
-                                                                <td><input type="hidden" name="meses" id="meses"  class="campo" style="width: 100px" min="1" max="3"/></td>
-                                                                <!--<td><label for="cuotas" style="margin-left: 10px">Cuotas:</label></td>-->
-                                                                <td><select id="cuotas" name="cuotas" style="width: 100px; display: none"></select></td>
+                                                            </tr>  
+                                                        </table>
+
+                                                        <table cellpadding="2" style="margin-left: 10px; display: none">
+                                                            <tr>
+                                                                <td><label for="adelanto" style="margin-left: 10px">Adelanto:</label></td>
+                                                                <td><input type="text" name="adelanto" id="adelanto" class="campo" placeholder="$0.00" style="width: 120px"/></td>
+                                                                <td><label for="meses" style="margin-left: 10px">Meses:</label></td>
+                                                                <td><input type="text" name="meses" id="meses"  class="campo" style="width: 100px" min="1" max="3"/></td>
+                                                                <td><label for="cuotas" style="margin-left: 10px">Cuotas:</label></td>
+                                                                <td><select id="cuotas" name="cuotas" style="width: 100px"></select></td>
                                                             </tr>
                                                         </table>
                                                     </fieldset>

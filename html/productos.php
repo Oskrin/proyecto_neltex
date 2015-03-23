@@ -286,6 +286,23 @@ include '../menus/menu.php';
                                                             </select>
                                                         </div>
                                                     </div>
+                                                    <div class="control-group">
+                                                        <label class="control-label" for="bodegas">Bodegas: <font color="red">*</font></label>
+                                                        <div class="controls">
+                                                            <div class="input-append">
+                                                                <select id="bodegas" name="bodegas" class="span4">
+                                                                    <option value="">........Seleccione........</option>
+                                                                    <?php
+                                                                    $consulta = pg_query("select * from bodegas ");
+                                                                    while ($row = pg_fetch_row($consulta)) {
+                                                                        echo "<option id=$row[0] value=$row[0]>$row[1]</option>";
+                                                                    }
+                                                                    ?>
+                                                                </select>
+                                                                <!-- <input type="button" class="btn btn-primary" id='btnCategoria' value="..." title="INGRESO CATEGORIAS"/> -->
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
 

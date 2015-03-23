@@ -717,7 +717,7 @@ $("#precio_mayorista").keyup(function() {
     jQuery("#list").jqGrid({
         url: '../xml/datos_productos.php',
         datatype: 'xml',
-        colNames: ['ID', 'CÓDIGO', 'CÓDIGO BARRAS', 'ARTICULO', 'IVA', 'SERIES', 'PRECIO COMPRA', 'UTILIDAD MINORISTA', 'PRECIO MINORISTA', 'UTILIDAD MAYORISTA', 'PRECIO MAYORISTA', 'CATEGORIA', 'MARCA', 'DESCUENTO', 'STOCK', 'MÍNIMO', 'MÁXIMO', 'FECHA COMPRA', 'CARACTERISTICAS', 'OBSERVACIONES', 'ESTADO','INVENTARIABLE', 'IMAGEN'],
+        colNames: ['ID', 'CÓDIGO', 'CÓDIGO BARRAS', 'ARTICULO', 'IVA', 'SERIES', 'PRECIO COMPRA', 'UTILIDAD MINORISTA', 'PRECIO MINORISTA', 'UTILIDAD MAYORISTA', 'PRECIO MAYORISTA', 'CATEGORIA', 'MARCA', 'DESCUENTO', 'STOCK', 'MÍNIMO', 'MÁXIMO', 'FECHA COMPRA', 'CARACTERISTICAS', 'OBSERVACIONES', 'ESTADO','INVENTARIABLE', 'IMAGEN','','BODEGA'],
         colModel: [
             {name: 'cod_productos', index: 'cod_productos', editable: true, align: 'center', width: '60', search: false, frozen: true, editoptions: {readonly: 'readonly'}, formoptions: {elmprefix: ""}},
             {name: 'cod_prod', index: 'cod_prod', editable: true, align: 'center', width: '120', search: true, frozen: true, formoptions: {elmsuffix: " (*)"}, editrules: {required: true}},
@@ -741,7 +741,9 @@ $("#precio_mayorista").keyup(function() {
             {name: 'aplicacion', index: 'aplicacion', editable: true, align: 'center', width: '120', search: false, frozen: true, editoptions: {readonly: 'readonly'}, formoptions: {elmprefix: ""}},
             {name: 'vendible', index: 'vendible', editable: true, align: 'center', hidden: true, width: '120', search: false, frozen: true, editoptions: {readonly: 'readonly'}, formoptions: {elmprefix: ""}},
             {name: 'inventario', index: 'inventario', editable: true, align: 'center', hidden: true, width: '120', search: false, frozen: true, editoptions: {readonly: 'readonly'}, formoptions: {elmprefix: ""}},
-            {name: 'imagen', index: 'imagen', editable: true, align: 'center', width: '120', search: false, frozen: true, editoptions: {readonly: 'readonly'}, formoptions: {elmprefix: ""}}
+            {name: 'imagen', index: 'imagen', editable: true, align: 'center', width: '120', search: false, frozen: true, editoptions: {readonly: 'readonly'}, formoptions: {elmprefix: ""}},
+            {name: 'bodegas', index: 'bodegas',hidden: true, editable: true, align: 'center', width: '120', search: false, frozen: true, editoptions: {readonly: 'readonly'}, formoptions: {elmprefix: ""}},
+            {name: 'descripcion', index: 'descripcion',hidden: false, editable: true, align: 'center', width: '120', search: false, frozen: true, editoptions: {readonly: 'readonly'}, formoptions: {elmprefix: ""}}
         ],
         rowNum: 10,
         width: 830,
