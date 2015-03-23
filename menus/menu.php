@@ -39,10 +39,7 @@ function menu_1() {
                             <li><a href="../html/notasCredito.php" target="_blank">Notas de crédito</a></li>
                         </ul>
                     </li>
-<<<<<<< HEAD
-                    
-=======
->>>>>>> origin/master
+
                     <li><a href="" target="_parent">Transferencias</a>
                         <ul>
                             <li><a href="../html/ingresos.php" target="_blank">Ingresos</a></li>
@@ -61,14 +58,13 @@ function menu_1() {
                            </li>
                         </ul>
                     </li>
-<<<<<<< HEAD
+
                      <li><a href="../html/plan_cuentas.php" target="_blank">Plan Cuentas</a></li>
                     <a href="../html/registroGastos.php" target="_blank">Registro Gastos</a></li>
                     <li><a href="../html/gastos.php" target="_blank">Gastos Internos</a>
                 </ul>
             </li>
 
-=======
                     <li><a href="../html/registroGastos.php" target="_blank">Registro Gastos</a></li>
                     <li><a href="../html/gastos.php" target="_blank">Gastos Internos</a></li>
                 </ul>
@@ -94,8 +90,7 @@ function menu_1() {
                     </li>
                 </ul>
             </li>
-            
->>>>>>> origin/master
+
             <li><a href="" target="_parent"><i class="icon-print"></i> Reportes</a>
                 <ul>
                     <li><a href="" target="_parent">Productos</a>
@@ -105,10 +100,7 @@ function menu_1() {
                             <li><a href="" id="producto_existencia_minima">Productos existencia mínima</a></li>
                         </ul>
                    </li>
-<<<<<<< HEAD
-=======
-                   
->>>>>>> origin/master
+
                    <li><a href="" target="_parent">Compras</a>
                         <ul>
                             <li><a href="">Resumen de compras locales</a>
@@ -123,10 +115,7 @@ function menu_1() {
                             </li>
                         </ul>
                    </li>
-<<<<<<< HEAD
-=======
-                   
->>>>>>> origin/master
+
                    <li><a href="" target="_parent">Ventas</a>
                         <ul>
                             <li><a href="" target="_parent">Flujo de caja</a>
@@ -151,14 +140,11 @@ function menu_1() {
                             <li><a href="" id="buscar_serie">Buscar por nro de serie</a></li>
                         </ul>
                    </li>
-<<<<<<< HEAD
-=======
-                   
->>>>>>> origin/master
+
                    <li><a href="" target="_parent">Cartera</a>
                         <ul>
-                            <!--<li><a href="">Estados de cuentas proveedores locales</a></li>
-                            <li><a href="">Estados de cuentas de clientes</a></li>-->
+                            li><a href="">Estados de cuentas proveedores locales</a></li>
+                            <li><a href="">Estados de cuentas de clientes</a></li>
                             <li><a href="">Cuentas por cobrar</a>
                                <ul>
                                   <li><a href="" id="facturas_canceladas">Listado de facturas canceladas</a></li>
@@ -176,20 +162,15 @@ function menu_1() {
                             </li>
                         </ul>
                    </li>
-<<<<<<< HEAD
-                   <!--<li><a href="" target="_parent">Proformas</a>
-=======
+
                   <li><a href="" target="_parent">Proformas</a>
->>>>>>> origin/master
+
                         <ul>
                             <li><a href="" target="_parent" id="proformas">Proformas</a></li>
                             <li><a href="" id="lista_proformas">Lista de Proformas</a></li>
                         </ul>
-<<<<<<< HEAD
-                  </li> --> 
-=======
-                   </li> 
->>>>>>> origin/master
+                  </li> 
+
                   <li><a href="" target="_parent">Gastos</a>
                       <ul>
                         <li><a href="" id="gastos">Gastos por factura</a></li> 
@@ -197,10 +178,8 @@ function menu_1() {
                         <li><a href="" id="gastos_internos">Gastos Internos Fechas</a></li>         
                       </ul>
                   </li> 
-<<<<<<< HEAD
-=======
+
                   <li><a href="" target="_parent">Plan de Cuentas</a></li> 
->>>>>>> origin/master
                 </ul>
             </li>
            
