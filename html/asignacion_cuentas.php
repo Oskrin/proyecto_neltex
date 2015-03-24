@@ -86,17 +86,14 @@ include '../menus/menu.php';
                   <div class="row">
                   <div class="span6">
                    <div class="control-group">
-                    <label class="control-label" for="categoria">Categoría:</label>
+                    <label class="control-label" for="categoria">Asignar Cuenta:</label>
                     <div class="controls">
                         <div class="input-append">
                             <select id="categoria" name="categoria" class="span4">
                                 <option value="">........Seleccione........</option>
-                                <?php
-                                $consulta = pg_query("select * from categoria ");
-                                while ($row = pg_fetch_row($consulta)) {
-                                    echo "<option id=$row[0] value=$row[1]>$row[1]</option>";
-                                }
-                                ?>
+                                <option value="clientes">clientes</option>
+                                <option value="proveedores">proveedores</option>
+                                <option value="bodegas">bodegas</option>
                             </select>
                             <!-- <input type="button" class="btn btn-primary" id='btnCategoria' value="..." title="INGRESO CATEGORIAS"/> -->
                         </div>
@@ -104,10 +101,26 @@ include '../menus/menu.php';
                 </div>   
                               </div> 
                               <div class="span6">
-                                  dsfsf
+                                  <input type="button" class="btn btn-primary" id='btnCuenta' value="Agregar Cuenta..." title=""/>
                               </div>
+                             </div>
+                             <br />
+                        <p style="margin-left: 10px">DETALLE PAGOS</p>
+                         <div style="margin-left: 10px; height: 200px; border: solid 0px">
+                            <table id="tablaNuevo" style="width: 400px; margin-left: 20px"  class="table table-striped table-bordered"  >
+                                <thead>
+                                    <tr>
+                                        <th style="width: 200px; text-align: center">Código</th>
+                                        <th style="width: 200px; text-align: center">Cuenta Contable</th>
+                                    </tr>   
+                                </thead>
+                                <tbody>
+                                    <tr></tr>
+                                </tbody>
+                            </table>
+                        </div>
                                   
-                              </div>
+                              
                                </form>
                               </div>
                            </div> 
