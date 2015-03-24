@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-include '../fdpf/fpdf.php';
+include '../fpdf/fpdf.php';
 include '../procesos/base.php';
 conectarse();
 //header("Content-Type: text/html; charset=iso-8859-1 ");

@@ -1,7 +1,7 @@
 <?php
 
 if (empty($_SESSION['id'])) {
-    header('Location: index.php');
+    header('Location: ../index.php');
 }
 
 function menu_1() {
@@ -31,7 +31,7 @@ function menu_1() {
             <li><a href="" target="_parent"><i class="icon-book"></i> Procesos</a>
                 <ul>
                     <li><a href="../html/inventario.php" target="_blank">Inventario</a></li>
-                    <!--<li><a href="../html/proformas.php" target="_blank">Proformas</a></li>-->
+                    <li><a href="../html/proformas.php" target="_blank">Proformas</a></li>
                     <li><a href="" target="_parent">Compras</a>
                         <ul>
                             <li><a href="../html/factura_compra.php" target="_blank">Productos Bodega</a></li>
@@ -41,13 +41,13 @@ function menu_1() {
                     <li><a href="" target="_parent">Ventas</a>
                         <ul>
                             <li><a href="../html/factura_venta.php" target="_blank">Ventas facturación</a></li>
-                            <!--<li><a href="../html/notasCredito.php" target="_blank">Notas de crédito</a></li>-->
+                            <li><a href="../html/notasCredito.php" target="_blank">Notas de crédito</a></li>
                         </ul>
                     </li>
 
                     <li><a href="" target="_parent">Cartera</a>
                         <ul>
-                            <!--<li><a href="../html/cuentasCobrar.php" target="_blank">Cuentas por cobrar</a></li>-->
+                            <li><a href="../html/cuentasCobrar.php" target="_blank">Cuentas por cobrar</a></li>
                             <li><a href="../html/cuentasPagar.php" target="_blank">Cuentas por pagar</a></li>
                             <li><a href="" target="_blank">Externas</a>
                             <ul>
@@ -55,6 +55,12 @@ function menu_1() {
                             <li><a href="../html/CxPexternas.php" target="_blank">Cuentas por pagar</a></li>
                             </ul>
                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="" target="_parent">Transferencias</a>
+                        <ul>
+                            <li><a href="ingresos.php" target="_blank">Ingresos</a></li>
+                            <li><a href="egresos.php" target="_blank">Egresos</a></li>
                         </ul>
                     </li>
                     <li><a href="../html/registroGastos.php" target="_blank">Registro Gastos</a></li>
