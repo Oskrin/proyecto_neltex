@@ -9,6 +9,7 @@ function menu_1() {
             <li><a href="../html/principal.php" target="_parent" class="inicio"><i class="icon-home"></i> Inicio</a></li>
             <li><a href="" target="_parent"> <i class="icon-th-large"></i> Ingresos</a>
                 <ul>
+                    <li><a href="../html/asignacion_cuentas.php" target="_blank">Asignación Cuentas</a></li>
                     <li><a href="../html/usuarios.php" target="_blank">Usuarios</a></li>
                     <li><a href="../html/proveedores.php"target="_blank">Proveedores</a></li>
                     <li><a href="../html/clientes.php" target="_blank">Clientes</a></li>
