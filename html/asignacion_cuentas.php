@@ -105,7 +105,7 @@ include '../menus/menu.php';
                               </div>
                              </div>
                              <br />
-                        <p style="margin-left: 10px">DETALLE PAGOS</p>
+                        <p style="margin-left: 10px">DETALLE CUENTAS</p>
                          <div style="margin-left: 10px; height: 200px; border: solid 0px">
                             <table id="tablaNuevo" style="width: 400px; margin-left: 20px"  class="table table-striped table-bordered"  >
                                 <thead>
