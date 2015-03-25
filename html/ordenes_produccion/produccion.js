@@ -4,7 +4,7 @@ function evento(e) {
 }
 
 function este(){
-window.open('../fdpf/ayuda_general.pdf');
+window.open('../../fpdf/ayuda_general.pdf');
 }
 
 $(function() {
@@ -316,7 +316,7 @@ function guardar_ordenes() {
 
             $.ajax({
                 type: "POST",
-                url: "../procesos/guardar_ordenes.php",
+                url: "guardar_ordenes.php",
                 data: "comprobante=" + $("#comprobante").val() + "&fecha_actual=" + $("#fecha_actual").val() + "&hora_actual=" + $("#hora_actual").val() + "&campo1=" + string_v1 + "&campo2=" + string_v2 + "&subtotal=" + $("#subtot").val() + "&campo3=" + string_v3 + "&campo4=" + string_v4 + "&campo5=" + string_v5 + "&campo6=" + string_v6,
                 success: function(data) {
                     var val = data;
@@ -341,7 +341,7 @@ function guardar_ordenes() {
 function flecha_atras(){
     $.ajax({
         type: "POST",
-        url: "../procesos/flechas.php",
+        url: "../../procesos/flechas.php",
         data: "comprobante=" + $("#comprobante").val() + "&tabla=" + "ordenes_produccion" + "&id_tabla=" + "id_ordenes" + "&tipo=" + 1,
         success: function(data) {
             var val = data;
@@ -362,7 +362,7 @@ function flecha_atras(){
                 $("#list").jqGrid("clearGridData", true);
                 $("#list2").jqGrid("clearGridData", true);
 
-                $.getJSON('../procesos/retornar_ordenes.php?com=' + valor, function(data) {
+                $.getJSON('retornar_ordenes.php?com=' + valor, function(data) {
                     var tama = data.length;
                     if (tama !== 0) {
                         for (var i = 0; i < tama; i = i + 4)
@@ -373,10 +373,8 @@ function flecha_atras(){
                         }
                     }
                 });
-                ///////////////////////////////////////////////////   
-
-                ///////////////////llamar ordenes segunda parte/////
-                $.getJSON('../procesos/retornar_ordenes2.php?com=' + valor, function(data) {
+                
+                $.getJSON('retornar_ordenes2.php?com=' + valor, function(data) {
                     var tama = data.length;
                     if (tama !== 0) {
                         for (var i = 0; i < tama; i = i + 6)
@@ -394,10 +392,8 @@ function flecha_atras(){
                         }
                     }
                 });
-                /////////////////////////////////////////////////////////
-
-                ///////////////////llamar ordenes tercera parte/////
-                $.getJSON('../procesos/retornar_ordenes3.php?com=' + valor, function(data) {
+                
+                $.getJSON('retornar_ordenes3.php?com=' + valor, function(data) {
                     var tama = data.length;
                     if (tama !== 0) {
                         for (var i = 0; i < tama; i = i + 6)
@@ -425,7 +421,7 @@ function flecha_atras(){
 function flecha_siguiente(){
     $.ajax({
         type: "POST",
-        url: "../procesos/flechas.php",
+        url: "../../procesos/flechas.php",
         data: "comprobante=" + $("#comprobante").val() + "&tabla=" + "ordenes_produccion" + "&id_tabla=" + "id_ordenes" + "&tipo=" + 2,
         success: function(data) {
             var val = data;
@@ -446,7 +442,7 @@ function flecha_siguiente(){
                 $("#list").jqGrid("clearGridData", true);
                 $("#list2").jqGrid("clearGridData", true);
 
-                $.getJSON('../procesos/retornar_ordenes.php?com=' + valor, function(data) {
+                $.getJSON('retornar_ordenes.php?com=' + valor, function(data) {
                     var tama = data.length;
                     if (tama !== 0) {
                         for (var i = 0; i < tama; i = i + 4)
@@ -457,10 +453,7 @@ function flecha_siguiente(){
                         }
                     }
                 });
-                ///////////////////////////////////////////////////  
-                //  
-                ///////////////////llamar ordenes segunda parte/////
-                $.getJSON('../procesos/retornar_ordenes2.php?com=' + valor, function(data) {
+                $.getJSON('retornar_ordenes2.php?com=' + valor, function(data) {
                     var tama = data.length;
                     if (tama !== 0) {
                         for (var i = 0; i < tama; i = i + 6)
@@ -477,10 +470,8 @@ function flecha_siguiente(){
                         }
                     }
                 });
-                /////////////////////////////////////////////////////////
 
-                ///////////////////llamar ordenes tercera parte/////
-                $.getJSON('../procesos/retornar_ordenes3.php?com=' + valor, function(data) {
+                $.getJSON('retornar_ordenes3.php?com=' + valor, function(data) {
                     var tama = data.length;
                     if (tama !== 0) {
                         for (var i = 0; i < tama; i = i + 6)
@@ -664,7 +655,7 @@ function inicio() {
 
     /////buscador productos primera tabla///// 
     $("#codigo").autocomplete({
-        source: "../procesos/buscar_producto3.php",
+        source: "buscar_producto3.php",
         minLength: 1,
         focus: function(event, ui) {
         $("#codigo").val(ui.item.value);
@@ -693,7 +684,7 @@ function inicio() {
 
     /////buscador productos primera tabla///// 
     $("#producto").autocomplete({
-        source: "../procesos/buscar_producto4.php",
+        source: "buscar_producto4.php",
         minLength: 1,
         focus: function(event, ui) {
         $("#producto").val(ui.item.value);
@@ -722,7 +713,7 @@ function inicio() {
 
     /////buscador productos2 segunda tabla///// 
     $("#codigo2").autocomplete({
-        source: "../procesos/buscar_producto5.php",
+        source: "buscar_producto5.php",
         minLength: 1,
         focus: function(event, ui) {
         $("#codigo2").val(ui.item.value);
@@ -746,41 +737,36 @@ function inicio() {
         .append("<a>" + item.value + "</a>")
         .appendTo(ul);
     };
-    //////////////////////////////
-
-    /////buscador productos2 segunda tabla///// 
-    $("#producto2").autocomplete({
-        source: "../procesos/buscar_producto6.php",
-        minLength: 1,
-        focus: function(event, ui) {
-        $("#producto2").val(ui.item.value);
-        $("#cod_producto2").val(ui.item.cod_producto2);
-        $("#codigo2").val(ui.item.codigo2);
-        $("#precio2").val(ui.item.precio2);
-        $("#disponibles").val(ui.item.disponibles);
-        return false;
-        },
-        select: function(event, ui) {
-        $("#producto2").val(ui.item.value);
-        $("#cod_producto2").val(ui.item.cod_producto2);
-        $("#codigo2").val(ui.item.codigo2);
-        $("#precio2").val(ui.item.precio2);
-        $("#disponibles").val(ui.item.disponibles);
-        return false;
-        }
-        }).data("ui-autocomplete")._renderItem = function(ul, item) {
-        return $("<li>")
-        .append("<a>" + item.value + "</a>")
-        .appendTo(ul);
-    };
-    //////////////////////////////
     
-    ///////////calendarios/////
+    $("#producto2").autocomplete({
+        source: "buscar_producto6.php",
+        minLength: 1,
+        focus: function(event, ui) {
+        $("#producto2").val(ui.item.value);
+        $("#cod_producto2").val(ui.item.cod_producto2);
+        $("#codigo2").val(ui.item.codigo2);
+        $("#precio2").val(ui.item.precio2);
+        $("#disponibles").val(ui.item.disponibles);
+        return false;
+        },
+        select: function(event, ui) {
+        $("#producto2").val(ui.item.value);
+        $("#cod_producto2").val(ui.item.cod_producto2);
+        $("#codigo2").val(ui.item.codigo2);
+        $("#precio2").val(ui.item.precio2);
+        $("#disponibles").val(ui.item.disponibles);
+        return false;
+        }
+        }).data("ui-autocomplete")._renderItem = function(ul, item) {
+        return $("<li>")
+        .append("<a>" + item.value + "</a>")
+        .appendTo(ul);
+    };
+    
     $('#fecha_actual').datepicker({
         dateFormat: 'yy-mm-dd'
     });
 
-//////////////////////tabla productos/////////////////////////
     jQuery("#list").jqGrid({
         datatype: "local",
         colNames: ['', 'ID', 'Código', 'Producto', 'Cantidad', 'Precio Costo', 'Total', 'stock'],
@@ -881,7 +867,7 @@ function inicio() {
             
      ////////////////////buscador ordenes/////////////////////////
         jQuery("#list3").jqGrid({
-        url: '../xml/xmlBuscarOrdenes.php',
+        url: 'xmlBuscarOrdenes.php',
         datatype: 'xml',
         colNames: ['ID','CÓDIGO','BARRAS','PRODUCTO','TOTAL'],
         colModel: [
@@ -920,7 +906,7 @@ function inicio() {
         $("#list").jqGrid("clearGridData", true);
         $("#list2").jqGrid("clearGridData", true);
         
-        $.getJSON('../procesos/retornar_ordenes.php?com=' + valor, function(data) {
+        $.getJSON('retornar_ordenes.php?com=' + valor, function(data) {
             var tama = data.length;
             if (tama !== 0) {
                 for (var i = 0; i < tama; i = i + 4)
@@ -932,10 +918,8 @@ function inicio() {
                 }
             }
         });
-        ///////////////////////////////////////////////////    
-        //
-        ///////////////////llamar ordenes segunda parte/////
-        $.getJSON('../procesos/retornar_ordenes2.php?com=' + valor, function(data) {
+
+        $.getJSON('retornar_ordenes2.php?com=' + valor, function(data) {
             var tama = data.length;
             if (tama !== 0) {
                 for (var i = 0; i < tama; i = i + 6)
@@ -952,10 +936,8 @@ function inicio() {
                 }
             }
         });
-        /////////////////////////////////////////////////////////
-        
-        ///////////////////llamar ordenes tercera parte/////
-        $.getJSON('../procesos/retornar_ordenes3.php?com=' + valor, function(data) {
+
+        $.getJSON('retornar_ordenes3.php?com=' + valor, function(data) {
             var tama = data.length;
             if (tama !== 0) {
                 for (var i = 0; i < tama; i = i + 6)
@@ -1026,7 +1008,7 @@ function inicio() {
         $("#list").jqGrid("clearGridData", true);
         $("#list2").jqGrid("clearGridData", true);
 
-        $.getJSON('../procesos/retornar_ordenes.php?com=' + valor, function(data) {
+        $.getJSON('retornar_ordenes.php?com=' + valor, function(data) {
             var tama = data.length;
             if (tama !== 0) {
                 for (var i = 0; i < tama; i = i + 4)
@@ -1038,10 +1020,8 @@ function inicio() {
                 }
             }
         });
-        ///////////////////////////////////////////////////    
-        //
-        ///////////////////llamar ordenes segunda parte/////
-        $.getJSON('../procesos/retornar_ordenes2.php?com=' + valor, function(data) {
+        
+        $.getJSON('retornar_ordenes2.php?com=' + valor, function(data) {
             var tama = data.length;
             if (tama !== 0) {
                 for (var i = 0; i < tama; i = i + 6)
@@ -1059,10 +1039,8 @@ function inicio() {
                 }
             }
         });
-        /////////////////////////////////////////////////////////
-        
-          ///////////////////llamar ordenes tercera parte/////
-        $.getJSON('../procesos/retornar_ordenes3.php?com=' + valor, function(data) {
+    
+        $.getJSON('retornar_ordenes3.php?com=' + valor, function(data) {
             var tama = data.length;
             if (tama !== 0) {
                 for (var i = 0; i < tama; i = i + 6)

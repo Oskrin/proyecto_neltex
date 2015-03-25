@@ -1,22 +1,15 @@
 <?php
-session_start();
-if (empty($_SESSION['id'])) {
-    header('Location: index.php');
-}
-include '../menus/menu.php';
-////////////////comprobante ordenes//////////////////
-include '../procesos/base.php';
-conectarse();
-error_reporting(0);
-
-
-/////////////////contador produccion///////////
-$cont1 = 0;
-$consulta2 = pg_query("select max(id_ordenes) from ordenes_produccion");
-while ($row = pg_fetch_row($consulta2)) {
-    $cont1 = $row[0];
-}
-$cont1++;
+    session_start();
+    include '../../menus/menu.php';
+    include '../../procesos/base.php';
+    conectarse();
+    error_reporting(0);
+    $cont1 = 0;
+    $consulta2 = pg_query("select max(id_ordenes) from ordenes_produccion");
+    while ($row = pg_fetch_row($consulta2)) {
+        $cont1 = $row[0];
+    }
+    $cont1++;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,36 +18,36 @@ $cont1++;
         <title>.:ORDENES DE PRODUCCIÓN:.</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
         <meta name="apple-mobile-web-app-capable" content="yes"> 
-        <link rel="stylesheet" type="text/css" href="../css/buttons.css"/>
-        <link rel="stylesheet" type="text/css" href="../css/jquery-ui-1.10.4.custom.css"/>    
-        <link rel="stylesheet" type="text/css" href="../css/normalize.css"/>    
-        <link rel="stylesheet" type="text/css" href="../css/ui.jqgrid.css"/> 
-        <link href="../css/bootstrap.min.css" rel="stylesheet">
-        <link href="../css/bootstrap-responsive.min.css" rel="stylesheet">
-        <link href="../css/font-awesome.css" rel="stylesheet">
-        <link href="../css/style.css" rel="stylesheet">
-        <link href="../css/link_top.css" rel="stylesheet" />
-        <link rel="stylesheet" href="../css/alertify.core.css" />
-        <link rel="stylesheet" href="../css/alertify.default.css" id="toggleCSS" />
-        <link href="../css/sm-core-css.css" rel="stylesheet" type="text/css" />
-        <link href="../css/sm-blue/sm-blue.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" type="text/css" href="../../css/buttons.css"/>
+        <link rel="stylesheet" type="text/css" href="../../css/jquery-ui-1.10.4.custom.css"/>    
+        <link rel="stylesheet" type="text/css" href="../../css/normalize.css"/>    
+        <link rel="stylesheet" type="text/css" href="../../css/ui.jqgrid.css"/> 
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/bootstrap-responsive.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.css" rel="stylesheet">
+        <link href="../../css/style.css" rel="stylesheet">
+        <link href="../../css/link_top.css" rel="stylesheet" />
+        <link rel="stylesheet" href="../../css/alertify.core.css" />
+        <link rel="stylesheet" href="../../css/alertify.default.css" id="toggleCSS" />
+        <link href="../../css/sm-core-css.css" rel="stylesheet" type="text/css" />
+        <link href="../../css/sm-blue/sm-blue.css" rel="stylesheet" type="text/css" />
 
-        <script type="text/javascript" src="../js/bootstrap.js"></script>
-        <script type="text/javascript" src="../js/jquery-loader.js"></script>
-        <script type="text/javascript" src="../js/jquery-1.10.2.js"></script>
-        <script type="text/javascript" src="../js/jquery-ui-1.10.4.custom.min.js"></script>
-        <script type="text/javascript" src="../js/grid.locale-es.js"></script>
-        <script type="text/javascript" src="../js/jquery.jqGrid.src.js"></script>
-        <script type="text/javascript" src="../js/buttons.js" ></script>
-        <script type="text/javascript" src="../js/validCampoFranz.js" ></script>
-        <script type="text/javascript" src="../js/produccion.js"></script>
-        <script type="text/javascript" src="../js/datosUser.js"></script>
-        <script type="text/javascript" src="../js/ventana_reporte.js"></script>
-        <script type="text/javascript" src="../js/guidely/guidely.min.js"></script>
-        <script type="text/javascript" src="../js/easing.js" ></script>
-        <script type="text/javascript" src="../js/jquery.ui.totop.js" ></script>
-        <script type="text/javascript" src="../js/jquery.smartmenus.js"></script>
-        <script type="text/javascript" src="../js/alertify.min.js"></script>
+        <script type="text/javascript" src="../../js/bootstrap.js"></script>
+        <script type="text/javascript" src="../../js/jquery-loader.js"></script>
+        <script type="text/javascript" src="../../js/jquery-1.10.2.js"></script>
+        <script type="text/javascript" src="../../js/jquery-ui-1.10.4.custom.min.js"></script>
+        <script type="text/javascript" src="../../js/grid.locale-es.js"></script>
+        <script type="text/javascript" src="../../js/jquery.jqGrid.src.js"></script>
+        <script type="text/javascript" src="../../js/buttons.js" ></script>
+        <script type="text/javascript" src="../../js/validCampoFranz.js" ></script>
+        <script type="text/javascript" src="produccion.js"></script>
+        <script type="text/javascript" src="../../js/datosUser.js"></script>
+        <script type="text/javascript" src="../../js/ventana_reporte.js"></script>
+        <script type="text/javascript" src="../../js/guidely/guidely.min.js"></script>
+        <script type="text/javascript" src="../../js/easing.js" ></script>
+        <script type="text/javascript" src="../../js/jquery.ui.totop.js" ></script>
+        <script type="text/javascript" src="../../js/jquery.smartmenus.js"></script>
+        <script type="text/javascript" src="../../js/alertify.min.js"></script>
     </head>
 
     <body>
@@ -241,8 +234,8 @@ $cont1++;
                 </div> 
             </div> 
         </div> 
-        <script type="text/javascript" src="../js/base.js"></script>
-        <script type="text/javascript" src="../js/jquery.ui.datepicker-es.js"></script>
+        <script type="text/javascript" src="../../js/base.js"></script>
+        <script type="text/javascript" src="../../js/jquery.ui.datepicker-es.js"></script>
 
         <div class="footer">
             <div class="footer-inner">

@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-include '../procesos/base.php';
+include '../../procesos/base.php';
 $page = $_GET['page'];
 $limit = $_GET['rows'];
 $sidx = $_GET['sidx'];

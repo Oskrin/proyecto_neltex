@@ -4,7 +4,7 @@ function evento(e) {
 }
 
 function este(){
-window.open('../fdpf/ayuda_general.pdf');
+window.open('../../fpdf/ayuda_general.pdf');
 }
 
 function scrollToBottom() {
@@ -129,7 +129,7 @@ function guardar_empresa() {
                                                 formURL=formURL; 
                                             
                                                 $.ajax({
-                                                    url: "../procesos/guardar_empresa2.php",
+                                                    url: "guardar_empresa2.php",
                                                     type: "POST",
                                                     data:  formData,
                                                     mimeType:"multipart/form-data",
@@ -228,7 +228,7 @@ function modificar_empresa(){
                                                 formURL=formURL; 
                                             
                                                 $.ajax({
-                                                    url: "../procesos/modificar_empresa.php",
+                                                    url: "modificar_empresa.php",
                                                     type: "POST",
                                                     data:  formData,
                                                     mimeType:"multipart/form-data",
@@ -299,202 +299,7 @@ function inicio() {
             doc = frame.document;
         }
         return doc;
-    }
-    //////////////////////////
-    
-    ///////////////enviar datos////////////////
-    //    $("#btnGuardar").click(function (){
-    //        var iden = $("#ruc_empresa").val();
-    //        if ($("#nombre_empresa").val() === "") {
-    //            $("#nombre_empresa").focus();
-    //            alert("Ingrese nombre de la empresa");
-    //        } else {
-    //            if ($("#ruc_empresa").val() === "") {
-    //                $("#ruc_empresa").focus();
-    //                alert("Ingrese ruc de la empresa");
-    //            }else{
-    //                if ( iden.length < 13) {
-    //                    $("#ruc_ci").focus();
-    //                    alert("Error.. Minimo 13 digitos ");
-    //                } else {
-    //                    if ($("#descripcion_empresa").val() === "") {
-    //                        $("#descripcion_empresa").focus();
-    //                        alert("Ingrese una descripción");
-    //                    }else{
-    //                        if ($("#propietario_empresa").val() === "") {
-    //                            $("#propietario_empresa").focus();
-    //                            alert("Ingrese el propietario");
-    //                        }else{
-    //                            if ($("#direccion_empresa").val() === "") {
-    //                                $("#direccion_empresa").focus();
-    //                                alert("Ingrese dirección de la empresa");
-    //                            }else{
-    //                                if ($("#telefono_empresa").val() === "") {
-    //                                    $("#telefono_empresa").focus();
-    //                                    alert("Ingrese telefóno de la empresa");
-    //                                }else{ 
-    //                                    $("#empresa_form").submit(function(e)
-    //                                    {
-    //                                        var formObj = $(this);
-    //                                        var formURL = formObj.attr("action");
-    //                                        if(window.FormData !== undefined)  
-    //                                        {	
-    //                                            var formData = new FormData(this);   
-    //                                            formURL=formURL;        	
-    //                                            $.ajax({
-    //                                                url: formURL,
-    //                                                type: "POST",
-    //                                                data:  formData,
-    //                                                mimeType:"multipart/form-data",
-    //                                                contentType: false,
-    //                                                cache: false,
-    //                                                processData:false,
-    //                                                success: function(data, textStatus, jqXHR)
-    //                                                {
-    //                                                    var res=data;
-    //                                                    if(res == 1){
-    //                                                        alert("Empresa guardada correctamente");
-    //                                                        location.reload();
-    //                                                    }
-    //                                                    else{
-    //                                                        alert("Error..... registro no guardado");
-    //                                                    }
-    //                                                },
-    //                                                error: function(jqXHR, textStatus, errorThrown) 
-    //                                                {
-    //                                                } 	        
-    //                                            });
-    //                                            e.preventDefault();
-    //                                        }
-    //                                        else  //for olden browsers
-    //                                        {
-    //                                            //generate a random id
-    //                                            var  iframeId = "unique" + (new Date().getTime());
-    //                                            //create an empty iframe
-    //                                            var iframe = $('<iframe src="javascript:false;" name="'+iframeId+'" />');
-    //                                            //hide it
-    //                                            iframe.hide();
-    //                                            //set form target to iframe
-    //                                            formObj.attr("target",iframeId);
-    //                                            //Add iframe to body
-    //                                            iframe.appendTo("body");
-    //                                            iframe.load(function(e)
-    //                                            {
-    //                                                var doc = getDoc(iframe[0]);
-    //                                                var docRoot = doc.body ? doc.body : doc.documentElement;
-    //                                                var data = docRoot.innerHTML;
-    //                                            //data return from server.			
-    //                                            });
-    //                                        }
-    //                                    });
-    //                                    $("#empresa_form").submit();
-    //                                }
-    //                            }
-    //                        }
-    //                    }
-    //                } 
-    //            }
-    //        }
-    //    });
-    /////////////////////////////////////////
-    
-    
-    ///////////////modificar empresa//////////////////////////
-    //    $("#btnModificar").click(function (){
-    //        var iden = $("#ruc_empresa").val();
-    //        if ($("#nombre_empresa").val() === "") {
-    //            $("#nombre_empresa").focus();
-    //            alert("Ingrese nombre de la empresa");
-    //        } else {
-    //            if ($("#ruc_empresa").val() === "") {
-    //                $("#ruc_empresa").focus();
-    //                alert("Ingrese ruc de la empresa");
-    //            }else{
-    //                if ( iden.length < 13) {
-    //                    $("#ruc_ci").focus();
-    //                    alert("Error.. Minimo 13 digitos ");
-    //                } else {
-    //                    if ($("#descripcion_empresa").val() === "") {
-    //                        $("#descripcion_empresa").focus();
-    //                        alert("Ingrese una descripción");
-    //                    }else{
-    //                        if ($("#propietario_empresa").val() === "") {
-    //                            $("#propietario_empresa").focus();
-    //                            alert("Ingrese el propietario");
-    //                        }else{
-    //                            if ($("#direccion_empresa").val() === "") {
-    //                                $("#direccion_empresa").focus();
-    //                                alert("Ingrese dirección de la empresa");
-    //                            }else{
-    //                                if ($("#telefono_empresa").val() === "") {
-    //                                    $("#telefono_empresa").focus();
-    //                                    alert("Ingrese telefóno de la empresa");
-    //                                }else{ 
-    //                                    $("#empresa_form").submit(function(e)
-    //                                    {
-    //                                        var formObj = $(this);
-    //                                        var formURL = formObj.attr("action");
-    //                                        if(window.FormData !== undefined)  
-    //                                        {	
-    //                                            var formData = new FormData(this);   
-    //                                            formURL=formURL; 
-    //                                            
-    //                                            $.ajax({
-    //                                                url: "../procesos/modificar_empresa.php",
-    //                                                type: "POST",
-    //                                                data:  formData,
-    //                                                mimeType:"multipart/form-data",
-    //                                                contentType: false,
-    //                                                cache: false,
-    //                                                processData:false,
-    //                                                success: function(data, textStatus, jqXHR)
-    //                                                {
-    //                                                    var res=data;
-    //                                                    if(res == 1){
-    //                                                        alert("Empresa modificada correctamente");
-    //                                                        location.reload();
-    //                                                    }
-    //                                                    else{
-    //                                                        alert("Error..... registro no modificado");
-    //                                                    }
-    //                                                },
-    //                                                error: function(jqXHR, textStatus, errorThrown) 
-    //                                                {
-    //                                                } 	        
-    //                                            });
-    //                                            e.preventDefault();
-    //                                        }
-    //                                        else  //for olden browsers
-    //                                        {
-    //                                            //generate a random id
-    //                                            var  iframeId = "unique" + (new Date().getTime());
-    //                                            //create an empty iframe
-    //                                            var iframe = $('<iframe src="javascript:false;" name="'+iframeId+'" />');
-    //                                            //hide it
-    //                                            iframe.hide();
-    //                                            //set form target to iframe
-    //                                            formObj.attr("target",iframeId);
-    //                                            //Add iframe to body
-    //                                            iframe.appendTo("body");
-    //                                            iframe.load(function(e)
-    //                                            {
-    //                                                var doc = getDoc(iframe[0]);
-    //                                                var docRoot = doc.body ? doc.body : doc.documentElement;
-    //                                                var data = docRoot.innerHTML;
-    //                                            //data return from server.			
-    //                                            });
-    //                                        }
-    //                                    });
-    //                                    $("#empresa_form").submit();
-    //                                }
-    //                            }
-    //                        }
-    //                    }
-    //                } 
-    //            }
-    //        }
-    //    });
-    
+    }      
 
     $("#ruc_empresa").validCampoFranz("0123456789");
     $("#telefono_empresa").validCampoFranz("0123456789");
@@ -578,7 +383,7 @@ function inicio() {
 
 /////////////tabla clientes/////////
  jQuery("#list").jqGrid({
-        url: '../xml/datos_empresa.php',
+        url: 'datos_empresa.php',
         datatype: 'xml',
         colNames: ['Codigo', 'Empresa', 'RUC', 'Descripción', 'Propietario', 'Dirección', 'Telefóno', 'Celular', 'País', 'Empresa', 'Fax', 'Correo', 'Página Web', 'Imagen'],
         colModel: [
@@ -604,14 +409,13 @@ function inicio() {
         sortname: 'id_empresa',
         shrinkToFit: false,
         sortorder: 'asc',
-        caption: 'Lista de Empresa',
-        editurl: 'procesos/estadio_del.php',
+        caption: 'Lista de Empresa',        
         viewrecords: true,
         ondblClickRow: function(){
          var id = jQuery("#list").jqGrid('getGridParam', 'selrow');
          jQuery('#list').jqGrid('restoreRow', id);   
          var ret = jQuery("#list").jqGrid('getRowData', id);
-         $("#foto").attr("src", "../logos_empresa/"+ ret.imagen);
+         $("#foto").attr("src", "../../logos_empresa/"+ ret.imagen);
          jQuery("#list").jqGrid('GridToForm', id, "#empresa_form");
          $("#btnGuardar").attr("disabled", true);
          $("#empresas").dialog("close");    

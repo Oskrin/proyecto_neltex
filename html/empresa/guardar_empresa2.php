@@ -1,6 +1,6 @@
 <?php
 
-include 'base.php';
+include '../../procesos/base.php';
 conectarse();
 error_reporting(0);
 $cont = 0;
@@ -24,7 +24,7 @@ $nombre = basename($_FILES["archivo"]["name"], "." . $extension);
 //////////////////////////
 
 $foto = $cont . '.' . $extension;
-move_uploaded_file($_FILES["archivo"]["tmp_name"], "../logos_empresa/" . $foto);
+move_uploaded_file($_FILES["archivo"]["tmp_name"], "../../logos_empresa/" . $foto);
 
 pg_query("insert into empresa values('$cont','$_POST[nombre_empresa]','$_POST[ruc_empresa]','$_POST[direccion_empresa]','$_POST[telefono_empresa]','$_POST[celular_empresa]','$_POST[pais_empresa]','$_POST[ciudad_empresa]','$_POST[fax_empresa]','$_POST[correo_empresa]','$_POST[pagina_empresa]','$_POST[descripcion_empresa]','$_POST[propietario_empresa]','$foto','Activo')");
 $data = 1;

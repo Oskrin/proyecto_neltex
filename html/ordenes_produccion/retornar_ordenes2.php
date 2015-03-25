@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-include 'base.php';
+include '../../procesos/base.php';
 conectarse();
 error_reporting(0);
 $id = $_GET['com'];

@@ -10,7 +10,7 @@ var dialogo =
 };
 
 function este(){
-window.open('../fdpf/ayuda_general.pdf');
+window.open('../../fpdf/ayuda_general.pdf');
 }
 
 function enter(e) {

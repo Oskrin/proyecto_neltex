@@ -1,6 +1,6 @@
 <?php
 
-include '../procesos/base.php';
+include '../../procesos/base.php';
 $page = $_GET['page'];
 $limit = $_GET['rows'];
 $sidx = $_GET['sidx'];
@@ -10,7 +10,7 @@ $search = $_GET['_search'];
 
 if (!$sidx)
     $sidx = 1;
-$result = pg_query("SELECT COUNT(*) AS count FROM detalles_permiso");
+$result = pg_query("SELECT COUNT(*) AS count FROM detalle_adicional");
 $row = pg_fetch_row($result);
 $count = $row[0];
 if ($count > 0 && $limit > 0) {
@@ -24,7 +24,7 @@ $start = $limit * $page - $limit;
 if ($start < 0)
     $start = 0;
 if ($search == 'false') {
-    $SQL = "select * from detalles_permiso D, permisos P where D.id_permisos = P.id_permisos and  P.estado='Activo' and P.id_permisos = '$_GET[id]' ORDER BY  $sidx $sord offset $start limit $limit";
+    $SQL = "select * from detalle_adicional D, detalles_permiso P where D.id_detalles_permiso = P.id_detalles_permiso and  P.estado='Activo' and P.id_detalles_permiso = '$_GET[id]' ORDER BY  $sidx $sord offset $start limit $limit";
 }
 
 
@@ -44,3 +44,4 @@ while ($row = pg_fetch_row($result)) {
 $s .= "</rows>";
 echo $s;
 ?>
+

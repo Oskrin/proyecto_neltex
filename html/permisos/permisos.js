@@ -8,7 +8,7 @@ $(function() {
 });
 
 function este(){
-window.open('../fdpf/ayuda_general.pdf');
+window.open('../../fpdf/ayuda_general.pdf');
 }
 
 function numeros(e) { 
@@ -24,7 +24,7 @@ function inicio() {
         jQuery("#list").setGridWidth($('#centro').width() - 10);
     }).trigger('resize');
     jQuery("#list").jqGrid({
-        url: '../xml/xmlPermisos.php',
+        url: 'xmlPermisos.php',
         datatype: 'xml',
         colNames: ['CÓDIGO', 'DESCRICIÓN'],
         colModel: [
@@ -49,7 +49,7 @@ function inicio() {
 		pager_id = "p_"+subgrid_table_id;
 		$("#"+subgrid_id).html("<table id='"+subgrid_table_id+"' class='scroll'></table><div id='"+pager_id+"' class='scroll'></div>");
 		jQuery("#"+subgrid_table_id).jqGrid({
-			url:"../xml/xmDetallelPermisos.php?id="+row_id,
+			url:"xmDetallelPermisos.php?id="+row_id,
 			datatype: "xml",
 			colNames: ['CÓDIGO','DESCRICIÓN'],
 			colModel: [
@@ -70,7 +70,7 @@ function inicio() {
 		        pager_id2 = "p_"+subgrid_table_id2;
                         $("#"+subgrid_id2).html("<table id='"+subgrid_table_id2+"' class='scroll'></table><div id='"+pager_id2+"' class='scroll'></div>");
                         jQuery("#"+subgrid_table_id2).jqGrid({
-                        url:"../xml/xmlDetalleAdicionales.php?id="+row_id2,
+                        url:"xmlDetalleAdicionales.php?id="+row_id2,
 			datatype: "xml",
 			colNames: ['CÓDIGO','DESCRICIÓN'],
 			colModel: [
