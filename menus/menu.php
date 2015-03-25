@@ -89,6 +89,15 @@ function menu_1() {
                 </ul>
             </li>
 
+            <li><a href="" target="_parent"><i class="icon-book"></i> Mantenimiento</a>
+                <ul>
+                    <li><a href="../plan_cuentas" target="_blank">Registro Equipos</a></li>
+                    <li><a href="../transacciones" target="_blank">Reparación Equipos/a></li>
+                    <li><a href="../kardex" target="_blank">Entrega Equipos</a></li>
+                    <li><a href="../libro_diario" target="_blank">Reestablecer</a></li>
+                </ul>
+            </li>
+
             
             <li><a href="" target="_parent"><i class="icon-print"></i> Reportes</a>
                 <ul>
@@ -177,7 +186,7 @@ function menu_1() {
             <li><a href="" target="_parent"><i class="icon-bookmark"></i> Bienvenido</a>
                 <ul>
                     <li><a href="" class="disabled">' . $_SESSION['nombres'] . '</a></li>
-                    <li><a href="../html/configuracion.php" target="_blank">Modificar</a></li>
+                    <li><a href="../html/configuracion" target="_blank">Modificar</a></li>
                     <li><a href="../html/index.php">Salir</a></li>
                 </ul>
             </li>

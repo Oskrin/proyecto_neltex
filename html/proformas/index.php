@@ -32,9 +32,9 @@
         <link href="../../css/sm-core-css.css" rel="stylesheet" type="text/css" />
         <link href="../../css/sm-blue/sm-blue.css" rel="stylesheet" type="text/css" />
 
+        <script type="text/javascript"src="../../js/jquery-1.7.2.min.js"></script>
         <script type="text/javascript" src="../../js/bootstrap.js"></script>
         <script type="text/javascript" src="../../js/jquery-loader.js"></script>
-        <script type="text/javascript" src="../../js/jquery-1.10.2.js"></script>
         <script type="text/javascript" src="../../js/jquery-ui-1.10.4.custom.min.js"></script>
         <script type="text/javascript" src="../../js/grid.locale-es.js"></script>
         <script type="text/javascript" src="../../js/jquery.jqGrid.src.js"></script>
@@ -132,53 +132,54 @@
                                                             </div>
                                                         </section>
                                                     </fieldset>
-                                                    <br />
+                                                    <hr>
+
                                                     <fieldset>
-                                                        <legend></legend>    
-                                                        <section class="columna1">
-                                                            <div class="control-group">											
+                                                       <div class="row">
+                                                           <div class="span6">
+                                                              <div class="control-group">                                          
                                                                 <label class="control-label" for="ci_ruc">CI. Identidad/RUC: <font color="red">*</font></label>
                                                                 <div class="controls">
-                                                                    <input type="text" name="ruc_ci"  id="ruc_ci" required placeholder="Buscar....." class="campo" />
+                                                                    <input type="text" name="ruc_ci"  id="ruc_ci" required placeholder="Buscar....." class="span4" />
                                                                 </div>
-                                                            </div> 
-
-                                                            <div class="control-group">											
+                                                              </div>
+                                                              
+                                                              <div class="control-group">                                           
                                                                 <label class="control-label" for="saldo">Saldo Disponible:</label>
                                                                 <div class="controls">
-                                                                    <div class="input-prepend input-append">
-                                                                        <span class="add-on">$</span>
-                                                                        <input type="text" name="saldo" id="saldo" required readonly class="campo" style="width: 165px" />
-                                                                    </div>
+                                                                     <input type="text" name="saldo" id="saldo" required readonly class="span4"/>
                                                                 </div>
-                                                            </div> 
-                                                        </section>
+                                                            </div>
 
-                                                        <section class="columna2">
-                                                            <div class="control-group">											
+                                                           </div>
+
+                                                           <div class="span6">
+                                                              <div class="control-group">                                          
                                                                 <label class="control-label" for="nombres_completos">Nombres del Cliente: <font color="red">*</font></label>
                                                                 <div class="controls">
-                                                                    <input type="text" name="nombres_completos" id="nombres_completos" placeholder="Buscar....." class="campo" />
+                                                                    <input type="text" name="nombres_completos" id="nombres_completos" placeholder="Buscar....." class="span4"/>
                                                                 </div>
-                                                            </div> 
+                                                              </div>
 
-                                                            <div class="control-group">											
+                                                              <div class="control-group">                                           
                                                                 <label class="control-label" for="tipo_precio">Tipo de Precio: <font color="red">*</font></label>
                                                                 <div class="controls">
-                                                                    <select id="tipo_precio" name="tipo_precio" style="width: 200px">
+                                                                    <select id="tipo_precio" name="tipo_precio" class="span4">
                                                                         <option value="MINORISTA">MINORISTA</option>
                                                                         <option value="MAYORISTA">MAYORISTA</option>
                                                                     </select>
-                                                                    <input type="hidden" name="id_cliente" id="id_cliente" required readonly class="campo" style="width: 100px"/>
+                                                                    <input type="hidden" name="id_cliente" id="id_cliente" required readonly  />
                                                                 </div> 
-                                                            </div>
-                                                        </section>
+                                                              </div>
+                                                           </div>
+                                                       </div> 
                                                     </fieldset>
 
                                                     <fieldset>
                                                         <legend>Productos</legend>    
                                                         <table cellpadding="2" border="0" style="margin-left: 10px">
                                                             <tr>
+                                                                <td><label>Código Barras:</label></td>
                                                                 <td><label>Código:</label></td>   
                                                                 <td><label>Producto:</label></td>   
                                                                 <td><label>Cantidad:</label></td>   
@@ -187,11 +188,12 @@
                                                             </tr>
 
                                                             <tr>
+                                                                <td><input type="text" name="codigo_barras" id="codigo_barras" class="campo" style="width: 170px"  placeholder="Buscar..."/></td>
                                                                 <td><input type="text" name="codigo" id="codigo" class="campo" style="width: 180px"  placeholder="Buscar..."/></td>
                                                                 <td><input type="text" name="producto" id="producto" class="campo" style="width: 200px"  placeholder="Buscar..."/></td>
                                                                 <td><input type="text" name="cantidad" id="cantidad" class="campo" style="width: 60px" maxlength="10"/></td>
                                                                 <td><input type="text" name="p_venta" id="p_venta" style="width: 60px" class="campo" maxlength="10"/></td>
-                                                                <td><input type="text" name="descuento" id="descuento" class="campo" style="width: 60px" maxlength="10" value="" placeholder="%"/></td>
+                                                                <td><input type="text" name="descuento" id="descuento" class="campo" style="width: 60px" maxlength="10" value="" placeholder="%" readonly/></td>
                                                                 <td><input type="hidden" name="cod_producto" id="cod_producto" class="campo" style="width: 100px"/></td>
                                                                 <td><input type="hidden" name="iva_producto" id="iva_producto" class="campo" style="width: 100px" /></td>
                                                             </tr>

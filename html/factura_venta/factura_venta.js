@@ -907,8 +907,7 @@ function agregar_proforma() {
         /////////////////llamado datos personales/////////////
         $.getJSON('retornar_proforma_clientes.php?id1=' + id_proforma, function(data) {
             var tama2 = data.length;
-            for (var i = 0; i < tama2; i = i + 7)
-            {
+            for (var i = 0; i < tama2; i = i + 7) {
                 $("#id_cliente").val(data[i]);
                 $("#ruc_ci").val(data[i + 1 ]);
                 $("#nombre_cliente").val(data[i + 2]);

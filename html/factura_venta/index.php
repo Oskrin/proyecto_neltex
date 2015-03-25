@@ -1,6 +1,5 @@
 <?php
-session_start();
-
+    session_start();
     include '../../menus/menu.php';
     include '../../procesos/base.php';
     conectarse();
@@ -42,7 +41,6 @@ session_start();
         <script type="text/javascript"src="../../js/jquery-1.7.2.min.js"></script>
         <script type="text/javascript" src="../../js/bootstrap.js"></script>
         <script type="text/javascript" src="../../js/jquery-loader.js"></script>
-        <!--<script type="text/javascript" src="../../js/jquery-1.10.2.js"></script>-->
         <script type="text/javascript" src="../../js/jquery-ui-1.10.4.custom.min.js"></script>
         <script type="text/javascript" src="../../js/grid.locale-es.js"></script>
         <script type="text/javascript" src="../../js/jquery.jqGrid.src.js"></script>

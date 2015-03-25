@@ -900,8 +900,6 @@ function inicio() {
     });
 
     ///////////tabla local/////////////  
-
-
     var can;
        jQuery("#list").jqGrid({
         datatype: "local",
@@ -922,7 +920,8 @@ function inicio() {
             {name: 'iva', index: 'iva', align: 'center', width: 100, hidden: true}
         ],
         rowNum: 30,
-        width: 770,
+        width: 810,
+        height: 300,
         sortable: true,
         rowList: [10, 20, 30],
         pager: jQuery('#pager'),

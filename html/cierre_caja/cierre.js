@@ -30,7 +30,7 @@ location.reload();
 
 function inicio() {
      ///////////////////llamar egresos primera parte/////
-    $.getJSON('../procesos/retornar_total.php', function(data) {
+    $.getJSON('retornar_total.php', function(data) {
         var tama = data.length;
         if (tama !== 0) {
             for (var i = 0; i < tama; i = i + 1) {

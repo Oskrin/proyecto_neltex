@@ -34,9 +34,9 @@ session_start();
         <link href="../../css/sm-core-css.css" rel="stylesheet" type="text/css" />
         <link href="../../css/sm-blue/sm-blue.css" rel="stylesheet" type="text/css" />
 
+        <script type="text/javascript"src="../../js/jquery-1.7.2.min.js"></script>
         <script type="text/javascript" src="../../js/bootstrap.js"></script>
         <script type="text/javascript" src="../../js/jquery-loader.js"></script>
-        <script type="text/javascript" src="../../js/jquery-1.10.2.js"></script>
         <script type="text/javascript" src="../../js/jquery-ui-1.10.4.custom.min.js"></script>
         <script type="text/javascript" src="../../js/grid.locale-es.js"></script>
         <script type="text/javascript" src="../../js/jquery.jqGrid.src.js"></script>
@@ -136,59 +136,61 @@ session_start();
                                                             </div>
                                                         </section>
                                                     </fieldset>
+                                                    <hr>
 
                                                     <fieldset>
-                                                        <legend></legend>
-                                                        <section class="columna1">
-                                                            <div class="control-group">											
+                                                        <div class="row">
+                                                            <div class="span6">
+                                                              <div class="control-group">                                         
                                                                 <label class="control-label" for="tipo_docu">Proveedor: <font color="red">*</font></label>
                                                                 <div class="controls">
-                                                                    <select name="tipo_docu" id="tipo_docu" required class="campo">
+                                                                    <select name="tipo_docu" id="tipo_docu" required class="span4">
                                                                         <option value="">......Seleccione......</option>
                                                                         <option value="Cedula">Cedula</option>
                                                                         <option value="Ruc">Ruc</option>
                                                                         <option value="Pasaporte">Pasaporte</option>  
                                                                     </select>
                                                                 </div>
-                                                            </div>
+                                                              </div>
 
-                                                            <div class="control-group">											
+                                                              <div class="control-group">                                           
                                                                 <label class="control-label" for="tipo_docu">Empresa: <font color="red">*</font></label>
                                                                 <div class="controls">
-                                                                    <input type="text" name="empresa" id="empresa" class="campo" placeholder="Empresa" style="width: 250px"/>
+                                                                    <input type="text" name="empresa" id="empresa" placeholder="Empresa" class="span4"/>
                                                                     <input type="hidden" name="id_proveedor" id="id_proveedor" class="campo" />
                                                                 </div>
-                                                            </div>
+                                                             </div>
 
-                                                            <div class="control-group">											
+                                                             <div class="control-group">                                            
                                                                 <label class="control-label" for="tipo_docu">Forma de pago: <font color="red">*</font></label>
                                                                 <div class="controls">
-                                                                    <select id="forma_pago" name="forma_pago" style="width: 180px">
+                                                                    <select id="forma_pago" name="forma_pago" class="span4">
                                                                         <option value="0">........SELECCIONE........</option>
                                                                         <option value="EFECTIVO">EFECTIVO</option>
                                                                         <option value="CHEQUE">CHEQUE</option>
                                                                         <option value="TARGETA">TARGETA</option>
                                                                     </select>
                                                                 </div>
+                                                             </div>
                                                             </div>
-                                                        </section>
 
-                                                        <section class="columna2">
-                                                            <div class="control-group">											
-                                                                <label class="control-label" for="ruc_ci">Identificación: <font color="red">*</font></label>
+                                                            <div class="span6">
+                                                              <div class="control-group">                                         
+                                                                <label class="control-label" for="ruc_ci">Nro de Identificación: <font color="red">*</font></label>
                                                                 <div class="controls">
-                                                                    <input type="text" name="ruc_ci" id="ruc_ci" class="campo" placeholder="Buscar..."/>
+                                                                    <input type="text" name="ruc_ci" id="ruc_ci" class="span4" placeholder="Buscar..."/>
                                                                 </div>
-                                                            </div>
+                                                              </div>
 
-                                                            <div class="control-group">											
+                                                              <div class="control-group">                                           
                                                                 <label class="control-label" for="tipo_pago">Pago: <font color="red">*</font></label>
                                                                 <div class="controls">
-                                                                    <select id="tipo_pago" name="tipo_pago" style="width: 180px">
+                                                                    <select id="tipo_pago" name="tipo_pago" class="span4">
                                                                     </select>
                                                                 </div>
                                                             </div>
-                                                        </section>
+                                                          </div>
+                                                        </div>
                                                     </fieldset>
                                                     <br />
                                                     <fieldset>

@@ -499,7 +499,7 @@ jQuery().UItoTop({ easingType: 'easeOutQuart' });
 
     /////buscador clientes ci///// 
     $("#ruc_ci").autocomplete({
-        source: "../procesos/buscar_cliente2.php",
+        source: "buscar_cliente2.php",
         minLength: 1,
         focus: function(event, ui) {
         $("#ruc_ci").val(ui.item.value);
