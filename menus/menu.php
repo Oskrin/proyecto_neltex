@@ -92,7 +92,7 @@ function menu_1() {
             <li><a href="" target="_parent"><i class="icon-book"></i> Mantenimiento</a>
                 <ul>
                     <li><a href="../plan_cuentas" target="_blank">Registro Equipos</a></li>
-                    <li><a href="../transacciones" target="_blank">Reparación Equipos/a></li>
+                    <li><a href="../transacciones" target="_blank">Reparación Equipos</a></li>
                     <li><a href="../kardex" target="_blank">Entrega Equipos</a></li>
                     <li><a href="../libro_diario" target="_blank">Reestablecer</a></li>
                 </ul>
