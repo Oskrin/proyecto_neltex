@@ -5,7 +5,7 @@ function Defecto(e) {
 }
 
 function este(){
-window.open('../fdpf/ayuda_general.pdf');
+window.open('../../fpdf/ayuda_general.pdf');
 }
 
 

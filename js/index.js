@@ -140,7 +140,7 @@ function ingresarSistema() {
                                 }
                             });
                         }else{
-                            window.location.href = "principal.php";
+                            window.location.href = "principal";
                         }
                     } else {
                         if (val == 2) {
@@ -150,7 +150,7 @@ function ingresarSistema() {
                                 $("#txt_usuario").focus();
                                 alertify.alert("Imposible acceder al sistema"); 
                             }else{
-                                window.location.href = "principal.php";  
+                                window.location.href = "principal";  
                             }
                         }else{
                             if (val == 0) {
