@@ -9,80 +9,80 @@ function menu_1() {
             <li><a href="../html/principal.php" target="_parent" class="inicio"><i class="icon-home"></i> Inicio</a></li>
             <li><a href="" target="_parent"> <i class="icon-th-large"></i> Ingresos</a>
                 <ul>
-                    <li><a href="../html/asignacion_cuentas.php" target="_blank">Asignación Cuentas</a></li>
-                    <li><a href="../html/usuarios.php" target="_blank">Usuarios</a></li>
-                    <li><a href="../html/proveedores.php"target="_blank">Proveedores</a></li>
-                    <li><a href="../html/clientes.php" target="_blank">Clientes</a></li>
+                    <li><a href="../asignacion_cuentas" target="_blank">Asignación Cuentas</a></li>
+                    <li><a href="../usuarios" target="_blank">Usuarios</a></li>
+                    <li><a href="../proveedores"target="_blank">Proveedores</a></li>
+                    <li><a href="../clientes" target="_blank">Clientes</a></li>
                       <li><a href="" target="_parent">Generales</a>
                         <ul>
-                            <li><a href="../html/bodegas.php" target="_blank">Bodegas</a></li>
-                            <li><a href="../html/categorias.php" target="_blank">Categorias</a></li>
-                            <li><a href="../html/marcas.php" target="_blank">Marcas</a></li>
-                            <li><a href="../html/medida.php" target="_blank">Unidades de Medida</a></li>
+                            <li><a href="../bodegas" target="_blank">Bodegas</a></li>
+                            <li><a href="../categorias" target="_blank">Categorias</a></li>
+                            <li><a href="../marcas" target="_blank">Marcas</a></li>
+                            <li><a href="../medida" target="_blank">Unidades de Medida</a></li>
                         </ul>
                       </li>
-                    <li><a href="../html/archivosExcel.php" target="_blank">Cargar Productos</a></li>
-                    <li><a href="../html/archivosPlan.php" target="_blank">Cargar Cuentas</a></li>
-                    <li><a href="../html/productos.php" target="_blank">Productos</a></li>
+                    <li><a href="../cargarProductos" target="_blank">Cargar Productos</a></li>
+                    <li><a href="../planCuentas" target="_blank">Cargar Cuentas</a></li>
+                    <li><a href="../productos" target="_blank">Productos</a></li>
                     
                 </ul>
             </li>
             
             <li><a href="" target="_parent"><i class="icon-book"></i> Procesos</a>
                 <ul>
-                    <li><a href="../html/inventario.php" target="_blank">Inventario</a></li>
-                    <li><a href="../html/proformas.php" target="_blank">Proformas</a></li>
+                    <li><a href="../inventario" target="_blank">Inventario</a></li>
+                    <li><a href="../proformas" target="_blank">Proformas</a></li>
                     <li><a href="" target="_parent">Compras</a>
                         <ul>
-                            <li><a href="../html/factura_compra.php" target="_blank">Productos Bodega</a></li>
-                            <li><a href="../html/devolucionCompra.php" target="_blank">Devolución Compra</a></li>
+                            <li><a href="../factura_compra" target="_blank">Productos Bodega</a></li>
+                            <li><a href="../devolucion_compra" target="_blank">Devolución Compra</a></li>
                         </ul>
                     </li>
                     <li><a href="" target="_parent">Ventas</a>
                         <ul>
-                            <li><a href="../html/factura_venta.php" target="_blank">Ventas facturación</a></li>
-                            <li><a href="../html/notasCredito.php" target="_blank">Notas de crédito</a></li>
+                            <li><a href="../factura_venta" target="_blank">Ventas facturación</a></li>
+                            <li><a href="../notas_credito" target="_blank">Notas de crédito</a></li>
                         </ul>
                     </li>
 
                     <li><a href="" target="_parent">Cartera</a>
                         <ul>
-                            <li><a href="../html/cuentasCobrar.php" target="_blank">Cuentas por cobrar</a></li>
-                            <li><a href="../html/cuentasPagar.php" target="_blank">Cuentas por pagar</a></li>
+                            <li><a href="../cuentas_cobrar" target="_blank">Cuentas por cobrar</a></li>
+                            <li><a href="../cuentas_pagar" target="_blank">Cuentas por pagar</a></li>
                             <li><a href="" target="_blank">Externas</a>
                             <ul>
-                            <li><a href="../html/CxCexternas.php" target="_blank">Cuentas por cobrar</a></li>
-                            <li><a href="../html/CxPexternas.php" target="_blank">Cuentas por pagar</a></li>
+                            <li><a href="../cxc_externa" target="_blank">Cuentas por cobrar</a></li>
+                            <li><a href="../cxp_externa" target="_blank">Cuentas por pagar</a></li>
                             </ul>
                            </li>
                         </ul>
                     </li>
                     <li><a href="" target="_parent">Transferencias</a>
                         <ul>
-                            <li><a href="ingresos.php" target="_blank">Ingresos</a></li>
-                            <li><a href="egresos.php" target="_blank">Egresos</a></li>
+                            <li><a href="../ingresos" target="_blank">Ingresos</a></li>
+                            <li><a href="../egresos.php" target="_blank">Egresos</a></li>
                         </ul>
                     </li>
-                    <li><a href="../html/registroGastos.php" target="_blank">Registro Gastos</a></li>
-                    <li><a href="../html/gastos.php" target="_blank">Gastos Internos</a></li>
+                    <li><a href="../registro_gastos.php" target="_blank">Registro Gastos</a></li>
+                    <li><a href="../gastos" target="_blank">Gastos Internos</a></li>
                 </ul>
             </li>
 
             <li><a href="" target="_parent"><i class="icon-book"></i> Contabilidad</a>
                 <ul>
-                    <li><a href="../html/plan_cuentas.php" target="_blank">Plan de Cuentas</a></li>
-                    <li><a href="../html/transacciones.php" target="_blank">Transacciones</a></li>
-                    <li><a href="../html/kardex.php" target="_blank">Kardex</a></li>
-                    <li><a href="../html/libro_diario.php" target="_blank">Libro Diario</a></li>
+                    <li><a href="../plan_cuentas" target="_blank">Plan de Cuentas</a></li>
+                    <li><a href="../transacciones" target="_blank">Transacciones</a></li>
+                    <li><a href="../kardex" target="_blank">Kardex</a></li>
+                    <li><a href="../libro_diario" target="_blank">Libro Diario</a></li>
                     <li><a href="" target="_parent">Bancos</a>
                         <ul>
-                            <li><a href="../html/bancos.php" target="_blank">Catalogo Bancos</a></li>
-                            <li><a href="../html/cuentasPagar.php" target="_blank">Conciliación</a></li>
+                            <li><a href="../bancos" target="_blank">Catalogo Bancos</a></li>
+                            <li><a href="../conciliacion" target="_blank">Conciliación</a></li>
                         </ul>
                     </li>
                     <li><a href="" target="_parent">Cierre de Caja</a>
                         <ul>
-                            <li><a href="../html/cierre1.php" target="_blank">Contado</a></li>
+                            <li><a href="../cierre_caja" target="_blank">Contado</a></li>
                             
                         </ul>
                     </li>
