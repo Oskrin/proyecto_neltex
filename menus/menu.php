@@ -91,10 +91,17 @@ function menu_1() {
 
             <li><a href="" target="_parent"><i class="icon-book"></i> Mantenimiento</a>
                 <ul>
+<<<<<<< HEAD
                     <li><a href="registro_equipo" target="_blank">Registro Equipos</a></li>
                     <li><a href="reparacion_equipo" target="_blank">Reparación Equipos</a></li>
                     <li><a href="entrega_equipo" target="_blank">Entrega Equipos</a></li>
                     <li><a href="reestablecer" target="_blank">Reestablecer</a></li>
+=======
+                    <li><a href="../plan_cuentas" target="_blank">Registro Equipos</a></li>
+                    <li><a href="../transacciones" target="_blank">Reparación Equipos</a></li>
+                    <li><a href="../kardex" target="_blank">Entrega Equipos</a></li>
+                    <li><a href="../libro_diario" target="_blank">Reestablecer</a></li>
+>>>>>>> origin/master
                 </ul>
             </li>
 
