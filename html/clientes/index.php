@@ -131,6 +131,13 @@ include '../../menus/menu.php';
                                                             <input type="text" name="direccion_cli" id="direccion_cli" placeholder="Direccion cliente" required  class="span4"/>
                                                         </div>
                                                     </div>
+
+                                                    <div class="control-group">
+                                                            <label class="control-label" for="notas_cli">Comentarios: </label>
+                                                            <div class="controls">
+                                                                <textarea name="notas_cli" id="notas_cli" rows="3" class="span4"></textarea>
+                                                            </div>
+                                                    </div>
                                                 </div>
 
                                                 <div class="span6">
@@ -139,17 +146,6 @@ include '../../menus/menu.php';
                                                         <div class="controls">
                                                             <input type="text" name="ruc_ci"  id="ruc_ci" placeholder="10000000000" required class="span4">
                                                             <input type="hidden" name="id_cliente"  id="id_cliente" readonly class="campo">
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="control-group">
-                                                        <label class="control-label" for="tipo_cli">Tipo Cliente: <font color="red">*</font></label>
-                                                        <div class="controls">
-                                                            <select name="tipo_cli" id="tipo_cli" required class="span4">
-                                                                <option value="">......Seleccione......</option>
-                                                                <option value="natural">Natural</option>
-                                                                <option value="juridico">Juridico</option>
-                                                            </select>
                                                         </div>
                                                     </div>
 
@@ -173,6 +169,16 @@ include '../../menus/menu.php';
                                                              <input type="text" name="email" id="email" placeholder="xxxx@example.com" class="span4"/>
                                                         </div>
                                                     </div>
+
+                                                    <div class="control-group">
+                                                        <label class="control-label" for="tipo_cli">Tipo: <font color="red">*</font></label>
+                                                        <div class="controls">
+                                                            <select name="tipo_cli" id="tipo_cli" required class="span4">
+                                                                <option value="N" selected>Persona Natural</option>
+                                                                <option value="J">Persona Jurídica</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
                                                   </div>
                                                </div> 
 
@@ -184,13 +190,60 @@ include '../../menus/menu.php';
                                                              <input type="text" name="cupo_credito" id="cupo_credito" class="span4" value="0.00" />
                                                         </div>
                                                     </div> 
+                                                     <hr />
 
-                                                    <div class="control-group">
-                                                            <label class="control-label" for="notas_cli">Notas: </label>
-                                                            <div class="controls">
-                                                                <textarea name="notas_cli" id="notas_cli" rows="3" class="span4"></textarea>
-                                                            </div>
-                                                        </div> 
+                                                 <div class="control-group">                                            
+                                                    <label class="control-label">Se aplica impto a las compras.</label>
+                                                    <div class="controls">
+                                                    <label class="radio inline">
+                                                      <input type="radio"  name="radiobtns">Si
+                                                    </label>
+                                                    
+                                                    <label class="radio inline">
+                                                      <input type="radio" name="radiobtns">No
+                                                    </label>
+                                                  </div>    <!-- /controls -->          
+                                                </div> <!-- /control-group -->
+
+                                                <div class="control-group">                                            
+                                                    <label class="control-label">Se aplica retención en el impto.</label>
+                                                    <div class="controls">
+                                                    <label class="radio inline">
+                                                      <input type="radio"  name="radiobtns">Si
+                                                    </label>
+                                                    
+                                                    <label class="radio inline">
+                                                      <input type="radio" name="radiobtns">No
+                                                    </label>
+                                                  </div>    <!-- /controls -->          
+                                                </div> <!-- /control-group -->
+
+                                                <div class="control-group">                                            
+                                                    <label class="control-label">Se aplica retención en la fuente.</label>
+                                                    <div class="controls">
+                                                    <label class="radio inline">
+                                                      <input type="radio"  name="radiobtns">Si
+                                                    </label>
+                                                    
+                                                    <label class="radio inline">
+                                                      <input type="radio" name="radiobtns">No
+                                                    </label>
+                                                  </div>    <!-- /controls -->          
+                                                </div> <!-- /control-group -->
+
+                                                <div class="control-group">                                            
+                                                    <label class="control-label">Se aplica un segundo impto.</label>
+                                                    <div class="controls">
+                                                    <label class="radio inline">
+                                                      <input type="radio"  name="radiobtns">Si
+                                                    </label>
+                                                    
+                                                    <label class="radio inline">
+                                                      <input type="radio" name="radiobtns">No
+                                                    </label>
+                                                  </div>    <!-- /controls -->          
+                                                </div> <!-- /control-group -->
+
                                                 </div>
                                                 
                                                 <div class="span6">
@@ -199,11 +252,13 @@ include '../../menus/menu.php';
                                                     <div class="controls">
                                                         <div class="input-append">
                                                             <input type="text" name="cuenta_contable" readonly id="cuenta_contable" class="span3"/>
-                                                            <input type="text" name="nombre_cuenta" readonly id="nombre_cuenta" class="span3"/>
+                                                            <input type="hidden" name="nombre_cuenta" readonly id="nombre_cuenta" class="span3"/>
                                                             
                                                         </div>
                                                     </div>
-                                                  </div>  
+                                                  </div>
+                                                  <hr />
+
                                                  </div>
                                                </div>
                                               </div>  
