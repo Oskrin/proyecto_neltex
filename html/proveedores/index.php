@@ -146,12 +146,18 @@
                                                         <label class="control-label" for="forma_pago">Formas de Pago: <font color="red">*</font></label>
                                                         <div class="controls" >
                                                             <select name="forma_pago" id="forma_pago" required class="span4">
-                                                                <option value="">......Seleccione......</option>
-                                                                <option value="Contado">Contado</option>
+                                                                <option value="Contado" selected>Contado</option>
                                                                 <option value="Credito">Credito</option>
                                                             </select>
                                                         </div>  
                                                     </div> 
+                                                    
+                                                    <div class="control-group">
+                                                        <label class="control-label" for="observaciones_pro">Comentario:</label>
+                                                        <div class="controls" >
+                                                            <textarea name="observaciones_pro" id="observaciones_pro" rows="3" class="span4"></textarea>
+                                                        </div>  
+                                                  </div>
                                                 </div>  
 
                                                 <div class="span6">
@@ -161,7 +167,6 @@
                                                             <input type="text" name="ruc_ci"  id="ruc_ci" placeholder="10000000000" required class="span4"  />
                                                             <input type="hidden" name="id_proveedor"  id="id_proveedor" readonly class="campo" >
                                                         </div>	
-                                                        <!--<div id="mensaje1" class="errores">Dame tu nombre</div>-->
                                                     </div>
 
                                                     <div class="control-group">											
@@ -203,16 +208,86 @@
                                                         <label class="control-label" for="principal_pro">Proveedor Principal: <font color="red">*</font></label>
                                                         <div class="controls">
                                                             <select name="principal_pro" id="principal_pro" required class="span4">
-                                                                <option value="">......Seleccione......</option>
-                                                                <option value="Si">Si</option>
+                                                                <option value="Si" selected>Si</option>
                                                                 <option value="No">No</option>
                                                             </select>
                                                         </div>			
+                                                    </div>
+
+                                                    <div class="control-group">                                         
+                                                        <label class="control-label" for="principal_pro">Tipo: <font color="red">*</font></label>
+                                                        <div class="controls">
+                                                            <select name="principal_pro" id="principal_pro" required class="span4">
+                                                                <option value="N" selected>Persona Natural</option>
+                                                                <option value="J">Persona Jurídica</option>
+                                                            </select>
+                                                        </div>          
                                                     </div>
                                                   </div>
                                                 </div>
 
                                                 <div class="tab-pane" id="jscontrols">
+                                                <div class="span6">
+                                                 <div class="control-group">                                           
+                                                        <label class="control-label" for="cupo_credito">Cupo de Crédito:</label>
+                                                        <div class="controls">
+                                                             <input type="text" name="cupo_credito" id="cupo_credito" class="span3" value="0.00" />
+                                                        </div>
+                                                  </div>
+                                                  <hr>
+
+                                                 <div class="control-group">                                            
+                                                    <label class="control-label">Se aplica impto a las compras.</label>
+                                                    <div class="controls">
+                                                    <label class="radio inline">
+                                                      <input type="radio"  name="radiobtns">Si
+                                                    </label>
+                                                    
+                                                    <label class="radio inline">
+                                                      <input type="radio" name="radiobtns">No
+                                                    </label>
+                                                  </div>    <!-- /controls -->          
+                                                </div> <!-- /control-group -->
+
+                                                <div class="control-group">                                            
+                                                    <label class="control-label">Se aplica retención en el impto.</label>
+                                                    <div class="controls">
+                                                    <label class="radio inline">
+                                                      <input type="radio"  name="radiobtns">Si
+                                                    </label>
+                                                    
+                                                    <label class="radio inline">
+                                                      <input type="radio" name="radiobtns">No
+                                                    </label>
+                                                  </div>    <!-- /controls -->          
+                                                </div> <!-- /control-group -->
+
+                                                <div class="control-group">                                            
+                                                    <label class="control-label">Se aplica retención en la fuente.</label>
+                                                    <div class="controls">
+                                                    <label class="radio inline">
+                                                      <input type="radio"  name="radiobtns">Si
+                                                    </label>
+                                                    
+                                                    <label class="radio inline">
+                                                      <input type="radio" name="radiobtns">No
+                                                    </label>
+                                                  </div>    <!-- /controls -->          
+                                                </div> <!-- /control-group -->
+
+                                                <div class="control-group">                                            
+                                                    <label class="control-label">Se aplica un segundo impto.</label>
+                                                    <div class="controls">
+                                                    <label class="radio inline">
+                                                      <input type="radio"  name="radiobtns">Si
+                                                    </label>
+                                                    
+                                                    <label class="radio inline">
+                                                      <input type="radio" name="radiobtns">No
+                                                    </label>
+                                                  </div>    <!-- /controls -->          
+                                                </div> <!-- /control-group -->
+                                               </div>
                                                 
                                                 <div class="span6">
                                                   <div class="control-group">
@@ -220,52 +295,11 @@
                                                     <div class="controls">
                                                         <div class="input-append">
                                                             <input type="text" name="cuenta_contable" readonly id="cuenta_contable" class="span3"/>
-                                                            <input type="text" name="nombre_cuenta" readonly id="nombre_cuenta" class="span3"/>                                                            
+                                                            <input type="hidden" name="nombre_cuenta" readonly id="nombre_cuenta" class="span3"/>                                                            
+                                                            <input type="button" class="btn btn-primary" id='btnCategoria' value="Cargar" title="Plan Cuentas"/>
                                                         </div>
                                                     </div>
-                                                  </div> 
-
-                                                  <div class="control-group">
-                                                        <label class="control-label" for="observaciones_pro">Observaciones:</label>
-                                                        <div class="controls" >
-                                                            <textarea name="observaciones_pro" id="observaciones_pro" rows="3" class="span4"></textarea>
-                                                        </div>  
                                                   </div>
-
-                                                  <div class="controls">
-                                                  <label class="checkbox span4">
-                                                    <div class="checker" id="uniform-allstates">
-                                                      <span>
-                                                        <input type="checkbox" value="all" id="allstates" name="all">
-                                                      </span>
-                                                    </div>Todas
-                                                  </label>
-
-                                                  <label class="checkbox span4">
-                                                    <div class="checker">
-                                                      <span>
-                                                        <input class="states" type="checkbox" value="Caba" id="" name="st[]">                          
-                                                       </span>
-                                                    </div> Ciudad Autónoma de Buenos Aires
-                                                  </label>
-
-                                                  <label class="checkbox span4">
-                                                    <div class="checker">
-                                                      <span>
-                                                        <input class="states" type="checkbox" value="Buenos Aires" id="" name="st[]">                           
-                                                      </span>
-                                                    </div> Buenos Aires
-                                                  </label>
-
-                                                  <label class="checkbox span4">
-                                                    <div class="checker">
-                                                      <span>
-                                                        <input class="states" type="checkbox" value="Catamarca" id="" name="st[]">                             
-                                                      </span>
-                                                    </div> Catamarca
-                                                  </label>
-                                                </div>    
-
                                                 </div>
                                                </div>
                                               </div>  

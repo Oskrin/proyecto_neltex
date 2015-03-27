@@ -178,12 +178,13 @@ include '../../menus/menu.php';
 
                                                <div class="tab-pane" id="jscontrols">
                                                 <div class="span6">
-                                                  <div class="control-group">                                           
+                                                    <div class="control-group">                                           
                                                         <label class="control-label" for="cupo_credito">Cupo de Crédito:</label>
                                                         <div class="controls">
                                                              <input type="text" name="cupo_credito" id="cupo_credito" class="span4" value="0.00" />
                                                         </div>
                                                     </div> 
+
                                                     <div class="control-group">
                                                             <label class="control-label" for="notas_cli">Notas: </label>
                                                             <div class="controls">
