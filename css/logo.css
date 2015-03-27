@@ -249,15 +249,3 @@
     -o-transform: scale(1);
     transform: scale(1);
 }
-#btnIngreso, #btnRetornar{
-    background: #2591BE;
-}
-#btnIngreso:hover{
-    background: #222222!important;
-    color: #ffffff;
-}
-
-#btnRetornar:hover{
-    background: #222222!important;
-    color: #ffffff;
-}
