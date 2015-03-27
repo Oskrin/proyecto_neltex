@@ -263,7 +263,7 @@ function inicio() {
             var id = jQuery("#list").jqGrid('getGridParam', 'selrow');
             if (id) {
                 var ret = jQuery("#list").jqGrid('getRowData', id);
-                window.open("../reportes/reportes/reporteRegistro.php?id=" + ret.txtRegistro);
+                window.open("../../reportes/reporteRegistro.php?id=" + ret.txtRegistro);
             } else {
               alertify.alert("Seleccione un fila");
             }

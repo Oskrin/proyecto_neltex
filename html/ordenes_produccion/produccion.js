@@ -322,7 +322,7 @@ function guardar_ordenes() {
                     var val = data;
                     if (val == 1) {
                         alertify.alert(" Ordenes de producción guardada correctamente", function(){
-                        window.open("../reportes/reportes/orden_produccion.php?hoja=A4&id="+$("#comprobante").val(),'_blank');
+                        window.open("../../reportes/orden_produccion.php?hoja=A4&id="+$("#comprobante").val(),'_blank');
                         location.reload();
                         });
                     }
@@ -560,7 +560,7 @@ function inicio() {
         e.preventDefault();
     });
     $("#btnImprimir").click(function(e) {
-        window.open("../reportes/reportes/orden_produccion.php?hoja=A4&id="+$("#comprobante").val(),'_blank');
+        window.open("../../reportes/orden_produccion.php?hoja=A4&id="+$("#comprobante").val(),'_blank');
     });
     $("#btnAtras").click(function(e) {
         e.preventDefault();

@@ -658,7 +658,7 @@ function guardar_devolucion() {
                                     var val = data;
                                     if (val == 1) {
                                         alertify.alert("Devolución Guardada correctamente",function(){
-//                                        window.open("../reportes/reportes/devolucion_compra.php?id="+$("#comprobante").val(),'_blank');    
+//                                        window.open("../../reportes/devolucion_compra.php?id="+$("#comprobante").val(),'_blank');    
                                         location.reload();
                                         });
                                     }
@@ -953,7 +953,7 @@ function inicio() {
         success: function(data) {
             var val = data;
             if(val != "") {
-                window.open("../reportes/reportes/devolucion_compra.php?id="+$("#comprobante").val(),'_blank');  
+                window.open("../../reportes/devolucion_compra.php?id="+$("#comprobante").val(),'_blank');  
             } else {
               alertify.alert("Devolución no creada!!");
             }   

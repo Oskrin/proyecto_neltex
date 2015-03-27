@@ -534,7 +534,7 @@ function guardar_devolucion() {
                                     if (val == 1) {
                                         
                                         alertify.alert("Nota de Crédito guardada correctamente", function(){
-                                        window.open("../reportes/reportes/notaCredito.php?id="+$("#comprobante").val());  
+                                        window.open("../../reportes/notaCredito.php?id="+$("#comprobante").val());  
                                         location.reload();
                                         });                                        
                                     }
@@ -819,7 +819,7 @@ function inicio() {
         success: function(data) {
             var val = data;
             if(val != "") {
-                window.open("../reportes/reportes/notaCredito.php?id="+$("#comprobante").val());  
+                window.open("../../reportes/notaCredito.php?id="+$("#comprobante").val());  
             } else {
               alertify.alert("Nota de Crédito no creada!!");
             }   

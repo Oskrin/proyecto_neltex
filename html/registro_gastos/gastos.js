@@ -128,7 +128,7 @@ function inicio() {
         e.preventDefault();
     });
     $("#btnImprimir").click(function (){        
-        window.open("../../reportes_sistema/factura_venta.php?hoja=A4&id="+$("#comprobante").val(),'_blank');
+        window.open("../../reportes/factura_venta.php?hoja=A4&id="+$("#comprobante").val(),'_blank');
     });
     $("#btnNuevo").click(function(e) {
         e.preventDefault();

@@ -395,7 +395,7 @@ function guardar_proforma() {
                         var val = data;
                         if (val == 1) {
                             alertify.alert("Proforma Guardada correctamente",function(){
-                            window.open("../reportes/reportes/proforma.php?id="+$("#comprobante").val(),'_blank');    
+                            window.open("../../reportes/proforma.php?id="+$("#comprobante").val(),'_blank');    
                             location.reload();
                             });   
                         }
@@ -666,7 +666,7 @@ function inicio() {
         success: function(data) {
             var val = data;
             if(val != "") {
-                window.open("../reportes/reportes/proforma.php?id="+$("#comprobante").val(),'_blank');  
+                window.open("../../reportes/proforma.php?id="+$("#comprobante").val(),'_blank');  
             } else {
               alertify.alert("Proforma no creada!!");
             }   

@@ -290,7 +290,7 @@ function inicio()
             if (id) {                
                 var ret = jQuery("#list1").jqGrid('getRowData', id);
                 if(ret.id_estado==2){
-                    window.open("../reportes/reportes/rep_entrega.php?id=" + ret.txtRegistro);
+                    window.open("../../reportes/rep_entrega.php?id=" + ret.txtRegistro);
                }else{
                 alertify.alert("Error.. solo puede ver los reportes de los equipos entregados")
                }
@@ -334,7 +334,7 @@ function inicio()
             if (id) {
                 var ret = jQuery("#list1").jqGrid('getRowData', id);
                if(ret.id_estado==2){
-                    window.open("../reportes/reportes/rep_entrega.php?id=" + ret.txtRegistro);
+                    window.open("../../reportes/rep_entrega.php?id=" + ret.txtRegistro);
                }else{
                 alertify.alert("Error.. solo puede ver los reportes de los equipos entregados")
                }
@@ -415,7 +415,7 @@ function guardarReparacion()
         success: function(response) {
             var data = response;
             alertify.alert("Datos Modificados", function(){
-            window.open("../reportes/reportes/rep_entrega.php?id=" + $("#txtRegistro").val());
+            window.open("../../reportes/rep_entrega.php?id=" + $("#txtRegistro").val());
             limpiarDatos();
             location.reload();
             $("#tablaEn").css("display", "block");

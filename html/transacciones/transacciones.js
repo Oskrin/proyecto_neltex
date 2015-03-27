@@ -155,9 +155,9 @@ function guardar_pagos(){
                             }, 1000);                                                        
 //                            if($("#tipo_pago").val()=="EXTERNA")
 //                            {
-//                                window.open("../reportes/reportes/reporte_cxc.php?tipo_pago="+$("#tipo_pago").val()+"&id="+v2[0]+"&comprobante="+$("#comprobante").val(),'_blank');
+//                                window.open("../../reportes/reporte_cxc.php?tipo_pago="+$("#tipo_pago").val()+"&id="+v2[0]+"&comprobante="+$("#comprobante").val(),'_blank');
 //                            }else{
-//                                window.open("../reportes/reportes/reporte_cxc.php?tipo_pago="+$("#tipo_pago").val()+"&id="+v2[0]+"&comprobante="+$("#comprobante").val()+"&temp2="+v6[0]+"&temp3="+v7[0],'_blank');
+//                                window.open("../../reportes/reporte_cxc.php?tipo_pago="+$("#tipo_pago").val()+"&id="+v2[0]+"&comprobante="+$("#comprobante").val()+"&temp2="+v6[0]+"&temp3="+v7[0],'_blank');
 //                            }    
 //                            alertify.alert("Pago Guardado correctamente", function(){location.reload();});
                         }
@@ -357,7 +357,7 @@ alertify.set({
     });
     
     $("#btnImprimir").click(function (){
-       window.open("../../reportes/reportes/transacciones.php?id="+$("#comprobante").val(),'_blank');
+       window.open("../../../reportes/transacciones.php?id="+$("#comprobante").val(),'_blank');
         
 //        var temp=0;
 //        var temp2=0;
@@ -377,9 +377,9 @@ alertify.set({
 //            var val = data;
 //            if(val != ""){
 //               if($("#tipo_pago").val()=="EXTERNA") {
-//                window.open("../reportes/reportes/reporte_cxc.php?tipo_pago="+$("#tipo_pago").val()+"&id="+temp+"&comprobante="+$("#comprobante").val(),'_blank');
+//                window.open("../../reportes/reporte_cxc.php?tipo_pago="+$("#tipo_pago").val()+"&id="+temp+"&comprobante="+$("#comprobante").val(),'_blank');
 //                }else{
-//                    window.open("../reportes/reportes/reporte_cxc.php?tipo_pago="+$("#tipo_pago").val()+"&id="+temp+"&comprobante="+$("#comprobante").val()+"&temp2="+temp2+"&temp3="+temp3,'_blank');
+//                    window.open("../../reportes/reporte_cxc.php?tipo_pago="+$("#tipo_pago").val()+"&id="+temp+"&comprobante="+$("#comprobante").val()+"&temp2="+temp2+"&temp3="+temp3,'_blank');
 //                }  
 //            } else {
 //              alertify.alert("Cuenta no creada!!");

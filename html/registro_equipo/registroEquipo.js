@@ -99,7 +99,7 @@ function guardarRegistro() {
                                     if (val == 0) {
                                         alertify.alert("Datos Guardados", function(){
                                         id = $("#txtRegistro").val();
-                                        window.open("../reportes/reportes/reporteRegistro.php?id=" + id);
+                                        window.open("../../reportes/reporteRegistro.php?id=" + id);
                                         limpiarDatos();
                                         $("#txtRegistro").val(parseInt(id) + 1);   
                                         });
@@ -299,7 +299,7 @@ function inicio()
         e.preventDefault();
     });
     $("#btnImprimir").click(function (){        
-        window.open("../reportes/reportes/reporteRegistro.php?id=" + $("#txtRegistro").val());
+        window.open("../../reportes/reporteRegistro.php?id=" + $("#txtRegistro").val());
     });
     $("#bRegistros").dialog(dialogos);
     $("#btnBuscar").on("click", abrirDialogo);
@@ -494,7 +494,7 @@ function inicio()
             var id = jQuery("#list").jqGrid('getGridParam', 'selrow');
             if (id) {
                 var ret = jQuery("#list").jqGrid('getRowData', id);
-                window.open("../reportes/reportes/reporteRegistro.php?id=" + ret.txtRegistro);
+                window.open("../../reportes/reporteRegistro.php?id=" + ret.txtRegistro);
             } else {
               alertify.alert("Seleccione un fila");
             }

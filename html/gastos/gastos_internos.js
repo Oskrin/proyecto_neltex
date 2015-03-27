@@ -145,7 +145,7 @@ function guardar_gasto() {
                                 var val = data;
                                 if (val == 1) {
                                     alertify.alert("Registro Guardado correctamente", function(){
-                                    window.open("../reportes/reportes/reporte_gasto.php?id="+$("#comprobante").val(),'_blank');    
+                                    window.open("../../reportes/reporte_gasto.php?id="+$("#comprobante").val(),'_blank');    
                                     location.reload();
                                     });
                                 }
