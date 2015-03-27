@@ -120,7 +120,7 @@ function fn_reporte(e){
     if($('#excel').is(':checked')){    	
         window.open('../phpexcel/reporte_productos.php', '_blank');	
     } else{
-        window.open('../reportes_sistema/reporte_productos.php', '_blank');		
+        window.open('../reportes/reporte_productos.php', '_blank');		
     }  
     modal.close();  
 }
@@ -141,7 +141,7 @@ function fn_reporte_mar_cat(e){
     if($('#excel').is(':checked')){    	
         window.open('../phpexcel/reporte_categoria_marcas.php?marca='+$('#sel_marcas').val()+'&categoria='+$('#sel_categoria').val(), '_blank');	
     } else{
-        window.open('../reportes_sistema/reporte_categoria_marcas.php?marca='+$("#sel_marcas").val()+'&categoria='+$("#sel_categoria").val(), '_blank');		
+        window.open('../reportes/reporte_categoria_marcas.php?marca='+$("#sel_marcas").val()+'&categoria='+$("#sel_categoria").val(), '_blank');		
     } 
     modal.close();  
 }
@@ -160,7 +160,7 @@ function fn_reporte_existencia(e){
     if($('#excel').is(':checked')){    	
         window.open('../phpexcel/reporte_existencia_minima.php', '_blank');	
     } else{
-        window.open('../reportes_sistema/reporte_existencia_minima.php', '_blank');		
+        window.open('../reportes/reporte_existencia_minima.php', '_blank');		
     }  
 }
 
@@ -208,7 +208,7 @@ function fn_reporte_agrupados_prov(e){
     if($('#excel').is(':checked')){     
         window.open('../phpexcel/reporte_agrupados_prov.php?id='+$('#idProv').val(), '_blank');    
     } else{
-        window.open('../reportes_sistema/reporte_agrupados_prov.php?id='+$('#idProv').val(), '_blank');      
+        window.open('../reportes/reporte_agrupados_prov.php?id='+$('#idProv').val(), '_blank');      
     }   
 }
 function ventana_factura_compra(e){ 
@@ -242,7 +242,7 @@ function fn_reporte_factura_compras(e){
     if($('#excel').is(':checked')){     
         window.open('../phpexcel/reporte_agrupados_prov.php?id='+$('#idProv').val(), '_blank');    
     } else{
-        window.open("../reportes/reportes/factura_compra.php?id="+$("#idFac").val(),'_blank');
+        window.open("../reportes/factura_compra.php?id="+$("#idFac").val(),'_blank');
     }   
 }
 
@@ -278,7 +278,7 @@ function fn_reporte_factura_venta(e){
     if($('#excel').is(':checked')){     
         window.open('../phpexcel/factura_venta.php?id='+$('#idProv').val(), '_blank');    
     } else{
-        window.open('../reportes_sistema/factura_venta.php?hoja='+"A4"+"&id="+$('#idFac').val(), '_blank');      
+        window.open('../reportes/factura_venta.php?hoja='+"A4"+"&id="+$('#idFac').val(), '_blank');      
     }   
 }
 
@@ -321,7 +321,7 @@ function fn_reporte_factura_compra(e){
     if($('#excel').is(':checked')){     
         window.open('../phpexcel/resumenFacturasCompras.php?inicio='+$('#inicio').val()+'&fin='+$('#fin').val(), '_blank');    
     } else{      
-        window.open('../reportes/reportes/resumenFacturasCompras.php?inicio='+$('#inicio').val()+'&fin='+$('#fin').val(), '_blank');      
+        window.open('../reportes/resumenFacturasCompras.php?inicio='+$('#inicio').val()+'&fin='+$('#fin').val(), '_blank');      
     }   
 }
 
@@ -363,7 +363,7 @@ function fn_resumen_facturas(e){
     if($('#excel').is(':checked')){     
         window.open('../phpexcel/facturasCompras.php?inicio='+$('#inicio').val()+'&fin='+$('#fin').val(), '_blank');    
     } else{      
-        window.open('../reportes/reportes/facturasCompras.php?inicio='+$('#inicio').val()+'&fin='+$('#fin').val(), '_blank');      
+        window.open('../reportes/facturasCompras.php?inicio='+$('#inicio').val()+'&fin='+$('#fin').val(), '_blank');      
     }   
 }
 
@@ -406,7 +406,7 @@ function fn_venta_general_clientes(e){
     if($('#excel').is(':checked')){     
         window.open('../phpexcel/resumenFacturasVentas.php?inicio='+$('#inicio').val()+'&fin='+$('#fin').val(), '_blank');    
     } else{      
-        window.open('../reportes/reportes/resumenFacturasVentas.php?inicio='+$('#inicio').val()+'&fin='+$('#fin').val(), '_blank');      
+        window.open('../reportes/resumenFacturasVentas.php?inicio='+$('#inicio').val()+'&fin='+$('#fin').val(), '_blank');      
     }   
 }
 
@@ -449,7 +449,7 @@ function fn_venta_general(e){
     if($('#excel').is(':checked')){     
         window.open('../phpexcel/facturasVentas.php?inicio='+$('#inicio').val()+'&fin='+$('#fin').val(), '_blank');    
     } else{      
-        window.open('../reportes/reportes/facturasVentas.php?inicio='+$('#inicio').val()+'&fin='+$('#fin').val(), '_blank');      
+        window.open('../reportes/facturasVentas.php?inicio='+$('#inicio').val()+'&fin='+$('#fin').val(), '_blank');      
     }   
 }
 //////////////////
@@ -511,7 +511,7 @@ function fn_estadosCuentaProveedores(e){
     if($('#excel').is(':checked')){     
         window.open('../phpexcel/reporte_agrupados_prov.php?id='+$('#idProv').val(), '_blank');    
     } else{        
-        window.open('../reportes_sistema/reporte_agrupados_prov.php?hoja='+hoja+"&id="+$('#idProv').val(), '_blank');      
+        window.open('../reportes/reporte_agrupados_prov.php?hoja='+hoja+"&id="+$('#idProv').val(), '_blank');      
     }   
 }
 ////////////////////////////
@@ -573,7 +573,7 @@ function fn_estadosCuentaClientes(e){
     if($('#excel').is(':checked')){     
         window.open('../phpexcel/reporte_agrupados_prov.php?id='+$('#idProv').val(), '_blank');    
     } else{        
-        window.open('../reportes_sistema/reporte_agrupados_prov.php?hoja='+hoja+"&id="+$('#idProv').val(), '_blank');      
+        window.open('../reportes/reporte_agrupados_prov.php?hoja='+hoja+"&id="+$('#idProv').val(), '_blank');      
     }   
 }
 ///////////////////////
@@ -611,7 +611,7 @@ function fn_reporte_nota_credito(e){
     if($('#excel').is(':checked')){     
     //window.open('../phpexcel/reporte_agrupados_prov.php?id='+$('#idProv').val(), '_blank');    
     } else{        
-        window.open('../reportes/reportes/notaCredito.php?id='+$("#idNC").val(), '_blank');      
+        window.open('../reportes/notaCredito.php?id='+$("#idNC").val(), '_blank');      
     }   
 }
 ///////////////////////
@@ -648,7 +648,7 @@ function fn_proformas(e){
     if($('#excel').is(':checked')){     
     //window.open('../phpexcel/reporte_agrupados_prov.php?id='+$('#idProv').val(), '_blank');    
     } else{        
-        window.open('../reportes/reportes/proforma.php?id='+$("#idProf").val(), '_blank');      
+        window.open('../reportes/proforma.php?id='+$("#idProf").val(), '_blank');      
     }   
 }
 /////////////////////////
@@ -684,7 +684,7 @@ function fn_reporte_dev_compras(e){
     if($('#excel').is(':checked')){     
     //window.open('../phpexcel/reporte_agrupados_prov.php?id='+$('#idProv').val(), '_blank');    
     } else{        
-        window.open('../reportes/reportes/devolucion_compra.php?id='+$("#idDevCom").val(), '_blank');      
+        window.open('../reportes/devolucion_compra.php?id='+$("#idDevCom").val(), '_blank');      
     }   
 }
 /////////////////////////
@@ -727,13 +727,13 @@ function fn_reporte_facturas_notas_anuladas(e){
     if($('#excel').is(':checked')){     
         window.open('../phpexcel/resumenFacturasNotasAnuladas.php?inicio='+$('#inicio').val()+'&fin='+$('#fin').val(), '_blank');    
     } else{      
-        window.open('../reportes/reportes/resumenFacturasNotasAnuladas.php?inicio='+$('#inicio').val()+'&fin='+$('#fin').val(), '_blank');      
+        window.open('../reportes/resumenFacturasNotasAnuladas.php?inicio='+$('#inicio').val()+'&fin='+$('#fin').val(), '_blank');      
     }   
 }
 ////////////////////////////
 function reporte_general(e){
     var hoja=$("#tam_hoja").val()
-    window.open('../reportes/reportes/general.php', '_blank');        
+    window.open('../reportes/general.php', '_blank');        
 }
 /////////////////////////
 function cobros_realizados(e){ 
@@ -752,9 +752,9 @@ function fn_cobros_realizados(e){
     //window.open('../phpexcel/reporte_agrupados_prov.php?id='+$('#idProv').val(), '_blank');    
     } else{        
         if($("#tipoCobro").val()==1){
-            window.open('../reportes/reportes/cobros_realizados_internos.php', '_blank');         
+            window.open('../reportes/cobros_realizados_internos.php', '_blank');         
         }else{
-            window.open('../reportes/reportes/cobros_realizados.php', '_blank');      
+            window.open('../reportes/cobros_realizados.php', '_blank');      
         }
     }   
 }
@@ -774,9 +774,9 @@ function fn_pagos_realizados(e){
     //window.open('../phpexcel/reporte_agrupados_prov.php?id='+$('#idProv').val(), '_blank');    
     } else{        
         if($("#tipoCobro").val()==1){
-            window.open('../reportes/reportes/pagos_realizados_internos.php', '_blank');         
+            window.open('../reportes/pagos_realizados_internos.php', '_blank');         
         }else{
-            window.open('../reportes/reportes/pagos_realizados.php', '_blank');      
+            window.open('../reportes/pagos_realizados.php', '_blank');      
         }
         
     }   
@@ -785,28 +785,28 @@ function fn_pagos_realizados(e){
 function facturas_canceladas(e){
     var hoja=$("#tam_hoja").val()
     facturas_canceladas
-    window.open('../reportes/reportes/facturas_canceladas.php', '_blank');      
+    window.open('../reportes/facturas_canceladas.php', '_blank');      
     
 }
 //////////////
 function facturas_canceladas_proveedor(e){
     var hoja=$("#tam_hoja").val()
     facturas_canceladas
-    window.open('../reportes/reportes/facturas_canceladas_proveedor.php', '_blank');      
+    window.open('../reportes/facturas_canceladas_proveedor.php', '_blank');      
     
 }
 ///////////////////
 function facturas_cobrar_clientes(e){
     var hoja=$("#tam_hoja").val()
     facturas_canceladas
-    window.open('../reportes/reportes/facturas_por_cobrar.php', '_blank');      
+    window.open('../reportes/facturas_por_cobrar.php', '_blank');      
     
 }
 ///////////////////
 function facturas_pagar_proveedor(e){
     var hoja=$("#tam_hoja").val()
     facturas_canceladas
-    window.open('../reportes/reportes/facturas_por_pagar.php', '_blank');      
+    window.open('../reportes/facturas_por_pagar.php', '_blank');      
     
 }
 /////////////////////////
@@ -849,7 +849,7 @@ function fn_reporte_utilidad_producto(e){
     if($('#excel').is(':checked')){     
         window.open('../phpexcel/resumenFacturasCompras.php?inicio='+$('#inicio').val()+'&fin='+$('#fin').val(), '_blank');    
     } else{      
-        window.open('../reportes/reportes/utilidad_productos.php?inicio='+$('#inicio').val()+'&fin='+$('#fin').val(), '_blank');      
+        window.open('../reportes/utilidad_productos.php?inicio='+$('#inicio').val()+'&fin='+$('#fin').val(), '_blank');      
     }   
 }
 /////////////////////////
@@ -892,7 +892,7 @@ function fn_reporte_utilidad_factura(e){
     if($('#excel').is(':checked')){     
         window.open('../phpexcel/resumenFacturasCompras.php?inicio='+$('#inicio').val()+'&fin='+$('#fin').val(), '_blank');    
     } else{      
-        window.open('../reportes/reportes/utilidad_factura.php?inicio='+$('#inicio').val()+'&fin='+$('#fin').val(), '_blank');      
+        window.open('../reportes/utilidad_factura.php?inicio='+$('#inicio').val()+'&fin='+$('#fin').val(), '_blank');      
     }   
 }
 ////////////////////////////
@@ -934,7 +934,7 @@ function fn_reporte_utilidad_factura_general(e){
     if($('#excel').is(':checked')){     
         window.open('../phpexcel/resumenFacturasCompras.php?inicio='+$('#inicio').val()+'&fin='+$('#fin').val(), '_blank');    
     } else{      
-        window.open('../reportes/reportes/utilidad_factura_general.php?inicio='+$('#inicio').val()+'&fin='+$('#fin').val(), '_blank');      
+        window.open('../reportes/utilidad_factura_general.php?inicio='+$('#inicio').val()+'&fin='+$('#fin').val(), '_blank');      
     }   
 }
 ////////////////////////////
@@ -969,7 +969,7 @@ function fn_orden_produccion(e){
     if($('#excel').is(':checked')){     
     //window.open('../phpexcel/reporte_agrupados_prov.php?id='+$('#idProv').val(), '_blank');    
     } else{        
-        window.open('../reportes/reportes/orden_produccion.php?id='+$("#idOrden").val(), '_blank');         
+        window.open('../reportes/orden_produccion.php?id='+$("#idOrden").val(), '_blank');         
     }   
 }
 /////////////////////////
@@ -1012,7 +1012,7 @@ function fn_lista_proformas(e){
     if($('#excel').is(':checked')){     
         window.open('../phpexcel/resumenFacturasCompras.php?inicio='+$('#inicio').val()+'&fin='+$('#fin').val(), '_blank');    
     } else{      
-        window.open('../reportes/reportes/lista_proformas.php?inicio='+$('#inicio').val()+'&fin='+$('#fin').val(), '_blank');      
+        window.open('../reportes/lista_proformas.php?inicio='+$('#inicio').val()+'&fin='+$('#fin').val(), '_blank');      
     }   
 }
 ////////////////////////////
@@ -1054,7 +1054,7 @@ function fn_equipos_recibidos(e){
     if($('#excel').is(':checked')){     
         window.open('../phpexcel/resumenFacturasCompras.php?inicio='+$('#inicio').val()+'&fin='+$('#fin').val(), '_blank');    
     } else{      
-        window.open('../reportes/reportes/reporteCliente.php?inicio='+$('#inicio').val()+'&fin='+$('#fin').val(), '_blank');      
+        window.open('../reportes/reporteCliente.php?inicio='+$('#inicio').val()+'&fin='+$('#fin').val(), '_blank');      
     }   
 }
 /////////////////////////
@@ -1096,7 +1096,7 @@ function fn_equipos_reparados(e){
     if($('#excel').is(':checked')){     
         window.open('../phpexcel/resumenFacturasCompras.php?inicio='+$('#inicio').val()+'&fin='+$('#fin').val(), '_blank');    
     } else{      
-        window.open('../reportes/reportes/reporteReparados.php?inicio='+$('#inicio').val()+'&fin='+$('#fin').val(), '_blank');      
+        window.open('../reportes/reporteReparados.php?inicio='+$('#inicio').val()+'&fin='+$('#fin').val(), '_blank');      
     }   
 }
 /////////////////////////
@@ -1140,7 +1140,7 @@ function fn_equipos_en_reparacion(e){
         window.open('../phpexcel/resumenFacturasCompras.php?inicio='+$('#inicio').val()+'&fin='+$('#fin').val(), '_blank');    
     }
     else{      
-        window.open('../reportes/reportes/reporteClienteReparacion.php?inicio='+$('#inicio').val()+'&fin='+$('#fin').val(), '_blank');      
+        window.open('../reportes/reporteClienteReparacion.php?inicio='+$('#inicio').val()+'&fin='+$('#fin').val(), '_blank');      
     }   
 }
 /////////////////////////
@@ -1182,7 +1182,7 @@ function fn_equipos_entregados(e){
     if($('#excel').is(':checked')){     
         window.open('../phpexcel/resumenFacturasCompras.php?inicio='+$('#inicio').val()+'&fin='+$('#fin').val(), '_blank');    
     } else{      
-        window.open('../reportes/reportes/reporteEntregados.php?inicio='+$('#inicio').val()+'&fin='+$('#fin').val(), '_blank');      
+        window.open('../reportes/reporteEntregados.php?inicio='+$('#inicio').val()+'&fin='+$('#fin').val(), '_blank');      
     }   
 }
 /////////////////////////
@@ -1218,7 +1218,7 @@ function fn_autorizaciones_cliente(e){
     if($('#excel').is(':checked')){     
         window.open('../phpexcel/reporte_agrupados_prov.php?id='+$('#idProv').val(), '_blank');    
     } else{        
-        window.open('../reportes/reportes/reporte_autorizacion.php?id='+$('#idCli').val(), '_blank');      
+        window.open('../reportes/reporte_autorizacion.php?id='+$('#idCli').val(), '_blank');      
     }   
 }
 /////////////////////////////
@@ -1258,7 +1258,7 @@ function fn_autorizaciones_cliente_fechas(e){
     if($('#excel').is(':checked')){     
         window.open('../phpexcel/resumenFacturasCompras.php?inicio='+$('#inicio').val()+'&fin='+$('#fin').val(), '_blank');    
     } else{      
-        window.open('../reportes/reportes/reporte_autorizacion_fechas.php?inicio='+$('#inicio').val()+'&fin='+$('#fin').val(), '_blank');      
+        window.open('../reportes/reporte_autorizacion_fechas.php?inicio='+$('#inicio').val()+'&fin='+$('#fin').val(), '_blank');      
     }   
 }
 /////////////////////////
@@ -1284,7 +1284,7 @@ function fn_autorizaciones_cliente_caducidad(e){
     if($('#excel').is(':checked')){     
         window.open('../phpexcel/resumenFacturasCompras.php?inicio='+$('#inicio').val()+'&fin='+$('#fin').val(), '_blank');    
     } else{      
-        window.open('../reportes/reportes/reporte_autorizacion_caducidad.php?&fin='+$('#fin').val(), '_blank');      
+        window.open('../reportes/reporte_autorizacion_caducidad.php?&fin='+$('#fin').val(), '_blank');      
     }   
 }
 /////////////////////////////
@@ -1324,7 +1324,7 @@ function fn_gastos(e){
     if($('#excel').is(':checked')){     
         window.open('../phpexcel/resumenFacturasCompras.php?inicio='+$('#inicio').val()+'&fin='+$('#fin').val(), '_blank');    
     } else{      
-        window.open('../reportes/reportes/gastos_realizados.php?inicio='+$('#inicio').val()+'&fin='+$('#fin').val(), '_blank');      
+        window.open('../reportes/gastos_realizados.php?inicio='+$('#inicio').val()+'&fin='+$('#fin').val(), '_blank');      
     }   
 }
 /////////////////////////////
@@ -1364,7 +1364,7 @@ function fn_gastos_general(e){
     if($('#excel').is(':checked')){     
         window.open('../phpexcel/resumenFacturasCompras.php?inicio='+$('#inicio').val()+'&fin='+$('#fin').val(), '_blank');    
     } else{      
-        window.open('../reportes/reportes/gasto_acumulado.php?inicio='+$('#inicio').val()+'&fin='+$('#fin').val(), '_blank');      
+        window.open('../reportes/gasto_acumulado.php?inicio='+$('#inicio').val()+'&fin='+$('#fin').val(), '_blank');      
     }   
 }
 /////////////////////////
@@ -1400,7 +1400,7 @@ function fn_buscar_serie(e){
     if($('#excel').is(':checked')){     
         window.open('../phpexcel/reporte_agrupados_prov.php?id='+$('#idProv').val(), '_blank');    
     } else{        
-        window.open('../reportes/reportes/reporte_serie.php?id='+$('#idSerie').val(), '_blank');      
+        window.open('../reportes/reporte_serie.php?id='+$('#idSerie').val(), '_blank');      
     }   
 }
 /////////////////////////////
@@ -1441,7 +1441,7 @@ function fn_gastos_internos(e){
     if($('#excel').is(':checked')){     
         window.open('../phpexcel/resumenFacturasCompras.php?inicio='+$('#inicio').val()+'&fin='+$('#fin').val(), '_blank');    
     } else{      
-        window.open('../reportes/reportes/gastos_fechas.php?inicio='+$('#inicio').val()+'&fin='+$('#fin').val(), '_blank');      
+        window.open('../reportes/gastos_fechas.php?inicio='+$('#inicio').val()+'&fin='+$('#fin').val(), '_blank');      
     }   
 }
 /////////////////////////
@@ -1482,7 +1482,7 @@ function fn_diario_caja(e){
     if($('#excel').is(':checked')){     
         window.open('../phpexcel/resumenFacturasCompras.php?inicio='+$('#inicio').val()+'&fin='+$('#fin').val(), '_blank');    
     } else{      
-        window.open('../reportes/reportes/diario_caja.php?inicio='+$('#inicio').val()+'&fin='+$('#fin').val(), '_blank');      
+        window.open('../reportes/diario_caja.php?inicio='+$('#inicio').val()+'&fin='+$('#fin').val(), '_blank');      
     }   
 }
 //////////////////////////
@@ -1522,7 +1522,7 @@ function fn_ordenes_produccion_fechas(e){
     if($('#excel').is(':checked')){     
         window.open('../phpexcel/resumenFacturasCompras.php?inicio='+$('#inicio').val()+'&fin='+$('#fin').val(), '_blank');    
     } else{      
-        window.open('../reportes/reportes/ordenes_produccion_fechas.php?inicio='+$('#inicio').val()+'&fin='+$('#fin').val(), '_blank');      
+        window.open('../reportes/ordenes_produccion_fechas.php?inicio='+$('#inicio').val()+'&fin='+$('#fin').val(), '_blank');      
     }   
 }
 ////////////////////////////
@@ -1579,6 +1579,6 @@ function total_director(e){
 }
 
 function fn_total_director(e){
-    window.open('../reportes/reportes/reporte_director.php?id='+$("#idDir").val()+"&inicio="+$("#inicio").val()+"&fin="+$("#fin").val(), '_blank');      
+    window.open('../reportes/reporte_director.php?id='+$("#idDir").val()+"&inicio="+$("#inicio").val()+"&fin="+$("#fin").val(), '_blank');      
        
 }
