@@ -605,7 +605,6 @@ function inicio() {
     {
         closeOnEscape: true,        
         multipleSearch: false, overlay: false
-
     },
     {
     },

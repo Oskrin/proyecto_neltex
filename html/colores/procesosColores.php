@@ -13,7 +13,7 @@ if ($_POST['oper'] == "add") {
     }
     $cont++;
 
-    $consulta2 = pg_query("select * from color where nombre_color='$_POST[nombre_Color]'");
+    $consulta2 = pg_query("select * from color where nombre_color='". strtoupper($_POST['nombre_Color']) ."'");
     while ($row = pg_fetch_row($consulta2)) {
         $repe++;
     }
@@ -22,6 +22,6 @@ if ($_POST['oper'] == "add") {
     }
 }
 if ($_POST['oper'] == "edit") {
-    pg_query("update color set id_color='$_POST[id_color]', nombre_color='$_POST[nombre_Color]' where id_color='$_POST[id_color]'");
+    pg_query("update color set nombre_color='". strtoupper($_POST['nombre_Color']) ."' where id_color='$_POST[id_color]'");
 }
 ?>

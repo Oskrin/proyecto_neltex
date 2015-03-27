@@ -230,7 +230,42 @@
                                                         <div class="controls" >
                                                             <textarea name="observaciones_pro" id="observaciones_pro" rows="3" class="span4"></textarea>
                                                         </div>  
-                                                    </div>  
+                                                  </div>
+
+                                                  <div class="controls">
+                                                  <label class="checkbox span4">
+                                                    <div class="checker" id="uniform-allstates">
+                                                      <span>
+                                                        <input type="checkbox" value="all" id="allstates" name="all">
+                                                      </span>
+                                                    </div>Todas
+                                                  </label>
+
+                                                  <label class="checkbox span4">
+                                                    <div class="checker">
+                                                      <span>
+                                                        <input class="states" type="checkbox" value="Caba" id="" name="st[]">                          
+                                                       </span>
+                                                    </div> Ciudad Autónoma de Buenos Aires
+                                                  </label>
+
+                                                  <label class="checkbox span4">
+                                                    <div class="checker">
+                                                      <span>
+                                                        <input class="states" type="checkbox" value="Buenos Aires" id="" name="st[]">                           
+                                                      </span>
+                                                    </div> Buenos Aires
+                                                  </label>
+
+                                                  <label class="checkbox span4">
+                                                    <div class="checker">
+                                                      <span>
+                                                        <input class="states" type="checkbox" value="Catamarca" id="" name="st[]">                             
+                                                      </span>
+                                                    </div> Catamarca
+                                                  </label>
+                                                </div>    
+
                                                 </div>
                                                </div>
                                               </div>  
@@ -289,7 +324,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="span12">
-                            &copy; 2014 <a href=""> <?php echo $_SESSION['empresa']; ?></a>.
+                            &copy; 2015 <a href=""> <?php echo $_SESSION['empresa']; ?></a>.
                         </div>
                     </div>
                 </div>

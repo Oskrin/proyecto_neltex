@@ -9,20 +9,39 @@ function menu_1() {
             <li><a href="../html/principal.php" target="_parent" class="inicio"><i class="icon-home"></i> Inicio</a></li>
             <li><a href="" target="_parent"> <i class="icon-th-large"></i> Ingresos</a>
                 <ul>
+                  <li><a href="" target="_parent">Parámetros</a>
+                      <ul>
+                          <li><a href="" target="_parent">Facturación</a>
+                            <ul>
+                              <li><a href="../impuestos" target="_blank">Impuestos Ventas/Compras</a>
+                              <li><a href="../retenciones" target="_blank">Retención en Impuesto</a>
+                              <li><a href="../retenciones_fuente" target="_blank">Retención en Fuente</a>
+                              <li><a href="../segundo_impuesto" target="_blank">Segundo Impuesto Ventas/Compras</a>
+                            </ul>
+                          </li>
+
+                          <li><a href="" target="_parent">Inventario</a>
+                            <ul>
+                              <li><a href="../bodegas" target="_blank">Bodegas</a>
+                              <li><a href="../categorias" target="_blank">Categorias</a>
+                              <li><a href="../marcas" target="_blank">Marcas</a>
+                              <li><a href="../medida" target="_blank">Unidades Productos</a>
+                            </ul>
+                          </li>
+                          
+                          <li><a href="" target="_parent">Importar</a>
+                            <ul>
+                              <li><a href="../cargarProductos" target="_blank">Cargar Productos</a></li>
+                              <li><a href="../planCuentas" target="_blank">Cargar Plan Cuentas</a></li>
+                            </ul>
+                          </li>
+                      </ul>
+                    </li>
                     <li><a href="../asignacion_cuentas" target="_blank">Asignación Cuentas</a></li>
                     <li><a href="../usuarios" target="_blank">Usuarios</a></li>
                     <li><a href="../proveedores"target="_blank">Proveedores</a></li>
                     <li><a href="../clientes" target="_blank">Clientes</a></li>
-                      <li><a href="" target="_parent">Generales</a>
-                        <ul>
-                            <li><a href="../bodegas" target="_blank">Bodegas</a></li>
-                            <li><a href="../categorias" target="_blank">Categorias</a></li>
-                            <li><a href="../marcas" target="_blank">Marcas</a></li>
-                            <li><a href="../medida" target="_blank">Unidades de Medida</a></li>
-                        </ul>
-                      </li>
-                    <li><a href="../cargarProductos" target="_blank">Cargar Productos</a></li>
-                    <li><a href="../planCuentas" target="_blank">Cargar Cuentas</a></li>
+                    
                     <li><a href="../productos" target="_blank">Productos</a></li>
                     
                 </ul>

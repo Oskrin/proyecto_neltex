@@ -1,9 +1,5 @@
 $(document).on("ready", inicio);
 
-function este(){
-window.open('../../fpdf/ayuda_general.pdf');
-}
-
 $(function() {
     $('#main-menu').smartmenus({
         subMenusSubOffsetX: 1,
@@ -11,12 +7,26 @@ $(function() {
     });
 });
 
-function numeros(e) { 
-tecla = (document.all) ? e.keyCode : e.which;
-if (tecla==8) return true;
-patron = /\d/;
-te = String.fromCharCode(tecla);
-return patron.test(te);
+function Valida_punto() {
+    var key;
+    if (window.event)
+    {
+        key = event.keyCode;
+    } else if (event.which)
+{
+        key = event.which;
+    }
+
+    if (key < 48 || key > 57)
+    {
+        if (key === 46 || key === 8)
+        {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    return true;
 }
 
 function inicio() {
@@ -24,26 +34,26 @@ function inicio() {
         jQuery("#list").setGridWidth($('#centro').width() - 10);
     }).trigger('resize');
     jQuery("#list").jqGrid({
-        url: 'xmlBodega.php',
+        url: 'xmlImpuestos.php',
         datatype: 'xml',
-        colNames: ['Cod.', 'Nombre Bodega', 'Ubicación Bodega', 'Teléfono Bodega'],
+        colNames: ['Cod', 'Abreviatura', 'Descripción','Valor en %'],
         colModel: [
-            {name: 'id_bodega', index: 'id_bodega', editable: true, align: 'center', width: '120', search: false, frozen: true, editoptions: {readonly: 'readonly'}, formoptions: {elmprefix: ""}},
-            {name: 'nombre_bodega', index: 'nombre_bodega', editable: true, align: 'center', width: '400', search: true, frozen: true, formoptions: {elmsuffix: " (*)"}, editrules: {required: true}},
-            {name: 'ubicacion_bodega', index: 'ubicacion_bodega', editable: true, align: 'center', width: '400', search: true, frozen: true, formoptions: {elmsuffix: " (*)"}, editrules: {required: true}},
-            {name: 'telefono_bodega', index: 'telefono_bodega', editable: true, align: 'center', width: '140', search: false, editrules: {required: false}, editoptions:{maxlength: 10, size:20,dataInit: function(elem){$(elem).bind("keypress", function(e) {return numeros(e)})}}}, 
+            {name: 'id_segundo_impuesto', index: 'id_segundo_impuesto', editable: true, align: 'center', width: '120', search: false, frozen: true, editoptions: {readonly: 'readonly'}, formoptions: {elmprefix: ""}},
+            {name: 'abreviatura', index: 'abreviatura', editable: true, align: 'center', width: '400', search: true, frozen: true, formoptions: {elmsuffix: " (*)"}, editrules: {required: true}},
+            {name: 'descripcion', index: 'descripcion', editable: true, align: 'center', width: '350', search: true, frozen: true, formoptions: {elmsuffix: " (*)"}, editrules: {required: true}},
+            {name: 'valor', index: 'valor', editable: true, align: 'center', width: '140', search: false, formoptions: {elmsuffix: " (*)"}, editrules: {required: true}, editoptions:{maxlength: 10, size:20,dataInit: function(elem){$(elem).bind("keypress", function(e) {return Valida_punto(e)})}}}, 
         ],
         rowNum: 10,
         rowList: [10, 20, 30],
         height: 255,
         pager: jQuery('#pager'),
-        editurl: "procesoBodegas.php",
-        sortname: 'id_bodega',
+        editurl: "procesoImpuestos.php",
+        sortname: 'id_segundo_impuesto',
         shrinkToFit: false,
         sortordezr: 'asc',
-        caption: 'Lista Categorías',
+        caption: 'Lista Impuestos',
         viewrecords: true
-    }).jqGrid('navGrid', '#pager',
+     }).jqGrid('navGrid', '#pager',
             {
                 add: true,
                 edit: true,
