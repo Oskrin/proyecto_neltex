@@ -108,7 +108,7 @@ function menu_1() {
                 </ul>
             </li>
 
-            <li><a href="" target="_parent"><i class="icon-book"></i> Mantenimiento</a>
+            <!--<li><a href="" target="_parent"><i class="icon-book"></i> Mantenimiento</a>
                 <ul>
                     <li><a href="../registro_equipo" target="_blank">Registro Equipos</a></li>
                     <li><a href="../reparacion_equipo" target="_blank">Reparación Equipos</a></li>
@@ -117,7 +117,7 @@ function menu_1() {
 
 
                 </ul>
-            </li>
+            </li>-->
 
             
             <li><a href="" target="_parent"><i class="icon-print"></i> Reportes</a>
