@@ -205,7 +205,7 @@ function menu_1() {
             <li><a href="" target="_parent"><i class="icon-bookmark"></i> Bienvenido</a>
                 <ul>
                     <li><a href="" class="disabled">' . $_SESSION['nombres'] . '</a></li>
-                    <li><a href="../html/configuracion" target="_blank">Modificar</a></li>
+                    <li><a href="../configuracion" target="_blank">Modificar</a></li>
                     <li><a href="../index.php">Salir</a></li>
                 </ul>
             </li>
