@@ -7,6 +7,10 @@ $(function() {
     });
 });
 
+function openPDF(){
+window.open('../../ayudas/ayuda.pdf');
+}
+
 function Valida_punto() {
     var key;
     if (window.event)

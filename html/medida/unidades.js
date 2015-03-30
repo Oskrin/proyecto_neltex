@@ -1,5 +1,9 @@
 $(document).on("ready", inicio);
 
+function openPDF(){
+window.open('../../ayudas/ayuda.pdf');
+}
+
 $(function() {
     $('#main-menu').smartmenus({
         subMenusSubOffsetX: 1,

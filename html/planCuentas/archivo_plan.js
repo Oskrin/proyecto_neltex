@@ -13,6 +13,10 @@ function scrollToTop() {
     }, 'slow');
 }
 
+function openPDF(){
+window.open('../../ayudas/ayuda.pdf');
+}
+
 $(function() {
     $('#main-menu').smartmenus({
         subMenusSubOffsetX: 1,

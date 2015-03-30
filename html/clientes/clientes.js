@@ -7,8 +7,9 @@ function scrollToBottom() {
         scrollTop: $(document).height()
     }, 'slow');
 }
-function este(){
-    window.open('../../fpdf/ayuda_general.pdf');
+
+function openPDF(){
+window.open('../../ayudas/ayuda.pdf');
 }
 
 function scrollToTop() {

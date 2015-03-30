@@ -9,6 +9,10 @@ function scrollToBottom() {
     }, 'slow');
 }
 
+function openPDF(){
+window.open('../../ayudas/ayuda.pdf');
+}
+
 function scrollToTop() {
     $('html, body').animate({
         scrollTop: 0

@@ -7,8 +7,8 @@ $(function() {
     });
 });
 
-function este(){
-window.open('../../fpdf/ayuda_general.pdf');
+function openPDF(){
+window.open('../../ayudas/ayuda.pdf');
 }
 
 function numeros(e) { 

@@ -114,8 +114,6 @@ function menu_1() {
                     <li><a href="../reparacion_equipo" target="_blank">Reparación Equipos</a></li>
                     <li><a href="../entrega_equipo" target="_blank">Entrega Equipos</a></li>
                     <li><a href="../reestablecer" target="_blank">Reestablecer</a></li>
-
-
                 </ul>
             </li>-->
 
@@ -211,6 +209,13 @@ function menu_1() {
                     <li><a href="../index.php">Salir</a></li>
                 </ul>
             </li>
+
+            <li><a href="" target="_parent">Ayuda</a>
+              <ul>
+                <li><a href="" onClick="openPDF()" >Generar</a></li>      
+              </ul>
+          </li> 
+
         </ul>');
 }
 
