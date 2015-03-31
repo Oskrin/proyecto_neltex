@@ -88,9 +88,9 @@
                                                 <table id="list"></table>
                                                 <div id="pager"></div>   
                                             </fieldset>   
-                                        </div> 
-
+                                            </div> 
                                          </div>
+                                         
                                          <div class="span6">
                                            <ul class="nav nav-tabs">
                                                 <li class="active">
@@ -104,7 +104,7 @@
                                                     <label class="control-label" for="descripcion">Abreviatura:</label>
                                                     <div class="controls">
                                                          <input type="text" name="abreviatura" id="abreviatura" class="span2" value="" />
-                                                         <input type="text" name="id_impuestos" id="id_impuestos" class="span2" value="" />
+                                                         <input type="hidden" name="id_impuestos" id="id_impuestos" class="span2" value="" />
                                                     </div>
                                                 </div>
 
@@ -147,11 +147,7 @@
                                                     </div>
                                                   </div>
                                              </div>
-
-
-                                          </div>  
-
-
+                                          </div>
                                          </div>
                                      </div>
                                   </form> 

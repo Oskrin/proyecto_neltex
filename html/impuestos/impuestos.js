@@ -47,25 +47,72 @@ if($("#abreviatura").val() == ""){
     alertify.error('Ingrese un Valor');
 }else{
  $.ajax({
-        url: '../procesos/validar_acceso.php',
+        url: 'procesoImpuestos.php',
         type: 'POST',
-        data: "clave=" + $("#clave").val(),
+        data: $("#impuesto_form").serialize()+"&oper="+'add',
         success: function(data) {
-            var val = data;
-            if (val == 0) {
-                $("#clave").val("");
-                $("#clave").focus();
-                alertify.error("Error... La clave es incorrecta ingrese nuevamente");
-            } else {
-                if (val == 1) {
-                    $("#seguro").dialog("open");   
-                }
-            }
+        var val = data;
+        if (val == 1) {
+            alertify.success('Datos Agregados Correctamente');     
+            setTimeout(function() {
+                location.reload();
+            }, 1000);
+        } else {
+        if (val == 3) {
+            $("#descripcion").focus();
+            alertify.error('El impuesto ya esta agregado');   
+         }
         }
+       }
       });
      } 
    }
   }
+}
+
+function modificar(){
+if($("#id_impuestos").val() == ""){
+   $("#id_impuestos").focus();
+   alertify.error('Seleccione un impuesto');
+}else{    
+if($("#abreviatura").val() == ""){
+   $("#abreviatura").focus();
+   alertify.error('Ingrese la Abreviatura');
+}else{
+  if($("#descripcion").val() == ""){
+    $("#descripcion").focus();
+    alertify.error('Ingrese la Descripción');
+}else{
+   if($("#valor").val() == ""){
+    $("#valor").focus();
+    alertify.error('Ingrese un Valor');
+}else{
+ $.ajax({
+        url: 'procesoImpuestos.php',
+        type: 'POST',
+        data: $("#impuesto_form").serialize()+"&oper="+'edit',
+        success: function(data) {
+        var val = data;
+        if (val == 2) {
+            alertify.success('Datos Modificados Correctamente');     
+            setTimeout(function() {
+                location.reload();
+            }, 1000);
+        } else {
+            if (val == 3) {
+                alertify.error('El impuesto ya esta agregado');   
+            }
+        }
+       }
+      });
+     } 
+   }
+  }
+}
+}
+
+function nuevo() {
+    location.reload();
 }
 
 function inicio() {
@@ -94,6 +141,8 @@ function inicio() {
     });
 
     $("#btnGuardar").on("click", guardar);
+    $("#btnModificar").on("click", modificar);
+    $("#btnNuevo").on("click", nuevo);
 
     $(window).bind('resize', function() {
         jQuery("#list").setGridWidth($('#centro').width() - 10);
@@ -126,6 +175,7 @@ function inicio() {
             $("#abreviatura").val(ret.abreviatura);
             $("#descripcion").val(ret.descripcion);
             $("#valor").val(ret.valor);
+            $("#btnGuardar").attr("disabled", true);
         }
      }).jqGrid('navGrid', '#pager',
             {
