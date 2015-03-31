@@ -11,8 +11,6 @@ function openPDF(){
 window.open('../../ayudas/ayuda.pdf');
 }
 
-
-
 function punto() {
     var key;
     if (window.event)
@@ -33,6 +31,41 @@ function punto() {
         }
     }
     return true;
+}
+
+function guardar(){
+if($("#abreviatura").val() == ""){
+   $("#abreviatura").focus();
+   alertify.error('Ingrese la Abreviatura');
+}else{
+  if($("#descripcion").val() == ""){
+    $("#descripcion").focus();
+    alertify.error('Ingrese la Descripción');
+}else{
+   if($("#valor").val() == ""){
+    $("#valor").focus();
+    alertify.error('Ingrese un Valor');
+}else{
+ $.ajax({
+        url: '../procesos/validar_acceso.php',
+        type: 'POST',
+        data: "clave=" + $("#clave").val(),
+        success: function(data) {
+            var val = data;
+            if (val == 0) {
+                $("#clave").val("");
+                $("#clave").focus();
+                alertify.error("Error... La clave es incorrecta ingrese nuevamente");
+            } else {
+                if (val == 1) {
+                    $("#seguro").dialog("open");   
+                }
+            }
+        }
+      });
+     } 
+   }
+  }
 }
 
 function inicio() {
@@ -59,8 +92,8 @@ function inicio() {
     $("#btnCuenta").click(function(e) {
         e.preventDefault();
     });
-   
 
+    $("#btnGuardar").on("click", guardar);
 
     $(window).bind('resize', function() {
         jQuery("#list").setGridWidth($('#centro').width() - 10);
@@ -79,12 +112,21 @@ function inicio() {
         rowList: [10, 20, 30],
         height: 255,
         pager: jQuery('#pager'),
-        editurl: "procesoImpuestos.php",
+        // editurl: "procesoImpuestos.php",
         sortname: 'id_impuestos',
         shrinkToFit: false,
         sortordezr: 'asc',
         caption: 'Lista Impuestos',
-        viewrecords: true
+        viewrecords: true,
+        ondblClickRow: function(){
+            var id = jQuery("#list").jqGrid('getGridParam', 'selrow');
+            jQuery('#list').jqGrid('restoreRow', id);
+            var ret = jQuery("#list").jqGrid('getRowData', id);
+            $("#id_impuestos").val(ret.id_impuestos);
+            $("#abreviatura").val(ret.abreviatura);
+            $("#descripcion").val(ret.descripcion);
+            $("#valor").val(ret.valor);
+        }
      }).jqGrid('navGrid', '#pager',
             {
                 add: false,

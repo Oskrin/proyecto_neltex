@@ -104,6 +104,7 @@
                                                     <label class="control-label" for="descripcion">Abreviatura:</label>
                                                     <div class="controls">
                                                          <input type="text" name="abreviatura" id="abreviatura" class="span2" value="" />
+                                                         <input type="text" name="id_impuestos" id="id_impuestos" class="span2" value="" />
                                                     </div>
                                                 </div>
 
