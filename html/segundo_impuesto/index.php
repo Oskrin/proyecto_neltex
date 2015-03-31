@@ -83,6 +83,7 @@
                                   <form class="form-horizontal" id="impuesto_form" name="impuesto_form" method="post">
                                     <div class="row">
                                       <div class="span6">
+                                      <hr />
                                             <div class="tabbable" id="centro">
                                             <fieldset>
                                                 <table id="list"></table>
@@ -92,6 +93,7 @@
                                          </div>
 
                                          <div class="span6">
+                                         <hr />
                                            <ul class="nav nav-tabs">
                                                 <li class="active">
                                                     <a href="#formcontrols" data-toggle="tab">Generales</a>
@@ -151,6 +153,7 @@
                                          </div> 
                                     </div>  
                                   </form>
+
                                   <div class="form-actions">
                                     <button class="btn btn-primary" id='btnGuardar'><i class="icon-save"></i> Guardar</button>
                                     <button class="btn btn-primary" id='btnModificar'><i class="icon-edit"></i> Modificar</button>
@@ -171,7 +174,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="span12">
-                            &copy; 2014 <a href=""> <?php echo $_SESSION['empresa']; ?></a>.
+                            &copy; 2015 <a href=""> <?php echo $_SESSION['empresa']; ?></a>.
                         </div>
                     </div>
                 </div>
