@@ -43,8 +43,8 @@ function inicio() {
         colNames: ['Cod', 'Abreviatura', 'Descripción','Valor en %','Valor Base $'],
         colModel: [
             {name: 'id_retenciones', index: 'id_retenciones', editable: true, align: 'center', width: '120', search: false, frozen: true, editoptions: {readonly: 'readonly'}, formoptions: {elmprefix: ""}},
-            {name: 'abreviatura', index: 'abreviatura', editable: true, align: 'center', width: '300', search: true, frozen: true, formoptions: {elmsuffix: " (*)"}, editrules: {required: true}},
-            {name: 'descripcion', index: 'descripcion', editable: true, align: 'center', width: '350', search: true, frozen: true, formoptions: {elmsuffix: " (*)"}, editrules: {required: true}},
+            {name: 'abreviatura', index: 'abreviatura', editable: true, align: 'center', width: '150', search: true, frozen: true, formoptions: {elmsuffix: " (*)"}, editrules: {required: true}},
+            {name: 'descripcion', index: 'descripcion', editable: true, align: 'center', width: '200', search: true, frozen: true, formoptions: {elmsuffix: " (*)"}, editrules: {required: true}},
             {name: 'valor', index: 'valor', editable: true, align: 'center', width: '140', search: false, formoptions: {elmsuffix: " (*)"}, editrules: {required: true}, editoptions:{maxlength: 10, size:20,dataInit: function(elem){$(elem).bind("keypress", function(e) {return Valida_punto(e)})}}}, 
             {name: 'valor_base', index: 'valor_base', editable: true, align: 'center', width: '140', search: false, formoptions: {elmsuffix: " (*)"}, editrules: {required: true}, editoptions:{maxlength: 10, size:20,dataInit: function(elem){$(elem).bind("keypress", function(e) {return Valida_punto(e)})}}}, 
         ],
@@ -57,19 +57,30 @@ function inicio() {
         shrinkToFit: false,
         sortordezr: 'asc',
         caption: 'Lista Retenciones',
-        viewrecords: true
+        viewrecords: true,
+        ondblClickRow: function(){
+            var id = jQuery("#list").jqGrid('getGridParam', 'selrow');
+            jQuery('#list').jqGrid('restoreRow', id);
+            var ret = jQuery("#list").jqGrid('getRowData', id);
+            $("#id_impuestos").val(ret.id_impuestos);
+            $("#abreviatura").val(ret.abreviatura);
+            $("#descripcion").val(ret.descripcion);
+            $("#valor").val(ret.valor);
+            $("#valor_base").val(ret.valor);
+            $("#btnGuardar").attr("disabled", true);
+        }
      }).jqGrid('navGrid', '#pager',
             {
-                add: true,
-                edit: true,
+                add: false,
+                edit: false,
                 del: false,
                 refresh: true,
                 search: true,
                 view: true,
                 addtext: "Nuevo",
                 edittext: "Modificar",
-                refreshtext: "Recargar",
-                viewtext: "Consultar"
+                // refreshtext: "Recargar",
+                // viewtext: "Consultar"
             },
     {
         recreateForm: true, closeAfterEdit: true, checkOnUpdate: true, reloadAfterSubmit: true, closeOnEscape: true
@@ -94,6 +105,7 @@ function inicio() {
     });
     jQuery("#list").setGridWidth($('#centro').width() - 10);
 }
+
 function Defecto(e) {
     e.preventDefault();
 }

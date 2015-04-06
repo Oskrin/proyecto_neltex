@@ -1,7 +1,7 @@
-    <?php
-    session_start();
-    include '../../menus/menu.php';
-    ?>
+<?php
+session_start();
+include '../../menus/menu.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
