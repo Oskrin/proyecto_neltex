@@ -13,7 +13,7 @@
             $this->widths=$w;
         }                       
         function Header(){             
-            $this->AddFont('Amble-Regular');
+            $this->AddFont('Amble-Regular','','Amble-Regular.php');
             $this->SetFont('Amble-Regular','',10);        
             $fecha = date('Y-m-d', time());
             $this->SetX(1);
@@ -65,7 +65,7 @@
     $pdf->AddPage();
     $pdf->SetMargins(0,0,0,0);
     $pdf->AliasNbPages();
-    $pdf->AddFont('Amble-Regular');                    
+    $pdf->AddFont('Amble-Regular','','Amble-Regular.php');
     $pdf->SetFont('Amble-Regular','',10);       
     $pdf->SetFont('Arial','B',9);   
     $pdf->SetX(5);    
