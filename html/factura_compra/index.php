@@ -32,6 +32,7 @@
         <link rel="stylesheet" href="../../css/alertify.default.css" id="toggleCSS" />
         <link href="../../css/sm-core-css.css" rel="stylesheet" type="text/css" />
         <link href="../../css/sm-blue/sm-blue.css" rel="stylesheet" type="text/css" />
+        <link href="../../css/jquery.idealforms.css" rel="stylesheet">
 
         <script type="text/javascript" src="../../js/bootstrap.js"></script>
         <script type="text/javascript" src="../../js/jquery-loader.js"></script>
@@ -320,9 +321,248 @@
                 </div> 
             </div> 
         </div> 
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+          Launch demo modal
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+              </div>
+              <div class="modal-body">
+               
+
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div>
+            </div>
+          </div>
+        </div>
         <script type="text/javascript" src="../../js/base.js"></script>
         <script type="text/javascript" src="../../js/jquery.ui.datepicker-es.js"></script>
+        <script type="text/javascript" src="../../js/bootstrap_modal.js"></script>
+        <script type="text/javascript" src="../../js/jquery.idealforms.js"></script>
+         <form action="" novalidate autocomplete="off" class="idealforms">
 
+                    <div class="idealsteps-wrap">
+                        <style type="text/css">
+                              .field.buttons button {
+                            margin-right: .5em;
+                          }
+
+                          #invalid {
+                            display: none;
+                            float: left;
+                            width: 290px;
+                            margin-left: 120px;
+                            margin-top: .5em;
+                            color: #CC2A18;
+                            font-size: 130%;
+                            font-weight: bold;
+                          }
+
+                          .idealforms.adaptive #invalid {
+                            margin-left: 0 !important;
+                          }
+
+                          .idealforms.adaptive .field.buttons label {
+                            height: 0;
+                          }
+                        </style>
+                      <!-- Step 1 -->
+
+                      <section class="idealsteps-step">
+
+                        <div class="field">
+                          <label class="main">Username:</label>
+                          <input name="username" type="text" data-idealforms-ajax="ajax.php">
+                          <span class="error"></span>
+                        </div>
+
+                        <div class="field">
+                          <label class="main">E-Mail:</label>
+                          <input name="email" type="email">
+                          <span class="error"></span>
+                        </div>
+
+                        <div class="field">
+                          <label class="main">Password:</label>
+                          <input name="password" type="password">
+                          <span class="error"></span>
+                        </div>
+
+                        <div class="field">
+                          <label class="main">Confirm:</label>
+                          <input name="confirmpass" type="password">
+                          <span class="error"></span>
+                        </div>
+
+                        <div class="field">
+                          <label class="main">Date:</label>
+                          <input name="date" type="text" placeholder="mm/dd/yyyy" class="datepicker">
+                          <span class="error"></span>
+                        </div>
+
+                        <div class="field">
+                          <label class="main">Picture:</label>
+                          <input id="picture" name="picture" type="file" multiple>
+                          <span class="error"></span>
+                        </div>
+
+                        <div class="field">
+                          <label class="main">Website:</label>
+                          <input name="website" type="text">
+                          <span class="error"></span>
+                        </div>
+
+                        <div class="field buttons">
+                          <label class="main">&nbsp;</label>
+                          <button type="button" class="next">Next &raquo;</button>
+                        </div>
+
+                      </section>
+
+                      <!-- Step 2 -->
+
+                      <section class="idealsteps-step">
+
+                        <div class="field">
+                          <label class="main">Sex:</label>
+                          <p class="group">
+                            <label><input name="sex" type="radio" value="male">Male</label>
+                            <label><input name="sex" type="radio" value="female">Female</label>
+                          </p>
+                          <span class="error"></span>
+                        </div>
+
+                        <div class="field">
+                          <label class="main">Hobbies:</label>
+                          <p class="group">
+                            <label><input name="hobbies[]" type="checkbox" value="football">Football</label>
+                            <label><input name="hobbies[]" type="checkbox" value="basketball">Basketball</label>
+                            <label><input name="hobbies[]" type="checkbox" value="dancing">Dancing</label>
+                            <label><input name="hobbies[]" type="checkbox" value="dancing">Parkour</label>
+                            <label><input name="hobbies[]" type="checkbox" value="dancing">Videogames</label>
+                          </p>
+                          <span class="error"></span>
+                        </div>
+
+                        <div class="field buttons">
+                          <label class="main">&nbsp;</label>
+                          <button type="button" class="prev">&laquo; Prev</button>
+                          <button type="button" class="next">Next &raquo;</button>
+                        </div>
+
+                      </section>
+
+                      <!-- Step 3 -->
+
+                      <section class="idealsteps-step">
+
+                        <div class="field">
+                          <label class="main">Phone:</label>
+                          <input name="phone" type="text" placeholder="000-000-0000">
+                          <span class="error"></span>
+                        </div>
+
+                        <div class="field">
+                          <label class="main">Zip:</label>
+                          <input name="zip" type="text" placeholder="00000">
+                          <span class="error"></span>
+                        </div>
+
+                        <div class="field">
+                          <label class="main">Options:</label>
+                          <select name="options" id="">
+                            <option value="default">&ndash; Select an option &ndash;</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                            <option value="4">Four</option>
+                          </select>
+                          <span class="error"></span>
+                        </div>
+
+                        <div class="field">
+                          <label class="main">Comments:</label>
+                          <textarea name="comments" cols="30" rows="10"></textarea>
+                          <span class="error"></span>
+                        </div>
+
+                        <div class="field buttons">
+                          <label class="main">&nbsp;</label>
+                          <button type="button" class="prev">&laquo; Prev</button>
+                          <button type="submit" class="submit">Submit</button>
+                        </div>
+
+                      </section>
+
+                    </div>
+
+                    <span id="invalid"></span>
+
+                  </form>
+        <script type="text/javascript">
+        // inicializacion proceso
+        $(function(){
+            $('form.idealforms').idealforms({
+
+              silentLoad: false,
+
+              rules: {
+                'username': 'required username ajax',
+                'email': 'required email',
+                'password': 'required pass',
+                'confirmpass': 'required equalto:password',
+                'date': 'required date',
+                'picture': 'required extension:jpg:png',
+                'website': 'url',
+                'hobbies[]': 'minoption:2 maxoption:3',
+                'phone': 'required phone',
+                'zip': 'required zip',
+                'options': 'select:default',
+              },
+
+              errors: {
+                'username': {
+                  ajaxError: 'Username not available'
+                }
+              },
+
+              onSubmit: function(invalid, e) {
+                e.preventDefault();
+                $('#invalid')
+                  .show()
+                  .toggleClass('valid', ! invalid)
+                  .text(invalid ? (invalid +' invalid fields') : 'All good!');
+              }
+            });
+
+            $('form.idealforms').find('input, select, textarea').on('change keyup', function() {
+              $('#invalid').hide();
+            });
+
+            $('form.idealforms').idealforms('addRules', {
+              'comments': 'required minmax:50:200'
+            });
+
+            $('.prev').click(function(){
+              $('.prev').show();
+              $('form.idealforms').idealforms('prevStep');
+            });
+            $('.next').click(function(){
+              $('.next').show();
+              $('form.idealforms').idealforms('nextStep');
+            });
+        });
+        </script>
         <div class="footer">
             <div class="footer-inner">
                 <div class="container">
