@@ -159,11 +159,15 @@
                                                         <table cellpadding="2" border="0" style="margin-left: 10px">
                                                             <tr>
                                                                 <td><label style="width: 100%">Tipo de comprobante: <font color="red">*</font></label></td>  
-                                                                <td><select name="tipo_comprobante" id="tipo_comprobante" style="width: 300px">
-                                                                        <option value="">......Seleccione comprobante......</option>  
-                                                                        <option value="Factura"> Factura</option>
-                                                                        <option value="Nota_venta"> Nota o boleta de venta</option>
-                                                                    </select></td>
+                                                                <td><select id="categoria" name="categoria" class="span4">
+                                                                    <option value="">........Seleccione........</option>
+                                                                    <?php
+                                                                    $consulta = pg_query("select * from tipo_comprobante ");
+                                                                    while ($row = pg_fetch_row($consulta)) {
+                                                                        echo "<option id=$row[0] value=$row[0]>$row[1] $row[2]</option>";
+                                                                    }
+                                                                    ?>
+                                                                </select></td>
                                                             </tr>  
                                                         </table>
 
@@ -199,7 +203,7 @@
                                                                 <td><select name="formas" id="formas">
                                                                         <option value="Contado">Contado</option>
                                                                         <option value="Credito">Crédito</option>
-                                                                    </select> </td>
+                                                                    </select></td>
                                                             </tr>  
                                                         </table>
 
@@ -292,7 +296,6 @@
                                                     <table id="list3"><tr><td></td></tr></table>
                                                     <div id="pager3"></div>
                                                 </div> 
-
                                             </div>
                                         </div>
 

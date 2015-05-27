@@ -79,7 +79,7 @@ function menu_1() {
                     <li><a href="" target="_parent">Transferencias</a>
                         <ul>
                             <li><a href="../ingresos" target="_blank">Ingresos</a></li>
-                            <li><a href="../egresos.php" target="_blank">Egresos</a></li>
+                            <li><a href="../egresos" target="_blank">Egresos</a></li>
                         </ul>
                     </li>
                     <li><a href="../registro_gastos.php" target="_blank">Registro Gastos</a></li>
