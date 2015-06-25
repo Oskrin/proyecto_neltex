@@ -317,7 +317,6 @@
                                                 </div>
 
                                                 <div id="buscar_facturas_venta" title="BUSCAR FACTURAS VENTAS">
-
                                                     <table id="list2"><tr><td></td></tr></table>
                                                     <div id="pager2"></div>
                                                 </div> 

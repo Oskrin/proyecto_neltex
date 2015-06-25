@@ -224,7 +224,7 @@
                                                     <div class="control-group">											
                                                         <label class="control-label" for="precio_mayorista">PSP Mayorista: <font color="red">*</font></label>
                                                         <div class="controls">
-                                                            <input type="text"  name="precio_mayorista" id="precio_mayorista" valu="0" placeholder="0.00" class="span4" required/>
+                                                            <input type="text"  name="precio_mayorista" id="precio_mayorista" value="0" placeholder="0.00" class="span4" required/>
                                                         </div>
                                                     </div>
 

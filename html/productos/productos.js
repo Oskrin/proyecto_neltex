@@ -492,6 +492,8 @@ function porcenta2(){
 }
 
 function inicio() {
+
+    $("#cod_prod").focus();
     alertify.set({ delay: 1000 });
     jQuery().UItoTop({
         easingType: 'easeOutQuart'
